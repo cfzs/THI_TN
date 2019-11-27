@@ -35,9 +35,11 @@
             this.btnBoMon = new DevExpress.XtraBars.BarButtonItem();
             this.btnLop = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGiangVien = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiaoVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnHocVi = new DevExpress.XtraBars.BarButtonItem();
             this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.DanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ToChuc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -54,8 +56,6 @@
             this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
@@ -73,7 +73,7 @@
             this.btnBoMon,
             this.btnLop,
             this.btnMonHoc,
-            this.btnGiangVien,
+            this.btnGiaoVien,
             this.btnHocVi,
             this.btnChucVu,
             this.btnDangNhap,
@@ -92,7 +92,7 @@
             // 
             this.btnKhoa.Caption = "Khoa";
             this.btnKhoa.Id = 2;
-            this.btnKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKhoa.ImageOptions.SvgImage")));
             this.btnKhoa.Name = "btnKhoa";
             // 
             // btnBoMon
@@ -113,12 +113,13 @@
             this.btnMonHoc.Id = 6;
             this.btnMonHoc.Name = "btnMonHoc";
             // 
-            // btnGiangVien
+            // btnGiaoVien
             // 
-            this.btnGiangVien.Caption = "Giảng viên";
-            this.btnGiangVien.Id = 7;
-            this.btnGiangVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.btnGiangVien.Name = "btnGiangVien";
+            this.btnGiaoVien.Caption = "Giáo viên";
+            this.btnGiaoVien.Id = 7;
+            this.btnGiaoVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiangVien.ImageOptions.SvgImage")));
+            this.btnGiaoVien.Name = "btnGiaoVien";
+            this.btnGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaoVien_ItemClick);
             // 
             // btnHocVi
             // 
@@ -131,6 +132,18 @@
             this.btnChucVu.Caption = "Chức vụ";
             this.btnChucVu.Id = 9;
             this.btnChucVu.Name = "btnChucVu";
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Caption = "Đăng nhập";
+            this.btnDangNhap.Id = 11;
+            this.btnDangNhap.Name = "btnDangNhap";
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng xuất";
+            this.btnDangXuat.Id = 12;
+            this.btnDangXuat.Name = "btnDangXuat";
             // 
             // ribbonPageCategory1
             // 
@@ -160,7 +173,7 @@
             // 
             // GiangVien
             // 
-            this.GiangVien.ItemLinks.Add(this.btnGiangVien);
+            this.GiangVien.ItemLinks.Add(this.btnGiaoVien);
             this.GiangVien.ItemLinks.Add(this.btnHocVi);
             this.GiangVien.ItemLinks.Add(this.btnChucVu);
             this.GiangVien.Name = "GiangVien";
@@ -248,18 +261,6 @@
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "ribbonPage6";
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Caption = "Đăng nhập";
-            this.btnDangNhap.Id = 11;
-            this.btnDangNhap.Name = "btnDangNhap";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Caption = "Đăng xuất";
-            this.btnDangXuat.Id = 12;
-            this.btnDangXuat.Name = "btnDangXuat";
-            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
@@ -278,6 +279,7 @@
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
             this.wizardControl1.ResumeLayout(false);
@@ -310,7 +312,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
-        private DevExpress.XtraBars.BarButtonItem btnGiangVien;
+        private DevExpress.XtraBars.BarButtonItem btnGiaoVien;
         private DevExpress.XtraBars.BarButtonItem btnHocVi;
         private DevExpress.XtraBars.BarButtonItem btnChucVu;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
