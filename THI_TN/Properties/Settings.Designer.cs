@@ -32,5 +32,15 @@ namespace THI_TN.Properties {
                 return ((string)(this["THI_TN_TRACUUConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;User ID=sa;Password=123456")]
+        public string THI_TNConnectionString {
+            get {
+                return ((string)(this["THI_TNConnectionString"]));
+            }
+        }
     }
 }
