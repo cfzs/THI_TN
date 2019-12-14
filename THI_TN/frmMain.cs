@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace THI_TN
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -22,7 +23,7 @@ namespace THI_TN
                 if (f.GetType() == ftype)
                     return f;
             return null;
-        }  
+        }
 
         private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -47,6 +48,5 @@ namespace THI_TN
                 f.Show();
             }
         }
-
     }
 }

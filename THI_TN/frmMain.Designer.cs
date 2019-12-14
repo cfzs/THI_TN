@@ -1,6 +1,6 @@
 ﻿namespace THI_TN
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnKhoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnBoMon = new DevExpress.XtraBars.BarButtonItem();
@@ -117,7 +117,7 @@
             // 
             this.btnGiaoVien.Caption = "Giáo viên";
             this.btnGiaoVien.Id = 7;
-            this.btnGiaoVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiangVien.ImageOptions.SvgImage")));
+            this.btnGiaoVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGiaoVien.ImageOptions.SvgImage")));
             this.btnGiaoVien.Name = "btnGiaoVien";
             this.btnGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaoVien_ItemClick);
             // 
@@ -265,7 +265,7 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // Form1
+            // frmMain
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -276,9 +276,9 @@
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Form1";
+            this.Text = "frmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
