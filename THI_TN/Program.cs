@@ -32,6 +32,9 @@ namespace THI_TN
         public static String mHoten = "";
         public static int mChinhanh = 0;
 
+        public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
+        //public static frmMain frmChinh;
+
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -52,7 +55,6 @@ namespace THI_TN
                 return 0;
             }
         }
-
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
             SqlDataReader myreader;
@@ -80,15 +82,12 @@ namespace THI_TN
             conn.Close();
             return dt;
         }
-
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            BonusSkins.Register();
-            Application.Run(new frmMain());
+            Application.Run(new frmDangNhap());
         }
     }
 }
