@@ -36,12 +36,21 @@ namespace THI_TN.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2BNEJOV\\SERVER2;Initial Catalog=THI_TN;Persist Security Info=" +
-            "True;User ID=sa;Password=123456")]
-
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User " +
+            "ID=sa;Password=123456")]
         public string THI_TNConnectionString {
             get {
                 return ((string)(this["THI_TNConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Quang-PC\\SRV1;Initial Catalog=THI_TN;User ID=sa;Password=123456")]
+        public string THI_TNConnectionString1 {
+            get {
+                return ((string)(this["THI_TNConnectionString1"]));
             }
         }
     }

@@ -17,18 +17,62 @@ namespace THI_TN
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void frmDangNhap_Load(object sender, EventArgs e)
         {
+            string chuoiketnoi = "Data Source=Quang-PC\\SRV1;Initial Catalog=THI_TN;Integrated Security=True";
+            Program.conn.ConnectionString = chuoiketnoi;
+            Program.conn.Open();
+            DataTable dt = new DataTable();
+            dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
+            Program.bds_dspm.DataSource = dt;
+            cmbCS.DataSource = dt;
+            cmbCS.DisplayMember = "TENPM";
+            cmbCS.ValueMember = "TENSERVER";
+            cmbCS.SelectedIndex = -1;
+        }
+        
+        private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.servername = cmbCS.SelectedValue.ToString();
 
+            }
+            catch (Exception) { };
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            if (txtLogin.Text.Trim() == "" || txtPass.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên đăng nhập và mật khẩu không được trống", "", MessageBoxButtons.OK);
+                return;
+            }
+            Program.mlogin = txtLogin.Text; Program.password = txtPass.Text;
+            if (Program.KetNoi() == 0) return;
 
-        }
+            Program.mChinhanh = cmbCS.SelectedIndex;
 
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+            Program.mloginDN = Program.mlogin;
+            Program.passwordDN = Program.password;
+            string strLenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
+
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+
+
+            Program.username = Program.myReader.GetString(0);     // Lay user name
+            if (Convert.IsDBNull(Program.username))
+            {
+                MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
+                return;
+            }
+            Program.mHoten = Program.myReader.GetString(1);
+            Program.mGroup = Program.myReader.GetString(2);
+            Program.myReader.Close();
+            Program.conn.Close();
+            MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
 
         }
     }
