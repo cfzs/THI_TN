@@ -12,7 +12,7 @@ namespace THI_TN
 {
     public partial class frmMonHoc : Form
     {
-        private int viTri;
+        private int viTri = 0;
 
         public frmMonHoc()
         {
@@ -32,6 +32,8 @@ namespace THI_TN
             //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+            groupBox1.Enabled = false;
+            //btnPhucHoi.Enabled = false;
             if (bdsMH.Count == 0)
                 btnXoa.Enabled = false;
         }
@@ -64,7 +66,7 @@ namespace THI_TN
         {
             if (txtMaMH.Text.Trim() == "")
             {
-                MessageBox.Show("Không được bỏ trống tên môn học.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không được bỏ trống mã môn học.", "", MessageBoxButtons.OK);
                 txtMaMH.Focus();
             }
 
@@ -89,11 +91,11 @@ namespace THI_TN
                     MessageBox.Show("Mã môn học bị trùng.", "", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("Lỗi ghi nhân viên. Bạn kiểm tra lại thông tin nhân viên trước khi ghi.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi ghi môn học. Bạn kiểm tra lại thông tin nhân viên trước khi ghi.", "", MessageBoxButtons.OK);
 
             }
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; groupBox1.Enabled = false;
-btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             btnRefresh.Enabled = true;
         btnInDSMH.Enabled = true; btnThoat.Enabled = true; gcMH.Enabled = true;
 
@@ -101,7 +103,7 @@ btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn có thật sự muốn xóa nhân viên này?", "",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Bạn có thật sự muốn xóa môn học này?", "",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -124,6 +126,22 @@ btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             bdsMH.Position = viTri;
             gcMH.Enabled = true;
             groupBox1.Enabled = false;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnInDSMH.Enabled = true;
+            btnThoat.Enabled = true;
+        }
+
+        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+
+        }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

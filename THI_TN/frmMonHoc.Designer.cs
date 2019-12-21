@@ -188,20 +188,22 @@
             this.btnRefresh.Id = 13;
             this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
             this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
             // 
             // btnInDSMH
             // 
             this.btnInDSMH.Caption = "In danh sách môn học";
             this.btnInDSMH.Id = 14;
-            this.btnInDSMH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSNV.ImageOptions.SvgImage")));
+            this.btnInDSMH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnInDSMH.ImageOptions.SvgImage")));
             this.btnInDSMH.Name = "btnInDSMH";
             // 
             // btnThoat
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 15;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem13.ImageOptions.SvgImage")));
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
