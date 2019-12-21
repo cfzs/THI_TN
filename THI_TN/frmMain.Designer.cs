@@ -92,7 +92,6 @@
             // 
             this.btnKhoa.Caption = "Khoa";
             this.btnKhoa.Id = 2;
-            this.btnKhoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKhoa.ImageOptions.SvgImage")));
             this.btnKhoa.Name = "btnKhoa";
             // 
             // btnBoMon
@@ -138,12 +137,14 @@
             this.btnDangNhap.Caption = "Đăng nhập";
             this.btnDangNhap.Id = 11;
             this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnDangXuat
             // 
             this.btnDangXuat.Caption = "Đăng xuất";
             this.btnDangXuat.Id = 12;
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // ribbonPageCategory1
             // 

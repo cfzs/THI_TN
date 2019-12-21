@@ -59,9 +59,15 @@
             this.dS = new THI_TN.DS();
             this.bdsGiaoVien = new System.Windows.Forms.BindingSource(this.components);
             this.GIAOVIENTableAdapter = new THI_TN.DSTableAdapters.GIAOVIENTableAdapter();
-            this.tableAdapterManager = new THI_TN.DSTableAdapters.TableAdapterManager();
             this.gcGiaoVien = new DevExpress.XtraGrid.GridControl();
+            this.bdsBoDe = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHOCVI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaKhoa = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -69,16 +75,8 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtMaGV = new System.Windows.Forms.TextBox();
-            this.gIAOVIEN_DANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gIAOVIEN_DANGKYTableAdapter = new THI_TN.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
-            this.gIAOVIEN_DANGKYGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHOCVI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tableAdapterManager = new THI_TN.DSTableAdapters.TableAdapterManager();
+            this.bODETableAdapter = new THI_TN.DSTableAdapters.BODETableAdapter();
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -89,11 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGiaoVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBoDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -341,24 +337,9 @@
             // 
             this.GIAOVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BANGDIEMTableAdapter = null;
-            this.tableAdapterManager.BODETableAdapter = null;
-            this.tableAdapterManager.COSOTableAdapter = null;
-            this.tableAdapterManager.CTBTTableAdapter = null;
-            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = this.GIAOVIENTableAdapter;
-            this.tableAdapterManager.KHOATableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.SINHVIENTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = THI_TN.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // gcGiaoVien
             // 
-            this.gcGiaoVien.DataSource = this.bdsGiaoVien;
+            this.gcGiaoVien.DataSource = this.bdsBoDe;
             this.gcGiaoVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcGiaoVien.Location = new System.Drawing.Point(0, 24);
             this.gcGiaoVien.MainView = this.gridView1;
@@ -368,6 +349,11 @@
             this.gcGiaoVien.TabIndex = 5;
             this.gcGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bdsBoDe
+            // 
+            this.bdsBoDe.DataMember = "FK_BODE_GIAOVIEN";
+            this.bdsBoDe.DataSource = this.bdsGiaoVien;
             // 
             // gridView1
             // 
@@ -382,101 +368,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(mAKHLabel);
-            this.groupBox1.Controls.Add(this.txtMaKhoa);
-            this.groupBox1.Controls.Add(dIACHILabel);
-            this.groupBox1.Controls.Add(this.txtDiaChi);
-            this.groupBox1.Controls.Add(hOCVILabel);
-            this.groupBox1.Controls.Add(this.txtHocVi);
-            this.groupBox1.Controls.Add(tENLabel);
-            this.groupBox1.Controls.Add(this.txtTen);
-            this.groupBox1.Controls.Add(hOLabel);
-            this.groupBox1.Controls.Add(this.txtHo);
-            this.groupBox1.Controls.Add(mAGVLabel);
-            this.groupBox1.Controls.Add(this.txtMaGV);
-            this.groupBox1.Location = new System.Drawing.Point(145, 187);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(474, 219);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // txtMaKhoa
-            // 
-            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "MAKH", true));
-            this.txtMaKhoa.Location = new System.Drawing.Point(78, 177);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(100, 25);
-            this.txtMaKhoa.TabIndex = 11;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(78, 149);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(100, 25);
-            this.txtDiaChi.TabIndex = 9;
-            // 
-            // txtHocVi
-            // 
-            this.txtHocVi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "HOCVI", true));
-            this.txtHocVi.Location = new System.Drawing.Point(78, 118);
-            this.txtHocVi.Name = "txtHocVi";
-            this.txtHocVi.Size = new System.Drawing.Size(100, 25);
-            this.txtHocVi.TabIndex = 7;
-            // 
-            // txtTen
-            // 
-            this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "TEN", true));
-            this.txtTen.Location = new System.Drawing.Point(78, 87);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(100, 25);
-            this.txtTen.TabIndex = 5;
-            // 
-            // txtHo
-            // 
-            this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "HO", true));
-            this.txtHo.Location = new System.Drawing.Point(78, 51);
-            this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(100, 25);
-            this.txtHo.TabIndex = 3;
-            // 
-            // txtMaGV
-            // 
-            this.txtMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "MAGV", true));
-            this.txtMaGV.Location = new System.Drawing.Point(78, 20);
-            this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(100, 25);
-            this.txtMaGV.TabIndex = 1;
-            // 
-            // gIAOVIEN_DANGKYBindingSource
-            // 
-            this.gIAOVIEN_DANGKYBindingSource.DataMember = "FK_GIAOVIEN_DANGKY_GIAOVIEN1";
-            this.gIAOVIEN_DANGKYBindingSource.DataSource = this.bdsGiaoVien;
-            // 
-            // gIAOVIEN_DANGKYTableAdapter
-            // 
-            this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
-            // 
-            // gIAOVIEN_DANGKYGridControl
-            // 
-            this.gIAOVIEN_DANGKYGridControl.DataSource = this.gIAOVIEN_DANGKYBindingSource;
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(684, 365);
-            this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView2;
-            this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
-            this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(300, 220);
-            this.gIAOVIEN_DANGKYGridControl.TabIndex = 14;
-            this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gIAOVIEN_DANGKYGridControl;
-            this.gridView2.Name = "gridView2";
             // 
             // colMAGV
             // 
@@ -526,12 +417,100 @@
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 5;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(mAKHLabel);
+            this.groupBox1.Controls.Add(this.txtMaKhoa);
+            this.groupBox1.Controls.Add(dIACHILabel);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(hOCVILabel);
+            this.groupBox1.Controls.Add(this.txtHocVi);
+            this.groupBox1.Controls.Add(tENLabel);
+            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(hOLabel);
+            this.groupBox1.Controls.Add(this.txtHo);
+            this.groupBox1.Controls.Add(mAGVLabel);
+            this.groupBox1.Controls.Add(this.txtMaGV);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 162);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1099, 219);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // txtMaKhoa
+            // 
+            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "MAKH", true));
+            this.txtMaKhoa.Location = new System.Drawing.Point(78, 177);
+            this.txtMaKhoa.Name = "txtMaKhoa";
+            this.txtMaKhoa.ReadOnly = true;
+            this.txtMaKhoa.Size = new System.Drawing.Size(100, 25);
+            this.txtMaKhoa.TabIndex = 11;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "DIACHI", true));
+            this.txtDiaChi.Location = new System.Drawing.Point(78, 149);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(100, 25);
+            this.txtDiaChi.TabIndex = 9;
+            // 
+            // txtHocVi
+            // 
+            this.txtHocVi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "HOCVI", true));
+            this.txtHocVi.Location = new System.Drawing.Point(78, 118);
+            this.txtHocVi.Name = "txtHocVi";
+            this.txtHocVi.Size = new System.Drawing.Size(100, 25);
+            this.txtHocVi.TabIndex = 7;
+            // 
+            // txtTen
+            // 
+            this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "TEN", true));
+            this.txtTen.Location = new System.Drawing.Point(78, 87);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(100, 25);
+            this.txtTen.TabIndex = 5;
+            // 
+            // txtHo
+            // 
+            this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "HO", true));
+            this.txtHo.Location = new System.Drawing.Point(78, 51);
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(100, 25);
+            this.txtHo.TabIndex = 3;
+            // 
+            // txtMaGV
+            // 
+            this.txtMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGiaoVien, "MAGV", true));
+            this.txtMaGV.Location = new System.Drawing.Point(78, 20);
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Size = new System.Drawing.Size(100, 25);
+            this.txtMaGV.TabIndex = 1;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = this.bODETableAdapter;
+            this.tableAdapterManager.COSOTableAdapter = null;
+            this.tableAdapterManager.CTBTTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = this.GIAOVIENTableAdapter;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = THI_TN.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // bODETableAdapter
+            // 
+            this.bODETableAdapter.ClearBeforeFill = true;
+            // 
             // frmGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 628);
-            this.Controls.Add(this.gIAOVIEN_DANGKYGridControl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcGiaoVien);
             this.Controls.Add(this.barDockControlLeft);
@@ -548,12 +527,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGiaoVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGiaoVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBoDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,7 +561,6 @@
         private System.Windows.Forms.BindingSource bdsGiaoVien;
         private DS dS;
         private DSTableAdapters.GIAOVIENTableAdapter GIAOVIENTableAdapter;
-        private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcGiaoVien;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -594,15 +570,14 @@
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtHocVi;
         private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.BindingSource gIAOVIEN_DANGKYBindingSource;
-        private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
-        private DevExpress.XtraGrid.GridControl gIAOVIEN_DANGKYGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colHO;
         private DevExpress.XtraGrid.Columns.GridColumn colTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colHOCVI;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
+        private DSTableAdapters.TableAdapterManager tableAdapterManager;
+        private DSTableAdapters.BODETableAdapter bODETableAdapter;
+        private System.Windows.Forms.BindingSource bdsBoDe;
     }
 }

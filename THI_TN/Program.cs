@@ -18,16 +18,16 @@ namespace THI_TN
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataReader myReader;
-        public static String servername = "Quang-PC\\SRV2";
+        public static String servername = "";
         public static String username = "";
-        public static String mlogin = "sa";
-        public static String password = "123456";
+        public static String mlogin = "";
+        public static String password = "";
 
         public static String database = "THI_TN";
         public static String remotelogin = "SUPPORT_CONECT";
         public static String remotepassword = "123456";
-        public static String mloginDN = "sa";
-        public static String passwordDN = "123456";
+        public static String mloginDN = "";
+        public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mChinhanh = 0;
@@ -87,7 +87,7 @@ namespace THI_TN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmGiaoVien());
         }
     }
 }

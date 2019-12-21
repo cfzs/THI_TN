@@ -25,6 +25,18 @@ namespace THI_TN
             return null;
         }
 
+        private void btnGiaoVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmGiaoVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmGiaoVien f = new frmGiaoVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
         private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmDangNhap));
@@ -37,16 +49,9 @@ namespace THI_TN
             }
         }
 
-        private void btnGiaoVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(frmGiaoVien));
-            if (frm != null) frm.Activate();
-            else
-            {
-                frmGiaoVien f = new frmGiaoVien();
-                f.MdiParent = this;
-                f.Show();
-            }
+            this.Close();
         }
     }
 }
