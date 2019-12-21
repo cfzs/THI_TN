@@ -13,19 +13,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace THI_TN
 {
-    public partial class NhapMonHoc : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmKhoa : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public NhapMonHoc()
+        public frmKhoa()
         {
             InitializeComponent();
-            gridControl.DataSource = GetDataSource();
+         //   gridControl.DataSource = GetDataSource();
             BindingList<Customer> dataSource = GetDataSource();
-            gridControl.DataSource = dataSource;
+         //   gridControl.DataSource = dataSource;
             bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.ShowRibbonPrintPreview();
+         //   gridControl.ShowRibbonPrintPreview();
         }
         public BindingList<Customer> GetDataSource()
         {
@@ -64,6 +64,31 @@ namespace THI_TN
             [Display(Name = "Zip Code")]
             public string ZipCode { get; set; }
             public string Phone { get; set; }
+        }
+
+        private void kHOABindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bdsKHOA.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dS);
+
+        }
+
+        private void frmKhoa_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dS.KHOA' table. You can move, or remove it, as needed.
+            this.kHOATableAdapter.Fill(this.dS.KHOA);
+
+        }
+
+        private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            txtMK.Enabled = true;
+            txtTK.Enabled = true;
+            txtMCS.Enabled = true;
+
+            bdsKHOA.AddNew();
+
         }
     }
 }
