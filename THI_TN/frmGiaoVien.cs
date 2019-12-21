@@ -19,15 +19,11 @@ namespace THI_TN
 
         private void frmGiaoVien_Load(object sender, EventArgs e)
         {
-           
-
+          
             //this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.GIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
-            //this.bODETableAdapter.Fill(this.dS.BODE);
-
 
         }
 
-
+        
     }
 }
