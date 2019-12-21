@@ -26,7 +26,7 @@ namespace THI_TN
             dt = Program.ExecSqlDataTable("SELECT * FROM V_DS_PHANMANH");
             Program.bds_dspm.DataSource = dt;
             cmbCS.DataSource = dt;
-            cmbCS.DisplayMember = "TENPM";
+            cmbCS.DisplayMember = "TENCS";
             cmbCS.ValueMember = "TENSERVER";
             cmbCS.SelectedIndex = -1;
         }
@@ -70,10 +70,27 @@ namespace THI_TN
             }
             Program.mHoten = Program.myReader.GetString(1);
             Program.mGroup = Program.myReader.GetString(2);
+
+            frmMain f = new frmMain();
+            f.FormClosed += new FormClosedEventHandler(f_formClosed);
+            f.Show();
+            this.Hide();
+
+            
             Program.myReader.Close();
             Program.conn.Close();
             MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
 
+        }
+
+        private void f_formClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

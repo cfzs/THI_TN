@@ -19,20 +19,15 @@ namespace THI_TN
 
         private void frmGiaoVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+           
+
+            //this.GIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.GIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.GIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.GIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.GIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
+            //this.bODETableAdapter.Fill(this.dS.BODE);
+
 
         }
 
-        
+
     }
 }
