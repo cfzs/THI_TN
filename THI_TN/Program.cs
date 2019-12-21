@@ -87,7 +87,7 @@ namespace THI_TN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMonHoc());
+            Application.Run(new frmKhoa());
         }
     }
 }
