@@ -19,19 +19,18 @@ namespace THI_TN
             InitializeComponent();
         }
 
-        private void mONHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsMH.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dS);
-
-        }
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
+            dS.EnforceConstraints = false;
             //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+            //this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bODETableAdapter.Fill(this.dS.BODE);
+            dS.EnforceConstraints = true;
+            btnGhi.Enabled = false;
+            btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
             //btnPhucHoi.Enabled = false;
             if (bdsMH.Count == 0)
@@ -70,40 +69,57 @@ namespace THI_TN
                 txtMaMH.Focus();
             }
 
-            if (txtTenMH.Text.Trim() == "")
+            else if (txtTenMH.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống tên môn học.", "", MessageBoxButtons.OK);
                 txtTenMH.Focus();
             }
-            try
+
+            else
             {
-                bdsMH.EndEdit();
-            bdsMH.ResetCurrentItem();
-                if(dS.HasChanges())
+                try
                 {
-                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+                    bdsMH.EndEdit();
+                    bdsMH.ResetCurrentItem();
+                    if (dS.HasChanges())
+                    {
+                        this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+                    }
                 }
-            }
-            catch(Exception ex)
-            {
-                if(ex.Message.Contains("PRIMARY"))
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Mã môn học bị trùng.", "", MessageBoxButtons.OK);
+                    if (ex.Message.Contains("already present") || ex.Message.Contains("PRIMARY"))
+                    {
+                        MessageBox.Show("Mã môn học bị trùng.", "", MessageBoxButtons.OK);
+                        txtMaMH.Focus();
+                        btnPhucHoi.Enabled = false;
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi ghi môn học. Bạn kiểm tra lại thông tin môn học trước khi ghi.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        return;
+                    }
+
                 }
-                else
-                    MessageBox.Show("Lỗi ghi môn học. Bạn kiểm tra lại thông tin nhân viên trước khi ghi.", "", MessageBoxButtons.OK);
+                btnGhi.Enabled = false; btnPhucHoi.Enabled = false; groupBox1.Enabled = false;
+                btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+                btnRefresh.Enabled = true;
+                btnInDSMH.Enabled = true; btnThoat.Enabled = true; gcMH.Enabled = true;
 
             }
-            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; groupBox1.Enabled = false;
-            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
-            btnRefresh.Enabled = true;
-        btnInDSMH.Enabled = true; btnThoat.Enabled = true; gcMH.Enabled = true;
 
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn có thật sự muốn xóa môn học này?", "",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(bdsBD.Count > 0)
+            {
+                MessageBox.Show("Môn học đã có bộ đề.", "", MessageBoxButtons.OK);
+                    return;
+            }
+            else if(MessageBox.Show("Bạn có thật sự muốn xóa môn học này?", "",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -112,10 +128,12 @@ namespace THI_TN
                 }
                 catch(Exception)
                 {
-                    MessageBox.Show("Lỗi xóa nhân viên.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa môn học.", "", MessageBoxButtons.OK);
 
                 }
             }
+            btnThem.Enabled = true;
+            btnPhucHoi.Enabled = false;
             if (bdsMH.Count == 0)
                 btnXoa.Enabled = false;
         }
@@ -126,16 +144,26 @@ namespace THI_TN
             bdsMH.Position = viTri;
             gcMH.Enabled = true;
             groupBox1.Enabled = false;
+            btnGhi.Enabled = false;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+            btnPhucHoi.Enabled = false;
             btnInDSMH.Enabled = true;
             btnThoat.Enabled = true;
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+            btnInDSMH.Enabled = true; btnThoat.Enabled = true;
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; btnRefresh.Enabled = true;
+            gcMH.Enabled = true; groupBox1.Enabled = false;
+            dS.EnforceConstraints = false;
+            this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+            this.bODETableAdapter.Fill(this.dS.BODE);
+            dS.EnforceConstraints = true;
+
 
         }
 

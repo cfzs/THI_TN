@@ -51,7 +51,7 @@ namespace THI_TN
             Program.mlogin = txtLogin.Text; Program.password = txtPass.Text;
             if (Program.KetNoi() == 0) return;
 
-            Program.mChinhanh = cmbCS.SelectedIndex;
+            Program.mCoso = cmbCS.SelectedIndex;
 
             Program.mloginDN = Program.mlogin;
             Program.passwordDN = Program.password;

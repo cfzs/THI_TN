@@ -30,7 +30,7 @@ namespace THI_TN
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
-        public static int mChinhanh = 0;
+        public static int mCoso = 0;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         //public static frmMain frmChinh;
@@ -87,7 +87,7 @@ namespace THI_TN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMonHoc());
+            Application.Run(new frmNhapDe());
         }
     }
 }
