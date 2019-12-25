@@ -170,6 +170,9 @@
     <EmbeddedResource Include="frmNhapDe.resx">
       <DependentUpon>frmNhapDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSV.resx">
+      <DependentUpon>frmSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
