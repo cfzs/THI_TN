@@ -175,5 +175,39 @@ namespace THI_TN
         {
             this.Close();
         }
+
+        private void cmbTrinhDo_DropDown(object sender, EventArgs e)
+        {
+            int trinhDo = cmbTrinhDo.SelectedIndex;
+            DataTable dt = new DataTable();
+            //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
+
+            //Set tay
+            Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            Program.conn.Open();
+            dt = Program.ExecSqlDataTable("SELECT TRINHDO FROM BODE");
+
+            cmbTrinhDo.DataSource = dt;
+            cmbTrinhDo.ValueMember = "TRINHDO";
+
+            cmbTrinhDo.SelectedIndex = trinhDo;
+        }
+
+        private void cmbDapAn_DropDown(object sender, EventArgs e)
+        {
+            int dapAn = cmbDapAn.SelectedIndex;
+            DataTable dt1 = new DataTable();
+            //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
+
+            //Set tay
+            Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            Program.conn.Open();
+            dt1 = Program.ExecSqlDataTable("SELECT DAPAN FROM BODE");
+
+            cmbDapAn.DataSource = dt1;
+            cmbDapAn.ValueMember = "DAPAN";
+
+            cmbDapAn.SelectedIndex = dapAn;
+        }
     }
 }
