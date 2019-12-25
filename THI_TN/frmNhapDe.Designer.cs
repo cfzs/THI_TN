@@ -693,20 +693,28 @@
             // cmbTrinhDo
             // 
             this.cmbTrinhDo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsBD, "TRINHDO", true));
+            this.cmbTrinhDo.DataSource = this.bdsBD;
+            this.cmbTrinhDo.DisplayMember = "TRINHDO";
             this.cmbTrinhDo.FormattingEnabled = true;
             this.cmbTrinhDo.Location = new System.Drawing.Point(116, 90);
             this.cmbTrinhDo.Name = "cmbTrinhDo";
             this.cmbTrinhDo.Size = new System.Drawing.Size(121, 25);
             this.cmbTrinhDo.TabIndex = 21;
+            this.cmbTrinhDo.ValueMember = "TRINHDO";
+            this.cmbTrinhDo.DropDown += new System.EventHandler(this.cmbTrinhDo_DropDown);
             // 
             // cmbDapAn
             // 
             this.cmbDapAn.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsBD, "DAP_AN", true));
+            this.cmbDapAn.DataSource = this.bdsBD;
+            this.cmbDapAn.DisplayMember = "DAP_AN";
             this.cmbDapAn.FormattingEnabled = true;
             this.cmbDapAn.Location = new System.Drawing.Point(116, 294);
             this.cmbDapAn.Name = "cmbDapAn";
             this.cmbDapAn.Size = new System.Drawing.Size(121, 25);
             this.cmbDapAn.TabIndex = 20;
+            this.cmbDapAn.ValueMember = "DAP_AN";
+            this.cmbDapAn.DropDown += new System.EventHandler(this.cmbDapAn_DropDown);
             // 
             // cAUHOISpinEdit
             // 
