@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mALOPLabel;
-            System.Windows.Forms.Label tENLOPLabel;
-            System.Windows.Forms.Label mAKHLabel1;
-            System.Windows.Forms.Label mASVLabel;
-            System.Windows.Forms.Label hOLabel;
-            System.Windows.Forms.Label tENLabel;
-            System.Windows.Forms.Label nGAYSINHLabel;
-            System.Windows.Forms.Label dIACHILabel;
-            System.Windows.Forms.Label mALOPLabel1;
-            System.Windows.Forms.Label mACSLabel;
-            System.Windows.Forms.Label tENLabel1;
-            System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSV));
+            this.mALOPLabel = new System.Windows.Forms.Label();
+            this.tENLOPLabel = new System.Windows.Forms.Label();
+            this.mAKHLabel1 = new System.Windows.Forms.Label();
+            this.mASVLabel = new System.Windows.Forms.Label();
+            this.hOLabel = new System.Windows.Forms.Label();
+            this.tENLabel = new System.Windows.Forms.Label();
+            this.nGAYSINHLabel = new System.Windows.Forms.Label();
+            this.dIACHILabel = new System.Windows.Forms.Label();
+            this.mALOPLabel1 = new System.Windows.Forms.Label();
+            this.mACSLabel = new System.Windows.Forms.Label();
+            this.tENLabel1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -102,18 +101,6 @@
             this.mACSComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dS_SVTableAdapter = new THI_TN.DSTableAdapters.DS_SVTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            mALOPLabel = new System.Windows.Forms.Label();
-            tENLOPLabel = new System.Windows.Forms.Label();
-            mAKHLabel1 = new System.Windows.Forms.Label();
-            mASVLabel = new System.Windows.Forms.Label();
-            hOLabel = new System.Windows.Forms.Label();
-            tENLabel = new System.Windows.Forms.Label();
-            nGAYSINHLabel = new System.Windows.Forms.Label();
-            dIACHILabel = new System.Windows.Forms.Label();
-            mALOPLabel1 = new System.Windows.Forms.Label();
-            mACSLabel = new System.Windows.Forms.Label();
-            tENLabel1 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
@@ -146,111 +133,111 @@
             // 
             // mALOPLabel
             // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(2, 8);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(45, 13);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "MALOP:";
+            this.mALOPLabel.AutoSize = true;
+            this.mALOPLabel.Location = new System.Drawing.Point(2, 8);
+            this.mALOPLabel.Name = "mALOPLabel";
+            this.mALOPLabel.Size = new System.Drawing.Size(45, 13);
+            this.mALOPLabel.TabIndex = 0;
+            this.mALOPLabel.Text = "MALOP:";
             // 
             // tENLOPLabel
             // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(2, 34);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(49, 13);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "TENLOP:";
+            this.tENLOPLabel.AutoSize = true;
+            this.tENLOPLabel.Location = new System.Drawing.Point(2, 34);
+            this.tENLOPLabel.Name = "tENLOPLabel";
+            this.tENLOPLabel.Size = new System.Drawing.Size(49, 13);
+            this.tENLOPLabel.TabIndex = 2;
+            this.tENLOPLabel.Text = "TENLOP:";
             // 
             // mAKHLabel1
             // 
-            mAKHLabel1.AutoSize = true;
-            mAKHLabel1.Location = new System.Drawing.Point(2, 60);
-            mAKHLabel1.Name = "mAKHLabel1";
-            mAKHLabel1.Size = new System.Drawing.Size(39, 13);
-            mAKHLabel1.TabIndex = 4;
-            mAKHLabel1.Text = "MAKH:";
+            this.mAKHLabel1.AutoSize = true;
+            this.mAKHLabel1.Location = new System.Drawing.Point(2, 60);
+            this.mAKHLabel1.Name = "mAKHLabel1";
+            this.mAKHLabel1.Size = new System.Drawing.Size(39, 13);
+            this.mAKHLabel1.TabIndex = 4;
+            this.mAKHLabel1.Text = "MAKH:";
             // 
             // mASVLabel
             // 
-            mASVLabel.AutoSize = true;
-            mASVLabel.Location = new System.Drawing.Point(5, 22);
-            mASVLabel.Name = "mASVLabel";
-            mASVLabel.Size = new System.Drawing.Size(38, 13);
-            mASVLabel.TabIndex = 0;
-            mASVLabel.Text = "MASV:";
+            this.mASVLabel.AutoSize = true;
+            this.mASVLabel.Location = new System.Drawing.Point(5, 22);
+            this.mASVLabel.Name = "mASVLabel";
+            this.mASVLabel.Size = new System.Drawing.Size(38, 13);
+            this.mASVLabel.TabIndex = 0;
+            this.mASVLabel.Text = "MASV:";
             // 
             // hOLabel
             // 
-            hOLabel.AutoSize = true;
-            hOLabel.Location = new System.Drawing.Point(5, 48);
-            hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(26, 13);
-            hOLabel.TabIndex = 2;
-            hOLabel.Text = "HO:";
+            this.hOLabel.AutoSize = true;
+            this.hOLabel.Location = new System.Drawing.Point(5, 48);
+            this.hOLabel.Name = "hOLabel";
+            this.hOLabel.Size = new System.Drawing.Size(26, 13);
+            this.hOLabel.TabIndex = 2;
+            this.hOLabel.Text = "HO:";
             // 
             // tENLabel
             // 
-            tENLabel.AutoSize = true;
-            tENLabel.Location = new System.Drawing.Point(5, 74);
-            tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(30, 13);
-            tENLabel.TabIndex = 4;
-            tENLabel.Text = "TEN:";
+            this.tENLabel.AutoSize = true;
+            this.tENLabel.Location = new System.Drawing.Point(5, 74);
+            this.tENLabel.Name = "tENLabel";
+            this.tENLabel.Size = new System.Drawing.Size(30, 13);
+            this.tENLabel.TabIndex = 4;
+            this.tENLabel.Text = "TEN:";
             // 
             // nGAYSINHLabel
             // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(5, 100);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(62, 13);
-            nGAYSINHLabel.TabIndex = 6;
-            nGAYSINHLabel.Text = "NGAYSINH:";
+            this.nGAYSINHLabel.AutoSize = true;
+            this.nGAYSINHLabel.Location = new System.Drawing.Point(5, 100);
+            this.nGAYSINHLabel.Name = "nGAYSINHLabel";
+            this.nGAYSINHLabel.Size = new System.Drawing.Size(62, 13);
+            this.nGAYSINHLabel.TabIndex = 6;
+            this.nGAYSINHLabel.Text = "NGAYSINH:";
             // 
             // dIACHILabel
             // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(5, 126);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(47, 13);
-            dIACHILabel.TabIndex = 8;
-            dIACHILabel.Text = "DIACHI:";
+            this.dIACHILabel.AutoSize = true;
+            this.dIACHILabel.Location = new System.Drawing.Point(5, 126);
+            this.dIACHILabel.Name = "dIACHILabel";
+            this.dIACHILabel.Size = new System.Drawing.Size(47, 13);
+            this.dIACHILabel.TabIndex = 8;
+            this.dIACHILabel.Text = "DIACHI:";
             // 
             // mALOPLabel1
             // 
-            mALOPLabel1.AutoSize = true;
-            mALOPLabel1.Location = new System.Drawing.Point(5, 152);
-            mALOPLabel1.Name = "mALOPLabel1";
-            mALOPLabel1.Size = new System.Drawing.Size(45, 13);
-            mALOPLabel1.TabIndex = 10;
-            mALOPLabel1.Text = "MALOP:";
+            this.mALOPLabel1.AutoSize = true;
+            this.mALOPLabel1.Location = new System.Drawing.Point(5, 152);
+            this.mALOPLabel1.Name = "mALOPLabel1";
+            this.mALOPLabel1.Size = new System.Drawing.Size(45, 13);
+            this.mALOPLabel1.TabIndex = 10;
+            this.mALOPLabel1.Text = "MALOP:";
             // 
             // mACSLabel
             // 
-            mACSLabel.AutoSize = true;
-            mACSLabel.Location = new System.Drawing.Point(492, 26);
-            mACSLabel.Name = "mACSLabel";
-            mACSLabel.Size = new System.Drawing.Size(40, 13);
-            mACSLabel.TabIndex = 14;
-            mACSLabel.Text = "MACS:";
+            this.mACSLabel.AutoSize = true;
+            this.mACSLabel.Location = new System.Drawing.Point(492, 26);
+            this.mACSLabel.Name = "mACSLabel";
+            this.mACSLabel.Size = new System.Drawing.Size(40, 13);
+            this.mACSLabel.TabIndex = 14;
+            this.mACSLabel.Text = "MACS:";
             // 
             // tENLabel1
             // 
-            tENLabel1.AutoSize = true;
-            tENLabel1.Location = new System.Drawing.Point(209, 7);
-            tENLabel1.Name = "tENLabel1";
-            tENLabel1.Size = new System.Drawing.Size(30, 13);
-            tENLabel1.TabIndex = 9;
-            tENLabel1.Text = "TEN:";
+            this.tENLabel1.AutoSize = true;
+            this.tENLabel1.Location = new System.Drawing.Point(209, 7);
+            this.tENLabel1.Name = "tENLabel1";
+            this.tENLabel1.Size = new System.Drawing.Size(30, 13);
+            this.tENLabel1.TabIndex = 9;
+            this.tENLabel1.Text = "TEN:";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(198, 34);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(38, 13);
-            label1.TabIndex = 10;
-            label1.Text = "MASV:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(198, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "MASV:";
             // 
             // barManager1
             // 
@@ -303,56 +290,48 @@
             // 
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 8;
-            this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
             this.btnThem.Name = "btnThem";
             // 
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.Id = 9;
-            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.Id = 10;
-            this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
             this.btnGhi.Name = "btnGhi";
             // 
             // Xóa
             // 
             this.Xóa.Caption = "btnXoa";
             this.Xóa.Id = 11;
-            this.Xóa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Xóa.ImageOptions.SvgImage")));
             this.Xóa.Name = "Xóa";
             // 
             // btnPhucHoi
             // 
             this.btnPhucHoi.Caption = "Phục hồi";
             this.btnPhucHoi.Id = 12;
-            this.btnPhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhucHoi.ImageOptions.SvgImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
             // 
             // btnRefresh
             // 
             this.btnRefresh.Caption = "Refresh";
             this.btnRefresh.Id = 13;
-            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
             this.btnRefresh.Name = "btnRefresh";
             // 
             // btnDSNV
             // 
             this.btnDSNV.Caption = "Danh sách sinh viên";
             this.btnDSNV.Id = 14;
-            this.btnDSNV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSNV.ImageOptions.SvgImage")));
             this.btnDSNV.Name = "btnDSNV";
             // 
             // barButtonItem13
             // 
             this.barButtonItem13.Caption = "Thoát";
             this.barButtonItem13.Id = 15;
-            this.barButtonItem13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem13.ImageOptions.SvgImage")));
             this.barButtonItem13.Name = "barButtonItem13";
             // 
             // bar3
@@ -373,7 +352,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(996, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(996, 22);
             // 
             // barDockControlBottom
             // 
@@ -387,17 +366,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 559);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 561);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(996, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(996, 22);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 559);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 561);
             // 
             // barButtonItem4
             // 
@@ -511,15 +490,15 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(label1);
+            this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.txtMASV);
-            this.panelControl1.Controls.Add(tENLabel1);
+            this.panelControl1.Controls.Add(this.tENLabel1);
             this.panelControl1.Controls.Add(this.tENComboBox);
-            this.panelControl1.Controls.Add(mALOPLabel);
+            this.panelControl1.Controls.Add(this.mALOPLabel);
             this.panelControl1.Controls.Add(this.txtML);
-            this.panelControl1.Controls.Add(tENLOPLabel);
+            this.panelControl1.Controls.Add(this.tENLOPLabel);
             this.panelControl1.Controls.Add(this.txtTL);
-            this.panelControl1.Controls.Add(mAKHLabel1);
+            this.panelControl1.Controls.Add(this.mAKHLabel1);
             this.panelControl1.Controls.Add(this.txtMK);
             this.panelControl1.Location = new System.Drawing.Point(13, 253);
             this.panelControl1.Name = "panelControl1";
@@ -658,17 +637,17 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(mASVLabel);
+            this.panelControl3.Controls.Add(this.mASVLabel);
             this.panelControl3.Controls.Add(this.mASVTextEdit);
-            this.panelControl3.Controls.Add(hOLabel);
+            this.panelControl3.Controls.Add(this.hOLabel);
             this.panelControl3.Controls.Add(this.hOTextEdit);
-            this.panelControl3.Controls.Add(tENLabel);
+            this.panelControl3.Controls.Add(this.tENLabel);
             this.panelControl3.Controls.Add(this.tENTextEdit);
-            this.panelControl3.Controls.Add(nGAYSINHLabel);
+            this.panelControl3.Controls.Add(this.nGAYSINHLabel);
             this.panelControl3.Controls.Add(this.nGAYSINHDateEdit);
-            this.panelControl3.Controls.Add(dIACHILabel);
+            this.panelControl3.Controls.Add(this.dIACHILabel);
             this.panelControl3.Controls.Add(this.dIACHITextEdit);
-            this.panelControl3.Controls.Add(mALOPLabel1);
+            this.panelControl3.Controls.Add(this.mALOPLabel1);
             this.panelControl3.Controls.Add(this.mALOPTextEdit1);
             this.panelControl3.Location = new System.Drawing.Point(13, 376);
             this.panelControl3.Name = "panelControl3";
@@ -768,7 +747,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 606);
-            this.Controls.Add(mACSLabel);
+            this.Controls.Add(this.mACSLabel);
             this.Controls.Add(this.mACSComboBoxEdit);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -878,5 +857,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label mALOPLabel;
+        private System.Windows.Forms.Label tENLOPLabel;
+        private System.Windows.Forms.Label mAKHLabel1;
+        private System.Windows.Forms.Label mASVLabel;
+        private System.Windows.Forms.Label hOLabel;
+        private System.Windows.Forms.Label tENLabel;
+        private System.Windows.Forms.Label nGAYSINHLabel;
+        private System.Windows.Forms.Label dIACHILabel;
+        private System.Windows.Forms.Label mALOPLabel1;
+        private System.Windows.Forms.Label mACSLabel;
+        private System.Windows.Forms.Label tENLabel1;
+        private System.Windows.Forms.Label label1;
     }
 }
