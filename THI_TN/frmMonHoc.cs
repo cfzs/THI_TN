@@ -44,21 +44,21 @@ namespace THI_TN
             groupBox1.Enabled = true;
             gcMH.Enabled = false;
             bdsMH.AddNew();
-            btnThem.Enabled = false; btnSua.Enabled = false ; btnXoa.Enabled = false;
-            btnInDSMH.Enabled = false ; btnThoat.Enabled = false;
-            btnGhi.Enabled = true ; btnPhucHoi.Enabled = true ; btnRefresh.Enabled = true;
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnInDSMH.Enabled = false; btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
             txtMaMH.Focus();
 
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnThem.Enabled = false ; btnSua.Enabled = false ; btnXoa.Enabled = false;
-        btnInDSMH.Enabled = false ; btnThoat.Enabled = false;
-        btnGhi.Enabled = true ; btnPhucHoi.Enabled = true ; btnRefresh.Enabled = true;
-        groupBox1.Enabled = true;
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnInDSMH.Enabled = false; btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
+            groupBox1.Enabled = true;
             gcMH.Enabled = false;
-        viTri = bdsMH.Position;
+            viTri = bdsMH.Position;
 
         }
 
@@ -77,16 +77,16 @@ namespace THI_TN
             }
             try
             {
-                bdsMH.EndEdit();
-            bdsMH.ResetCurrentItem();
-                if(dS.HasChanges())
+                bdsMH.EndEdit();//đẩy về csdl
+                bdsMH.ResetCurrentItem();
+                if (dS.HasChanges())
                 {
-                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);//đẩy về sql
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                if(ex.Message.Contains("PRIMARY"))
+                if (ex.Message.Contains("PRIMARY"))
                 {
                     MessageBox.Show("Mã môn học bị trùng.", "", MessageBoxButtons.OK);
                 }
@@ -97,20 +97,20 @@ namespace THI_TN
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; groupBox1.Enabled = false;
             btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             btnRefresh.Enabled = true;
-        btnInDSMH.Enabled = true; btnThoat.Enabled = true; gcMH.Enabled = true;
+            btnInDSMH.Enabled = true; btnThoat.Enabled = true; gcMH.Enabled = true;
 
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn có thật sự muốn xóa môn học này?", "",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có thật sự muốn xóa môn học này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
                     bdsMH.RemoveCurrent();
                     this.mONHOCTableAdapter.Update(this.dS.MONHOC);
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     MessageBox.Show("Lỗi xóa nhân viên.", "", MessageBoxButtons.OK);
 
@@ -135,7 +135,7 @@ namespace THI_TN
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+            this.mONHOCTableAdapter.Update(this.dS.MONHOC);
 
         }
 

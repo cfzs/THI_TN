@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoa));
             this.dS = new THI_TN.DS();
-            this.bdsKHOA = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new THI_TN.DSTableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new THI_TN.DSTableAdapters.TableAdapterManager();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -41,6 +40,8 @@
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -54,25 +55,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMK = new System.Windows.Forms.TextBox();
-            this.txtTK = new System.Windows.Forms.TextBox();
             this.txtMCS = new System.Windows.Forms.TextBox();
+            this.txtTK = new System.Windows.Forms.TextBox();
+            this.txtMK = new System.Windows.Forms.TextBox();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.cOSOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOSOTableAdapter = new THI_TN.DSTableAdapters.COSOTableAdapter();
+            this.bdsKHOA = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKHOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).BeginInit();
             this.SuspendLayout();
             // 
             // dS
             // 
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bdsKHOA
-            // 
-            this.bdsKHOA.DataMember = "KHOA";
-            this.bdsKHOA.DataSource = this.dS;
             // 
             // kHOATableAdapter
             // 
@@ -110,6 +111,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXoa);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPhucHoi);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnGhi);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Tasks";
@@ -128,6 +131,7 @@
             this.btnSua.Id = 17;
             this.btnSua.ImageOptions.ImageUri.Uri = "Edit";
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -135,6 +139,7 @@
             this.btnXoa.Id = 18;
             this.btnXoa.ImageOptions.ImageUri.Uri = "Delete";
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -142,6 +147,7 @@
             this.btnPhucHoi.Id = 19;
             this.btnPhucHoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnGhi
             // 
@@ -150,6 +156,25 @@
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 22;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Refresh";
+            this.barButtonItem2.Id = 23;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPageGroup2
             // 
@@ -178,9 +203,11 @@
             this.btnSua,
             this.btnXoa,
             this.btnPhucHoi,
-            this.btnGhi});
+            this.btnGhi,
+            this.btnThoat,
+            this.barButtonItem2});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 21;
+            this.ribbonControl.MaxItemId = 24;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -250,7 +277,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 382);
+            this.label1.Location = new System.Drawing.Point(12, 454);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 7;
@@ -268,19 +295,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 449);
+            this.label3.Location = new System.Drawing.Point(8, 379);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Mã Cơ Sở :";
             // 
-            // txtMK
+            // txtMCS
             // 
-            this.txtMK.Enabled = false;
-            this.txtMK.Location = new System.Drawing.Point(93, 379);
-            this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(158, 21);
-            this.txtMK.TabIndex = 10;
+            this.txtMCS.Enabled = false;
+            this.txtMCS.Location = new System.Drawing.Point(93, 379);
+            this.txtMCS.Name = "txtMCS";
+            this.txtMCS.Size = new System.Drawing.Size(158, 21);
+            this.txtMCS.TabIndex = 10;
             // 
             // txtTK
             // 
@@ -290,22 +317,44 @@
             this.txtTK.Size = new System.Drawing.Size(158, 21);
             this.txtTK.TabIndex = 11;
             // 
-            // txtMCS
+            // txtMK
             // 
-            this.txtMCS.Enabled = false;
-            this.txtMCS.Location = new System.Drawing.Point(93, 446);
-            this.txtMCS.Name = "txtMCS";
-            this.txtMCS.Size = new System.Drawing.Size(158, 21);
-            this.txtMCS.TabIndex = 12;
+            this.txtMK.Enabled = false;
+            this.txtMK.Location = new System.Drawing.Point(93, 446);
+            this.txtMK.Name = "txtMK";
+            this.txtMK.Size = new System.Drawing.Size(158, 21);
+            this.txtMK.TabIndex = 12;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thoát";
+            this.barButtonItem1.Id = 21;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // cOSOBindingSource
+            // 
+            this.cOSOBindingSource.DataMember = "COSO";
+            this.cOSOBindingSource.DataSource = this.dS;
+            // 
+            // cOSOTableAdapter
+            // 
+            this.cOSOTableAdapter.ClearBeforeFill = true;
+            // 
+            // bdsKHOA
+            // 
+            this.bdsKHOA.DataMember = "KHOA";
+            this.bdsKHOA.DataSource = this.dS;
             // 
             // frmKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 595);
-            this.Controls.Add(this.txtMCS);
-            this.Controls.Add(this.txtTK);
             this.Controls.Add(this.txtMK);
+            this.Controls.Add(this.txtTK);
+            this.Controls.Add(this.txtMCS);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -317,10 +366,11 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Load += new System.EventHandler(this.frmKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKHOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +378,6 @@
 
         #endregion
         private DS dS;
-        private System.Windows.Forms.BindingSource bdsKHOA;
         private DSTableAdapters.KHOATableAdapter kHOATableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
@@ -351,8 +400,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMK;
-        private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.TextBox txtMCS;
+        private System.Windows.Forms.TextBox txtTK;
+        private System.Windows.Forms.TextBox txtMK;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private System.Windows.Forms.BindingSource cOSOBindingSource;
+        private DSTableAdapters.COSOTableAdapter cOSOTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.BindingSource bdsKHOA;
     }
 }
