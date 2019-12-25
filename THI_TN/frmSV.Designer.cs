@@ -100,7 +100,6 @@
             this.cOSOTableAdapter = new THI_TN.DSTableAdapters.COSOTableAdapter();
             this.mACSComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dS_SVTableAdapter = new THI_TN.DSTableAdapters.DS_SVTableAdapter();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
@@ -737,11 +736,6 @@
             // 
             this.dS_SVTableAdapter.ClearBeforeFill = true;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // frmSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -856,7 +850,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label mALOPLabel;
         private System.Windows.Forms.Label tENLOPLabel;
         private System.Windows.Forms.Label mAKHLabel1;
