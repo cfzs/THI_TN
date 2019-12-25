@@ -15,6 +15,8 @@ namespace THI_TN
 {
     public partial class frmKhoa : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private int viTri = 0;
+        
         public frmKhoa()
         {
             InitializeComponent();
@@ -76,6 +78,9 @@ namespace THI_TN
 
         private void frmKhoa_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.COSO' table. You can move, or remove it, as needed.
+            this.cOSOTableAdapter.Fill(this.dS.COSO);
+            Program.mCoso = 1;
             // TODO: This line of code loads data into the 'dS.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Fill(this.dS.KHOA);
 
@@ -83,12 +88,122 @@ namespace THI_TN
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            txtMK.Enabled = true;
+            // txtMCS.Enabled = true;
+            
             txtTK.Enabled = true;
-            txtMCS.Enabled = true;
-
+            txtMK.Enabled = true;
+            
+            viTri = bdsKHOA.Position;
+            gcKHOA.Enabled = false;
             bdsKHOA.AddNew();
 
+            this.txtMCS.Text = "CS1";
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+             btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnPhucHoi.Enabled = true;
+            txtMCS.Focus();
+
+        }
+
+        private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+             btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnPhucHoi.Enabled = true;
+            txtMK.Enabled = true;
+            txtTK.Enabled = true;
+
+            gcKHOA.Enabled = false;
+            viTri = bdsKHOA.Position;
+        }
+
+        private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn xóa khoa này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    bdsKHOA.RemoveCurrent();
+                    this.kHOATableAdapter.Update(this.dS.KHOA);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi xóa khoa.", "", MessageBoxButtons.OK);
+
+                }
+            }
+            if (bdsKHOA.Count == 0)
+                btnXoa.Enabled = false;
+        }
+
+        private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (txtTK.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống tên khoa.", "", MessageBoxButtons.OK);
+                txtTK.Focus();
+            }
+
+            if (txtMK.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống mã khoa.", "", MessageBoxButtons.OK);
+                txtMK.Focus();
+            }
+            try
+            {
+                bdsKHOA.EndEdit();//đẩy về csdl
+                bdsKHOA.ResetCurrentItem();
+                if (dS.HasChanges())
+                {
+                    this.kHOATableAdapter.Update(this.dS.KHOA);//đẩy về sql
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("PRIMARY"))
+                {
+                    MessageBox.Show("Mã khoa bị trùng.", "", MessageBoxButtons.OK);
+                }
+                else
+                    MessageBox.Show("Lỗi ghi khoa. Bạn kiểm tra lại thông tin trước khi ghi.", "", MessageBoxButtons.OK);
+
+            }
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; 
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+            btnPhucHoi.Enabled = true;
+            btnThoat.Enabled = true; gcKHOA.Enabled = true;
+
+        }
+
+        private void btnPhucHoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bdsKHOA.CancelEdit();
+            bdsKHOA.Position = viTri;
+            gcKHOA.Enabled = true;
+           // groupBox1.Enabled = false;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+           // btnInDSMH.Enabled = true;
+            btnThoat.Enabled = true;
+        }
+
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bdsKHOA.CancelEdit();
+            bdsKHOA.Position = viTri;
+            gcKHOA.Enabled = true;
+            // groupBox1.Enabled = false;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            // btnInDSMH.Enabled = true;
+            btnThoat.Enabled = true;
         }
     }
 }
