@@ -52,6 +52,7 @@
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcKHOA = new DevExpress.XtraGrid.GridControl();
+            this.bdsKHOA = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,13 +62,12 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.cOSOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cOSOTableAdapter = new THI_TN.DSTableAdapters.COSOTableAdapter();
-            this.bdsKHOA = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKHOA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dS
@@ -274,6 +274,11 @@
             this.gcKHOA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // bdsKHOA
+            // 
+            this.bdsKHOA.DataMember = "KHOA";
+            this.bdsKHOA.DataSource = this.dS;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -303,6 +308,7 @@
             // 
             // txtMCS
             // 
+            this.txtMCS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKHOA, "MACS", true));
             this.txtMCS.Enabled = false;
             this.txtMCS.Location = new System.Drawing.Point(93, 379);
             this.txtMCS.Name = "txtMCS";
@@ -311,6 +317,7 @@
             // 
             // txtTK
             // 
+            this.txtTK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKHOA, "TENKH", true));
             this.txtTK.Enabled = false;
             this.txtTK.Location = new System.Drawing.Point(93, 415);
             this.txtTK.Name = "txtTK";
@@ -319,6 +326,7 @@
             // 
             // txtMK
             // 
+            this.txtMK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKHOA, "MAKH", true));
             this.txtMK.Enabled = false;
             this.txtMK.Location = new System.Drawing.Point(93, 446);
             this.txtMK.Name = "txtMK";
@@ -342,11 +350,6 @@
             // 
             this.cOSOTableAdapter.ClearBeforeFill = true;
             // 
-            // bdsKHOA
-            // 
-            this.bdsKHOA.DataMember = "KHOA";
-            this.bdsKHOA.DataSource = this.dS;
-            // 
             // frmKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,8 +372,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcKHOA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKHOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOSOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
