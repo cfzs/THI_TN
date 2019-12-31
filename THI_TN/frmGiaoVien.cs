@@ -172,6 +172,10 @@ namespace THI_TN
             btnPhucHoi.Enabled = false;
             btnCTBD.Enabled = true;
             btnThoat.Enabled = true;
+            bdsBD.CancelEdit();
+            btnThemBD.Enabled = true;
+            btnGhiBD.Enabled = false;
+            btnXoaBD.Enabled = true;
         }
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -207,6 +211,113 @@ namespace THI_TN
             cmbMaKhoa.ValueMember = "MAKH";
 
             cmbMaKhoa.SelectedIndex = maKhoa;
+        }
+
+        private void btnThemBD_Click(object sender, EventArgs e)
+        {
+            viTri = bdsGV.Position;
+            groupBox1.Enabled = false;
+            gcGV.Enabled = false;
+            bdsBD.AddNew();
+            //object maxCauHoi;
+            //maxCauHoi = dS.BODE.Compute("Max(CAUHOI)", "");
+            //txtCauHoi.Selected = (int.Parse(maxCauHoi.ToString()) + 1).ToString();
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnCTBD.Enabled = false; btnThoat.Enabled = false;
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
+            btnThemBD.Enabled = false;
+            btnGhiBD.Enabled = true;
+            btnXoaBD.Enabled = false;
+        }
+
+        private void btnGhiBD_Click(object sender, EventArgs e)
+        {
+            if (cmbTenMH.Selected.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống tên môn học.", "", MessageBoxButtons.OK);
+            }
+
+            else if (txtNoiDung.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống nội dung.", "", MessageBoxButtons.OK);
+            }
+            else if (txtA.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+            }
+            else if (txtB.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+            }
+            else if (txtC.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+            }
+            else if (txtD.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+            }
+
+            else if (cmbDapAn.ToString().Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống đáp án.", "", MessageBoxButtons.OK);
+            }
+
+            else
+            {
+                try
+                {
+                    bdsBD.EndEdit();
+                    bdsBD.ResetCurrentItem();
+                    if (dS.HasChanges())
+                    {
+                        this.bODETableAdapter.Update(this.dS.BODE);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("already present") || ex.Message.Contains("PRIMARY"))
+                    {
+                        MessageBox.Show("Mã lớp bị trùng.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        return;
+                    }
+                    else if (ex.Message.Contains("String or binary"))
+                    {
+                        MessageBox.Show("Trình độ và đáp án chỉ được nhập 1 kí tự.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        //if (cmbTrinhDo.Selected.ToString().Length > 1)
+                        //    cmbTrinhDo.Focus();
+                        //if (cmbDapAn.Selected.ToString().Length > 1)
+                        //    cmbDapAn.Focus();
+                        return;
+                    }
+                    else if (ex.Message.Contains("CHECK"))
+                    {
+                        MessageBox.Show("Trình độ chỉ được nhập 1 kí tự (A,B,C)." +
+                            "\nĐáp án chỉ được nhập 1 kí tự (A,B,C,D)", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        //if (cmbTrinhDo.SelectedValue.ToString().Length > 1)
+                        //    cmbTrinhDo.Focus();
+                        //if (cmbDapAn.SelectedValue.ToString().Length > 1)
+                        //    cmbDapAn.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
+
+                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        return;
+                    }
+
+                }
+                btnGhiBD.Enabled = false; 
+                btnThemBD.Enabled = true;
+                btnXoaBD.Enabled = true;
+               
+            }
         }
     }
 }

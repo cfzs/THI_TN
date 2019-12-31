@@ -54,4 +54,17 @@
       </ColumnUISettings>
     </TableUISetting>
   </TableUISettings>
+  <TableUISettings>
+    <TableUISetting Name="BODE">
+      <ColumnUISettings>
+        <ColumnUISetting Name="CAUHOI">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+              <BindableControlInfo Name="TextEdit" Type="DevExpress.XtraEditors.TextEdit" AssemblyName="DevExpress.XtraEditors.v19.1" />
+            </ControlSetting>
+          </ControlSettings>
+        </ColumnUISetting>
+      </ColumnUISettings>
+    </TableUISetting>
+  </TableUISettings>
 </DataSetUISetting>
