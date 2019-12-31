@@ -125,6 +125,8 @@ namespace THI_TN
                 {
                     bdsKHOA.RemoveCurrent();
                     this.kHOATableAdapter.Update(this.dS.KHOA);
+                    btnPhucHoi.Enabled = false;
+                       
                 }
                 catch (Exception)
                 {
@@ -134,6 +136,7 @@ namespace THI_TN
             }
             if (bdsKHOA.Count == 0)
                 btnXoa.Enabled = false;
+
         }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
@@ -171,7 +174,11 @@ namespace THI_TN
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; 
             btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             btnPhucHoi.Enabled = true;
+            btnPhucHoi.Enabled = false;
             btnThoat.Enabled = true; gcKHOA.Enabled = true;
+            txtMCS.Enabled = false;
+            txtMK.Enabled = false;
+            txtTK.Enabled = false;
 
         }
 

@@ -46,11 +46,11 @@
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
-            this.Xóa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -74,15 +74,15 @@
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtMASV = new DevExpress.XtraEditors.TextEdit();
-            this.tENComboBox = new System.Windows.Forms.ComboBox();
+            this.cbbTEN = new System.Windows.Forms.ComboBox();
             this.bdsDS_SV = new System.Windows.Forms.BindingSource(this.components);
             this.bdsSINHVIEN = new System.Windows.Forms.BindingSource(this.components);
             this.txtML = new DevExpress.XtraEditors.TextEdit();
             this.txtTL = new DevExpress.XtraEditors.TextEdit();
             this.txtMK = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.SINHVIEN = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sINHVIENDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,16 +90,20 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sINHVIENTableAdapter = new THI_TN.DSTableAdapters.SINHVIENTableAdapter();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.mASVTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nGAYSINHDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.mALOPTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtMASV1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtHO = new DevExpress.XtraEditors.TextEdit();
+            this.txtTEN = new DevExpress.XtraEditors.TextEdit();
+            this.txtNS = new DevExpress.XtraEditors.DateEdit();
+            this.txtDC = new DevExpress.XtraEditors.TextEdit();
+            this.txtML1 = new DevExpress.XtraEditors.TextEdit();
             this.bdsCOSO = new System.Windows.Forms.BindingSource(this.components);
             this.cOSOTableAdapter = new THI_TN.DSTableAdapters.COSOTableAdapter();
             this.mACSComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dS_SVTableAdapter = new THI_TN.DSTableAdapters.DS_SVTableAdapter();
+            this.contex = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnT = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnX = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnG = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
@@ -116,18 +120,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SINHVIEN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMASV1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNS.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNS.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtML1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCOSO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mACSComboBoxEdit.Properties)).BeginInit();
+            this.contex.SuspendLayout();
             this.SuspendLayout();
             // 
             // mALOPLabel
@@ -257,11 +262,11 @@
             this.btnThem,
             this.btnSua,
             this.btnGhi,
-            this.Xóa,
+            this.btnXoa,
             this.btnPhucHoi,
             this.btnRefresh,
             this.btnDSNV,
-            this.barButtonItem13});
+            this.btnThoat});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 16;
             this.barManager1.StatusBar = this.bar3;
@@ -276,11 +281,11 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.Xóa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDSNV, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem13, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -303,17 +308,18 @@
             this.btnGhi.Id = 10;
             this.btnGhi.Name = "btnGhi";
             // 
-            // Xóa
+            // btnXoa
             // 
-            this.Xóa.Caption = "btnXoa";
-            this.Xóa.Id = 11;
-            this.Xóa.Name = "Xóa";
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 11;
+            this.btnXoa.Name = "btnXoa";
             // 
             // btnPhucHoi
             // 
             this.btnPhucHoi.Caption = "Phục hồi";
             this.btnPhucHoi.Id = 12;
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnRefresh
             // 
@@ -327,11 +333,12 @@
             this.btnDSNV.Id = 14;
             this.btnDSNV.Name = "btnDSNV";
             // 
-            // barButtonItem13
+            // btnThoat
             // 
-            this.barButtonItem13.Caption = "Thoát";
-            this.barButtonItem13.Id = 15;
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 15;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -492,7 +499,7 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.txtMASV);
             this.panelControl1.Controls.Add(this.tENLabel1);
-            this.panelControl1.Controls.Add(this.tENComboBox);
+            this.panelControl1.Controls.Add(this.cbbTEN);
             this.panelControl1.Controls.Add(this.mALOPLabel);
             this.panelControl1.Controls.Add(this.txtML);
             this.panelControl1.Controls.Add(this.tENLOPLabel);
@@ -511,19 +518,19 @@
             this.txtMASV.Size = new System.Drawing.Size(121, 20);
             this.txtMASV.TabIndex = 11;
             // 
-            // tENComboBox
+            // cbbTEN
             // 
-            this.tENComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDS_SV, "TEN", true));
-            this.tENComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsSINHVIEN, "MASV", true));
-            this.tENComboBox.DataSource = this.bdsDS_SV;
-            this.tENComboBox.DisplayMember = "TEN";
-            this.tENComboBox.FormattingEnabled = true;
-            this.tENComboBox.Location = new System.Drawing.Point(242, 4);
-            this.tENComboBox.Name = "tENComboBox";
-            this.tENComboBox.Size = new System.Drawing.Size(121, 21);
-            this.tENComboBox.TabIndex = 10;
-            this.tENComboBox.ValueMember = "MASV";
-            this.tENComboBox.SelectedIndexChanged += new System.EventHandler(this.tENComboBox_SelectedIndexChanged);
+            this.cbbTEN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDS_SV, "TEN", true));
+            this.cbbTEN.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsSINHVIEN, "MASV", true));
+            this.cbbTEN.DataSource = this.bdsDS_SV;
+            this.cbbTEN.DisplayMember = "TEN";
+            this.cbbTEN.FormattingEnabled = true;
+            this.cbbTEN.Location = new System.Drawing.Point(242, 4);
+            this.cbbTEN.Name = "cbbTEN";
+            this.cbbTEN.Size = new System.Drawing.Size(121, 21);
+            this.cbbTEN.TabIndex = 10;
+            this.cbbTEN.ValueMember = "MASV";
+            this.cbbTEN.SelectedIndexChanged += new System.EventHandler(this.tENComboBox_SelectedIndexChanged);
             // 
             // bdsDS_SV
             // 
@@ -564,41 +571,35 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.SINHVIEN);
+            this.panelControl2.Controls.Add(this.sINHVIENDataGridView);
             this.panelControl2.Location = new System.Drawing.Point(385, 253);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(599, 314);
             this.panelControl2.TabIndex = 13;
             // 
-            // SINHVIEN
+            // sINHVIENDataGridView
             // 
-            this.SINHVIEN.AutoGenerateColumns = false;
-            this.SINHVIEN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SINHVIEN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sINHVIENDataGridView.AutoGenerateColumns = false;
+            this.sINHVIENDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sINHVIENDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.SINHVIEN.DataSource = this.bdsSINHVIEN;
-            this.SINHVIEN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SINHVIEN.Location = new System.Drawing.Point(2, 2);
-            this.SINHVIEN.Name = "SINHVIEN";
-            this.SINHVIEN.Size = new System.Drawing.Size(595, 310);
-            this.SINHVIEN.TabIndex = 0;
-            this.SINHVIEN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sINHVIENDataGridView_CellContentClick);
+            this.sINHVIENDataGridView.DataSource = this.bdsSINHVIEN;
+            this.sINHVIENDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sINHVIENDataGridView.Location = new System.Drawing.Point(2, 2);
+            this.sINHVIENDataGridView.Name = "sINHVIENDataGridView";
+            this.sINHVIENDataGridView.Size = new System.Drawing.Size(595, 310);
+            this.sINHVIENDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MASV";
-            this.dataGridViewTextBoxColumn1.DataSource = this.bdsDS_SV;
-            this.dataGridViewTextBoxColumn1.DisplayMember = "TEN";
             this.dataGridViewTextBoxColumn1.HeaderText = "MASV";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn1.ValueMember = "MASV";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -637,80 +638,80 @@
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.mASVLabel);
-            this.panelControl3.Controls.Add(this.mASVTextEdit);
+            this.panelControl3.Controls.Add(this.txtMASV1);
             this.panelControl3.Controls.Add(this.hOLabel);
-            this.panelControl3.Controls.Add(this.hOTextEdit);
+            this.panelControl3.Controls.Add(this.txtHO);
             this.panelControl3.Controls.Add(this.tENLabel);
-            this.panelControl3.Controls.Add(this.tENTextEdit);
+            this.panelControl3.Controls.Add(this.txtTEN);
             this.panelControl3.Controls.Add(this.nGAYSINHLabel);
-            this.panelControl3.Controls.Add(this.nGAYSINHDateEdit);
+            this.panelControl3.Controls.Add(this.txtNS);
             this.panelControl3.Controls.Add(this.dIACHILabel);
-            this.panelControl3.Controls.Add(this.dIACHITextEdit);
+            this.panelControl3.Controls.Add(this.txtDC);
             this.panelControl3.Controls.Add(this.mALOPLabel1);
-            this.panelControl3.Controls.Add(this.mALOPTextEdit1);
+            this.panelControl3.Controls.Add(this.txtML1);
             this.panelControl3.Location = new System.Drawing.Point(13, 376);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(366, 185);
             this.panelControl3.TabIndex = 14;
             // 
-            // mASVTextEdit
+            // txtMASV1
             // 
-            this.mASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "MASV", true));
-            this.mASVTextEdit.Location = new System.Drawing.Point(73, 19);
-            this.mASVTextEdit.MenuManager = this.barManager1;
-            this.mASVTextEdit.Name = "mASVTextEdit";
-            this.mASVTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.mASVTextEdit.TabIndex = 1;
+            this.txtMASV1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "MASV", true));
+            this.txtMASV1.Location = new System.Drawing.Point(73, 19);
+            this.txtMASV1.MenuManager = this.barManager1;
+            this.txtMASV1.Name = "txtMASV1";
+            this.txtMASV1.Size = new System.Drawing.Size(100, 20);
+            this.txtMASV1.TabIndex = 1;
             // 
-            // hOTextEdit
+            // txtHO
             // 
-            this.hOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "HO", true));
-            this.hOTextEdit.Location = new System.Drawing.Point(73, 45);
-            this.hOTextEdit.MenuManager = this.barManager1;
-            this.hOTextEdit.Name = "hOTextEdit";
-            this.hOTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.hOTextEdit.TabIndex = 3;
+            this.txtHO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "HO", true));
+            this.txtHO.Location = new System.Drawing.Point(73, 45);
+            this.txtHO.MenuManager = this.barManager1;
+            this.txtHO.Name = "txtHO";
+            this.txtHO.Size = new System.Drawing.Size(100, 20);
+            this.txtHO.TabIndex = 3;
             // 
-            // tENTextEdit
+            // txtTEN
             // 
-            this.tENTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "TEN", true));
-            this.tENTextEdit.Location = new System.Drawing.Point(73, 71);
-            this.tENTextEdit.MenuManager = this.barManager1;
-            this.tENTextEdit.Name = "tENTextEdit";
-            this.tENTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.tENTextEdit.TabIndex = 5;
+            this.txtTEN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "TEN", true));
+            this.txtTEN.Location = new System.Drawing.Point(73, 71);
+            this.txtTEN.MenuManager = this.barManager1;
+            this.txtTEN.Name = "txtTEN";
+            this.txtTEN.Size = new System.Drawing.Size(100, 20);
+            this.txtTEN.TabIndex = 5;
             // 
-            // nGAYSINHDateEdit
+            // txtNS
             // 
-            this.nGAYSINHDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "NGAYSINH", true));
-            this.nGAYSINHDateEdit.EditValue = null;
-            this.nGAYSINHDateEdit.Location = new System.Drawing.Point(73, 97);
-            this.nGAYSINHDateEdit.MenuManager = this.barManager1;
-            this.nGAYSINHDateEdit.Name = "nGAYSINHDateEdit";
-            this.nGAYSINHDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtNS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "NGAYSINH", true));
+            this.txtNS.EditValue = null;
+            this.txtNS.Location = new System.Drawing.Point(73, 97);
+            this.txtNS.MenuManager = this.barManager1;
+            this.txtNS.Name = "txtNS";
+            this.txtNS.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtNS.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYSINHDateEdit.Size = new System.Drawing.Size(100, 20);
-            this.nGAYSINHDateEdit.TabIndex = 7;
+            this.txtNS.Size = new System.Drawing.Size(100, 20);
+            this.txtNS.TabIndex = 7;
             // 
-            // dIACHITextEdit
+            // txtDC
             // 
-            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "DIACHI", true));
-            this.dIACHITextEdit.Location = new System.Drawing.Point(73, 123);
-            this.dIACHITextEdit.MenuManager = this.barManager1;
-            this.dIACHITextEdit.Name = "dIACHITextEdit";
-            this.dIACHITextEdit.Size = new System.Drawing.Size(100, 20);
-            this.dIACHITextEdit.TabIndex = 9;
+            this.txtDC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "DIACHI", true));
+            this.txtDC.Location = new System.Drawing.Point(73, 123);
+            this.txtDC.MenuManager = this.barManager1;
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(100, 20);
+            this.txtDC.TabIndex = 9;
             // 
-            // mALOPTextEdit1
+            // txtML1
             // 
-            this.mALOPTextEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "MALOP", true));
-            this.mALOPTextEdit1.Location = new System.Drawing.Point(73, 149);
-            this.mALOPTextEdit1.MenuManager = this.barManager1;
-            this.mALOPTextEdit1.Name = "mALOPTextEdit1";
-            this.mALOPTextEdit1.Size = new System.Drawing.Size(100, 20);
-            this.mALOPTextEdit1.TabIndex = 11;
+            this.txtML1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "MALOP", true));
+            this.txtML1.Location = new System.Drawing.Point(73, 149);
+            this.txtML1.MenuManager = this.barManager1;
+            this.txtML1.Name = "txtML1";
+            this.txtML1.Size = new System.Drawing.Size(100, 20);
+            this.txtML1.TabIndex = 11;
             // 
             // bdsCOSO
             // 
@@ -736,11 +737,42 @@
             // 
             this.dS_SVTableAdapter.ClearBeforeFill = true;
             // 
+            // contex
+            // 
+            this.contex.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnT,
+            this.btnX,
+            this.btnG});
+            this.contex.Name = "contex";
+            this.contex.Size = new System.Drawing.Size(105, 70);
+            // 
+            // btnT
+            // 
+            this.btnT.Name = "btnT";
+            this.btnT.Size = new System.Drawing.Size(104, 22);
+            this.btnT.Text = "Thêm";
+            this.btnT.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // btnX
+            // 
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(104, 22);
+            this.btnX.Text = "Xóa";
+            this.btnX.Click += new System.EventHandler(this.btnX_Click);
+            // 
+            // btnG
+            // 
+            this.btnG.Name = "btnG";
+            this.btnG.Size = new System.Drawing.Size(104, 22);
+            this.btnG.Text = "Ghi";
+            this.btnG.Click += new System.EventHandler(this.btnG_Click);
+            // 
             // frmSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 606);
+            this.ContextMenuStrip = this.contex;
             this.Controls.Add(this.mACSLabel);
             this.Controls.Add(this.mACSComboBoxEdit);
             this.Controls.Add(this.panelControl3);
@@ -771,19 +803,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SINHVIEN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mASVTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYSINHDateEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mALOPTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMASV1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHO.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTEN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNS.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNS.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtML1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCOSO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mACSComboBoxEdit.Properties)).EndInit();
+            this.contex.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -796,11 +829,11 @@
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnGhi;
-        private DevExpress.XtraBars.BarButtonItem Xóa;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.BarButtonItem btnPhucHoi;
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraBars.BarButtonItem btnDSNV;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -829,27 +862,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
         private System.Windows.Forms.BindingSource bdsSINHVIEN;
         private DSTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
-        private System.Windows.Forms.DataGridView SINHVIEN;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.TextEdit mASVTextEdit;
-        private DevExpress.XtraEditors.TextEdit hOTextEdit;
-        private DevExpress.XtraEditors.TextEdit tENTextEdit;
-        private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
-        private DevExpress.XtraEditors.TextEdit dIACHITextEdit;
-        private DevExpress.XtraEditors.TextEdit mALOPTextEdit1;
+        private DevExpress.XtraEditors.TextEdit txtMASV1;
+        private DevExpress.XtraEditors.TextEdit txtHO;
+        private DevExpress.XtraEditors.TextEdit txtTEN;
+        private DevExpress.XtraEditors.DateEdit txtNS;
+        private DevExpress.XtraEditors.TextEdit txtDC;
+        private DevExpress.XtraEditors.TextEdit txtML1;
         private System.Windows.Forms.BindingSource bdsCOSO;
         private DSTableAdapters.COSOTableAdapter cOSOTableAdapter;
         private DevExpress.XtraEditors.ComboBoxEdit mACSComboBoxEdit;
         private System.Windows.Forms.BindingSource bdsDS_SV;
         private DSTableAdapters.DS_SVTableAdapter dS_SVTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtMASV;
-        private System.Windows.Forms.ComboBox tENComboBox;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.ComboBox cbbTEN;
         private System.Windows.Forms.Label mALOPLabel;
         private System.Windows.Forms.Label tENLOPLabel;
         private System.Windows.Forms.Label mAKHLabel1;
@@ -862,5 +888,16 @@
         private System.Windows.Forms.Label mACSLabel;
         private System.Windows.Forms.Label tENLabel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contex;
+        private System.Windows.Forms.ToolStripMenuItem btnT;
+        private System.Windows.Forms.ToolStripMenuItem btnX;
+        private System.Windows.Forms.ToolStripMenuItem btnG;
+        private System.Windows.Forms.DataGridView sINHVIENDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
