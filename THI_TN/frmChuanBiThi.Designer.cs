@@ -38,15 +38,16 @@
             System.Windows.Forms.Label tENMHLabel;
             System.Windows.Forms.Label mAMHLabel;
             System.Windows.Forms.Label mAGVLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuanBiThi));
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label tENLOPLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuanBiThi));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -81,17 +82,17 @@
             this.txtTG = new DevExpress.XtraEditors.SpinEdit();
             this.bdsGETDSGV = new System.Windows.Forms.BindingSource(this.components);
             this.gETDSGVTableAdapter = new THI_TN.DSTableAdapters.GETDSGVTableAdapter();
-            this.txtHT = new DevExpress.XtraEditors.TextEdit();
             this.bdsGETDSMH = new System.Windows.Forms.BindingSource(this.components);
             this.gETDSMHTableAdapter = new THI_TN.DSTableAdapters.GETDSMHTableAdapter();
-            this.txtTMH = new DevExpress.XtraEditors.TextEdit();
-            this.txtMMH = new System.Windows.Forms.ComboBox();
-            this.txtMGV = new System.Windows.Forms.ComboBox();
-            this.txtNgay = new System.Windows.Forms.DateTimePicker();
-            this.dSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbsLOP = new System.Windows.Forms.BindingSource(this.components);
             this.dSLOPTableAdapter = new THI_TN.DSTableAdapters.DSLOPTableAdapter();
-            this.txtML = new System.Windows.Forms.ComboBox();
-            this.txtTenLop = new System.Windows.Forms.ComboBox();
+            this.cbbMGV = new System.Windows.Forms.ComboBox();
+            this.cbbMMH = new System.Windows.Forms.ComboBox();
+            this.cbbML = new System.Windows.Forms.ComboBox();
+            this.txtNT = new System.Windows.Forms.DateTimePicker();
+            this.cbbHT = new System.Windows.Forms.ComboBox();
+            this.cbbTMH = new System.Windows.Forms.ComboBox();
+            this.cbbTL = new System.Windows.Forms.ComboBox();
             tRINHDOLabel = new System.Windows.Forms.Label();
             nGAYTHILabel = new System.Windows.Forms.Label();
             lANLabel = new System.Windows.Forms.Label();
@@ -113,10 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSCT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTG.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGETDSGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGETDSMH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTMH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsLOP)).BeginInit();
             this.SuspendLayout();
             // 
             // tRINHDOLabel
@@ -167,7 +166,7 @@
             // hoTenLabel
             // 
             hoTenLabel.AutoSize = true;
-            hoTenLabel.Location = new System.Drawing.Point(232, 269);
+            hoTenLabel.Location = new System.Drawing.Point(21, 262);
             hoTenLabel.Name = "hoTenLabel";
             hoTenLabel.Size = new System.Drawing.Size(46, 13);
             hoTenLabel.TabIndex = 23;
@@ -176,7 +175,7 @@
             // tENMHLabel
             // 
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(229, 301);
+            tENMHLabel.Location = new System.Drawing.Point(22, 296);
             tENMHLabel.Name = "tENMHLabel";
             tENMHLabel.Size = new System.Drawing.Size(49, 13);
             tENMHLabel.TabIndex = 26;
@@ -185,7 +184,7 @@
             // mAMHLabel
             // 
             mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(24, 296);
+            mAMHLabel.Location = new System.Drawing.Point(244, 296);
             mAMHLabel.Name = "mAMHLabel";
             mAMHLabel.Size = new System.Drawing.Size(43, 13);
             mAMHLabel.TabIndex = 31;
@@ -194,11 +193,29 @@
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(30, 267);
+            mAGVLabel.Location = new System.Drawing.Point(244, 264);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(41, 13);
             mAGVLabel.TabIndex = 32;
             mAGVLabel.Text = "MAGV:";
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(244, 323);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(47, 13);
+            mALOPLabel.TabIndex = 48;
+            mALOPLabel.Text = "MALOP:";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(24, 326);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(53, 13);
+            tENLOPLabel.TabIndex = 49;
+            tENLOPLabel.Text = "TENLOP:";
             // 
             // barManager1
             // 
@@ -223,9 +240,10 @@
             this.btnPhucHoi,
             this.btnRefresh,
             this.btnDSNV,
-            this.btnThoat});
+            this.btnThoat,
+            this.barButtonItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 16;
+            this.barManager1.MaxItemId = 17;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -238,7 +256,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -279,6 +298,13 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Sửa";
+            this.barButtonItem1.Id = 16;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -297,7 +323,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(856, 24);
             // 
             // barDockControlBottom
             // 
@@ -305,7 +331,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 514);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(856, 23);
             // 
             // barDockControlLeft
             // 
@@ -319,7 +345,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(856, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
             // 
@@ -414,7 +440,7 @@
             this.gcGIAOVIEN_DANGKY.MainView = this.gridView1;
             this.gcGIAOVIEN_DANGKY.MenuManager = this.barManager1;
             this.gcGIAOVIEN_DANGKY.Name = "gcGIAOVIEN_DANGKY";
-            this.gcGIAOVIEN_DANGKY.Size = new System.Drawing.Size(800, 220);
+            this.gcGIAOVIEN_DANGKY.Size = new System.Drawing.Size(856, 220);
             this.gcGIAOVIEN_DANGKY.TabIndex = 5;
             this.gcGIAOVIEN_DANGKY.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -555,15 +581,6 @@
             // 
             this.gETDSGVTableAdapter.ClearBeforeFill = true;
             // 
-            // txtHT
-            // 
-            this.txtHT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGETDSGV, "HoTen", true));
-            this.txtHT.Location = new System.Drawing.Point(302, 266);
-            this.txtHT.MenuManager = this.barManager1;
-            this.txtHT.Name = "txtHT";
-            this.txtHT.Size = new System.Drawing.Size(125, 20);
-            this.txtHT.TabIndex = 24;
-            // 
             // bdsGETDSMH
             // 
             this.bdsGETDSMH.DataMember = "GETDSMH";
@@ -573,112 +590,117 @@
             // 
             this.gETDSMHTableAdapter.ClearBeforeFill = true;
             // 
-            // txtTMH
+            // dbsLOP
             // 
-            this.txtTMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGETDSMH, "TENMH", true));
-            this.txtTMH.Location = new System.Drawing.Point(302, 298);
-            this.txtTMH.MenuManager = this.barManager1;
-            this.txtTMH.Name = "txtTMH";
-            this.txtTMH.Size = new System.Drawing.Size(125, 20);
-            this.txtTMH.TabIndex = 27;
-            // 
-            // txtMMH
-            // 
-            this.txtMMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSMH, "MAMH", true));
-            this.txtMMH.DataSource = this.bdsGETDSMH;
-            this.txtMMH.DisplayMember = "MAMH";
-            this.txtMMH.FormattingEnabled = true;
-            this.txtMMH.Location = new System.Drawing.Point(95, 293);
-            this.txtMMH.Name = "txtMMH";
-            this.txtMMH.Size = new System.Drawing.Size(121, 21);
-            this.txtMMH.TabIndex = 32;
-            this.txtMMH.ValueMember = "TENMH";
-            // 
-            // txtMGV
-            // 
-            this.txtMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSGV, "MAGV", true));
-            this.txtMGV.DataSource = this.bdsGETDSGV;
-            this.txtMGV.DisplayMember = "MAGV";
-            this.txtMGV.FormattingEnabled = true;
-            this.txtMGV.Location = new System.Drawing.Point(95, 264);
-            this.txtMGV.Name = "txtMGV";
-            this.txtMGV.Size = new System.Drawing.Size(121, 21);
-            this.txtMGV.TabIndex = 33;
-            this.txtMGV.ValueMember = "HoTen";
-            // 
-            // txtNgay
-            // 
-            this.txtNgay.Location = new System.Drawing.Point(95, 372);
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new System.Drawing.Size(121, 20);
-            this.txtNgay.TabIndex = 39;
-            // 
-            // dSLOPBindingSource
-            // 
-            this.dSLOPBindingSource.DataMember = "DSLOP";
-            this.dSLOPBindingSource.DataSource = this.dS;
+            this.dbsLOP.DataMember = "DSLOP";
+            this.dbsLOP.DataSource = this.dS;
+            this.dbsLOP.CurrentChanged += new System.EventHandler(this.dSLOPBindingSource_CurrentChanged);
             // 
             // dSLOPTableAdapter
             // 
             this.dSLOPTableAdapter.ClearBeforeFill = true;
             // 
-            // mALOPLabel
+            // cbbMGV
             // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(24, 323);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(47, 13);
-            mALOPLabel.TabIndex = 48;
-            mALOPLabel.Text = "MALOP:";
+            this.cbbMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIAOVIEN_DANGKY, "MAGV", true));
+            this.cbbMGV.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MAGV", true));
+            this.cbbMGV.DataSource = this.bdsGETDSGV;
+            this.cbbMGV.DisplayMember = "MAGV";
+            this.cbbMGV.FormattingEnabled = true;
+            this.cbbMGV.Location = new System.Drawing.Point(321, 259);
+            this.cbbMGV.Name = "cbbMGV";
+            this.cbbMGV.Size = new System.Drawing.Size(121, 21);
+            this.cbbMGV.TabIndex = 55;
+            this.cbbMGV.ValueMember = "MAGV";
             // 
-            // txtML
+            // cbbMMH
             // 
-            this.txtML.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSLOPBindingSource, "MALOP", true));
-            this.txtML.DataSource = this.dSLOPBindingSource;
-            this.txtML.DisplayMember = "MALOP";
-            this.txtML.FormattingEnabled = true;
-            this.txtML.Location = new System.Drawing.Point(95, 320);
-            this.txtML.Name = "txtML";
-            this.txtML.Size = new System.Drawing.Size(121, 21);
-            this.txtML.TabIndex = 49;
-            this.txtML.ValueMember = "TENLOP";
+            this.cbbMMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIAOVIEN_DANGKY, "MAMH", true));
+            this.cbbMMH.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MAMH", true));
+            this.cbbMMH.DataSource = this.bdsGETDSMH;
+            this.cbbMMH.DisplayMember = "MAMH";
+            this.cbbMMH.FormattingEnabled = true;
+            this.cbbMMH.Location = new System.Drawing.Point(321, 288);
+            this.cbbMMH.Name = "cbbMMH";
+            this.cbbMMH.Size = new System.Drawing.Size(121, 21);
+            this.cbbMMH.TabIndex = 56;
+            this.cbbMMH.ValueMember = "MAMH";
             // 
-            // tENLOPLabel
+            // cbbML
             // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(245, 328);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(53, 13);
-            tENLOPLabel.TabIndex = 49;
-            tENLOPLabel.Text = "TENLOP:";
+            this.cbbML.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIAOVIEN_DANGKY, "MALOP", true));
+            this.cbbML.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MALOP", true));
+            this.cbbML.DataSource = this.dbsLOP;
+            this.cbbML.DisplayMember = "MALOP";
+            this.cbbML.FormattingEnabled = true;
+            this.cbbML.Location = new System.Drawing.Point(321, 323);
+            this.cbbML.Name = "cbbML";
+            this.cbbML.Size = new System.Drawing.Size(121, 21);
+            this.cbbML.TabIndex = 57;
+            this.cbbML.ValueMember = "MALOP";
             // 
-            // txtTenLop
+            // txtNT
             // 
-            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSLOPBindingSource, "TENLOP", true));
-            this.txtTenLop.FormattingEnabled = true;
-            this.txtTenLop.Location = new System.Drawing.Point(304, 325);
-            this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(121, 21);
-            this.txtTenLop.TabIndex = 50;
+            this.txtNT.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bdsGIAOVIEN_DANGKY, "NGAYTHI", true));
+            this.txtNT.Location = new System.Drawing.Point(95, 372);
+            this.txtNT.Name = "txtNT";
+            this.txtNT.Size = new System.Drawing.Size(200, 20);
+            this.txtNT.TabIndex = 58;
+            // 
+            // cbbHT
+            // 
+            this.cbbHT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSGV, "HoTen", true));
+            this.cbbHT.DataSource = this.bdsGETDSGV;
+            this.cbbHT.DisplayMember = "HoTen";
+            this.cbbHT.FormattingEnabled = true;
+            this.cbbHT.Location = new System.Drawing.Point(95, 261);
+            this.cbbHT.Name = "cbbHT";
+            this.cbbHT.Size = new System.Drawing.Size(121, 21);
+            this.cbbHT.TabIndex = 59;
+            this.cbbHT.ValueMember = "MAGV";
+            // 
+            // cbbTMH
+            // 
+            this.cbbTMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSMH, "TENMH", true));
+            this.cbbTMH.DataSource = this.bdsGETDSMH;
+            this.cbbTMH.DisplayMember = "TENMH";
+            this.cbbTMH.FormattingEnabled = true;
+            this.cbbTMH.Location = new System.Drawing.Point(95, 293);
+            this.cbbTMH.Name = "cbbTMH";
+            this.cbbTMH.Size = new System.Drawing.Size(121, 21);
+            this.cbbTMH.TabIndex = 60;
+            this.cbbTMH.ValueMember = "MAMH";
+            // 
+            // cbbTL
+            // 
+            this.cbbTL.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dbsLOP, "TENLOP", true));
+            this.cbbTL.DataSource = this.dbsLOP;
+            this.cbbTL.DisplayMember = "TENLOP";
+            this.cbbTL.FormattingEnabled = true;
+            this.cbbTL.Location = new System.Drawing.Point(95, 320);
+            this.cbbTL.Name = "cbbTL";
+            this.cbbTL.Size = new System.Drawing.Size(121, 21);
+            this.cbbTL.TabIndex = 61;
+            this.cbbTL.ValueMember = "MALOP";
             // 
             // frmChuanBiThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.ClientSize = new System.Drawing.Size(856, 537);
+            this.Controls.Add(this.cbbTL);
+            this.Controls.Add(this.cbbTMH);
+            this.Controls.Add(this.cbbHT);
+            this.Controls.Add(this.txtNT);
+            this.Controls.Add(this.cbbML);
+            this.Controls.Add(this.cbbMMH);
+            this.Controls.Add(this.cbbMGV);
             this.Controls.Add(tENLOPLabel);
-            this.Controls.Add(this.txtTenLop);
             this.Controls.Add(mALOPLabel);
-            this.Controls.Add(this.txtML);
-            this.Controls.Add(this.txtNgay);
             this.Controls.Add(mAGVLabel);
-            this.Controls.Add(this.txtMGV);
             this.Controls.Add(mAMHLabel);
-            this.Controls.Add(this.txtMMH);
             this.Controls.Add(tENMHLabel);
-            this.Controls.Add(this.txtTMH);
             this.Controls.Add(hoTenLabel);
-            this.Controls.Add(this.txtHT);
             this.Controls.Add(tRINHDOLabel);
             this.Controls.Add(this.txtTD);
             this.Controls.Add(nGAYTHILabel);
@@ -706,10 +728,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSCT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTG.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGETDSGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGETDSMH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTMH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsLOP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -749,10 +769,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource bdsGETDSGV;
         private DSTableAdapters.GETDSGVTableAdapter gETDSGVTableAdapter;
-        private DevExpress.XtraEditors.TextEdit txtHT;
         private System.Windows.Forms.BindingSource bdsGETDSMH;
         private DSTableAdapters.GETDSMHTableAdapter gETDSMHTableAdapter;
-        private DevExpress.XtraEditors.TextEdit txtTMH;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
@@ -761,12 +779,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLAN;
         private DevExpress.XtraGrid.Columns.GridColumn colSOCAUTHI;
         private DevExpress.XtraGrid.Columns.GridColumn colTHOIGIAN;
-        private System.Windows.Forms.ComboBox txtMGV;
-        private System.Windows.Forms.ComboBox txtMMH;
-        private System.Windows.Forms.DateTimePicker txtNgay;
-        private System.Windows.Forms.BindingSource dSLOPBindingSource;
+        private System.Windows.Forms.BindingSource dbsLOP;
         private DSTableAdapters.DSLOPTableAdapter dSLOPTableAdapter;
-        private System.Windows.Forms.ComboBox txtTenLop;
-        private System.Windows.Forms.ComboBox txtML;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private System.Windows.Forms.DateTimePicker txtNT;
+        private System.Windows.Forms.ComboBox cbbML;
+        private System.Windows.Forms.ComboBox cbbMMH;
+        private System.Windows.Forms.ComboBox cbbMGV;
+        private System.Windows.Forms.ComboBox cbbTL;
+        private System.Windows.Forms.ComboBox cbbTMH;
+        private System.Windows.Forms.ComboBox cbbHT;
     }
 }

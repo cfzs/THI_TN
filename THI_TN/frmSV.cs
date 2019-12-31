@@ -275,9 +275,9 @@ namespace THI_TN
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (bdsLOP.Count > 0)
+            if (bdsSINHVIEN.Count > 0)
             {
-                MessageBox.Show("Môn học đã có bộ đề.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Lớp đã có sinh viên không thể xóa.", "", MessageBoxButtons.OK);
                 return;
             }
             if (MessageBox.Show("Bạn có thật sự muốn xóa lớp này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)

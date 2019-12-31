@@ -49,7 +49,6 @@
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -61,6 +60,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
             this.dS = new THI_TN.DS();
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new THI_TN.DSTableAdapters.KHOATableAdapter();
@@ -331,12 +331,6 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
             // 
-            // btnDSNV
-            // 
-            this.btnDSNV.Caption = "Danh sách sinh viên";
-            this.btnDSNV.Id = 14;
-            this.btnDSNV.Name = "btnDSNV";
-            // 
             // btnThoat
             // 
             this.btnThoat.Caption = "Thoát";
@@ -417,6 +411,12 @@
             this.barButtonItem8.Caption = "barButtonItem8";
             this.barButtonItem8.Id = 7;
             this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // btnDSNV
+            // 
+            this.btnDSNV.Caption = "Danh sách sinh viên";
+            this.btnDSNV.Id = 14;
+            this.btnDSNV.Name = "btnDSNV";
             // 
             // dS
             // 
