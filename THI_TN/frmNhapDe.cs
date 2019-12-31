@@ -41,8 +41,11 @@ namespace THI_TN
         {
             viTri = bdsBD.Position;
             groupBox1.Enabled = true;
-           gcBD.Enabled = false;
+            gcBD.Enabled = false;
             bdsBD.AddNew();
+            object maxCauHoi;
+            maxCauHoi = dS.BODE.Compute("Max(CAUHOI)", "");
+            txtCauHoi.Text = (int.Parse(maxCauHoi.ToString()) + 1).ToString();
             btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
             btnInDSBD.Enabled = false; btnThoat.Enabled = false;
             btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
@@ -88,20 +91,45 @@ namespace THI_TN
         {
             if (cmbTenMH.Text.Trim() == "")
             {
-                MessageBox.Show("Không được bỏ trống mã lớp.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không được bỏ trống tên môn học.", "", MessageBoxButtons.OK);
                 cmbTenMH.Focus();
             }
 
             else if (txtNoiDung.Text.Trim() == "")
             {
-                MessageBox.Show("Không được bỏ trống tên lớp.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không được bỏ trống nội dung.", "", MessageBoxButtons.OK);
                 txtNoiDung.Focus();
+            }
+            else if (txtA.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+                txtA.Focus();
+            }
+            else if (txtB.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+                txtB.Focus();
+            }
+            else if (txtC.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+                txtC.Focus();
+            }
+            else if (txtD.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống câu trả lời.", "", MessageBoxButtons.OK);
+                txtD.Focus();
             }
 
             else if (cmbDapAn.Text.Trim() == "")
             {
-                MessageBox.Show("Không được bỏ trống mã khoa.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không được bỏ trống đáp án.", "", MessageBoxButtons.OK);
                 cmbDapAn.Focus();
+            }
+            else if (cmbTenGV.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống tên giáo viên.", "", MessageBoxButtons.OK);
+                cmbTenGV.Focus();
             }
 
             else
@@ -124,8 +152,31 @@ namespace THI_TN
                         cmbTenMH.Focus();
                         return;
                     }
+                    else if(ex.Message.Contains("String or binary"))
+                    {
+                        MessageBox.Show("Trình độ và đáp án chỉ được nhập 1 kí tự.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        if (cmbTrinhDo.SelectedValue.ToString().Length > 1)
+                            cmbTrinhDo.Focus();
+                        if (cmbDapAn.SelectedValue.ToString().Length > 1)
+                            cmbDapAn.Focus();
+                        return;
+                    }
+                    else if (ex.Message.Contains("CHECK"))
+                    {
+                        MessageBox.Show("Trình độ chỉ được nhập 1 kí tự (A,B,C)." +
+                            "\nĐáp án chỉ được nhập 1 kí tự (A,B,C,D)", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        if (cmbTrinhDo.SelectedValue.ToString().Length > 1)
+                            cmbTrinhDo.Focus();
+                        if (cmbDapAn.SelectedValue.ToString().Length > 1)
+                            cmbDapAn.Focus();
+                        return;
+                    }
                     else
                     {
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
+
                         MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
                         btnPhucHoi.Enabled = false;
                         return;
@@ -178,36 +229,33 @@ namespace THI_TN
 
         private void cmbTrinhDo_DropDown(object sender, EventArgs e)
         {
-            int trinhDo = cmbTrinhDo.SelectedIndex;
             DataTable dt = new DataTable();
             //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
 
             //Set tay
             Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
             Program.conn.Open();
-            dt = Program.ExecSqlDataTable("SELECT TRINHDO FROM BODE");
+            dt = Program.ExecSqlDataTable("SELECT DISTINCT TRINHDO FROM BODE");
 
             cmbTrinhDo.DataSource = dt;
             cmbTrinhDo.ValueMember = "TRINHDO";
-
-            cmbTrinhDo.SelectedIndex = trinhDo;
         }
 
         private void cmbDapAn_DropDown(object sender, EventArgs e)
         {
-            int dapAn = cmbDapAn.SelectedIndex;
-            DataTable dt1 = new DataTable();
+            DataTable dt = new DataTable();
             //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
 
             //Set tay
             Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
             Program.conn.Open();
-            dt1 = Program.ExecSqlDataTable("SELECT DAPAN FROM BODE");
+            dt = Program.ExecSqlDataTable("SELECT DISTINCT DAP_AN FROM BODE");
 
-            cmbDapAn.DataSource = dt1;
-            cmbDapAn.ValueMember = "DAPAN";
+            cmbDapAn.DataSource = dt;
+            cmbDapAn.ValueMember = "DAP_AN";
 
-            cmbDapAn.SelectedIndex = dapAn;
         }
+
+       
     }
 }

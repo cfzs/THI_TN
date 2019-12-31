@@ -705,7 +705,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GIAOVIEN1TableAdapter" GeneratorDataComponentClassName="GIAOVIEN1TableAdapter" Name="GIAOVIEN1" UserDataComponentName="GIAOVIEN1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GETDSGVTableAdapter" GeneratorDataComponentClassName="GETDSGVTableAdapter" Name="GETDSGV" UserDataComponentName="GETDSGVTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="THI_TNConnectionString (Settings)" DbObjectName="THI_TN.dbo.GIAOVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -723,7 +723,7 @@ FROM            GIAOVIEN</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MONHOC1TableAdapter" GeneratorDataComponentClassName="MONHOC1TableAdapter" Name="MONHOC1" UserDataComponentName="MONHOC1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GETDSMHTableAdapter" GeneratorDataComponentClassName="GETDSMHTableAdapter" Name="GETDSMH" UserDataComponentName="GETDSMHTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="THI_TNConnectionString (Settings)" DbObjectName="THI_TN.dbo.MONHOC" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -1128,7 +1128,7 @@ FROM            MONHOC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GIAOVIEN1" msprop:Generator_TableClassName="GIAOVIEN1DataTable" msprop:Generator_TableVarName="tableGIAOVIEN1" msprop:Generator_TablePropName="GIAOVIEN1" msprop:Generator_RowDeletingName="GIAOVIEN1RowDeleting" msprop:Generator_RowChangingName="GIAOVIEN1RowChanging" msprop:Generator_RowEvHandlerName="GIAOVIEN1RowChangeEventHandler" msprop:Generator_RowDeletedName="GIAOVIEN1RowDeleted" msprop:Generator_UserTableName="GIAOVIEN1" msprop:Generator_RowChangedName="GIAOVIEN1RowChanged" msprop:Generator_RowEvArgName="GIAOVIEN1RowChangeEvent" msprop:Generator_RowClassName="GIAOVIEN1Row">
+        <xs:element name="GETDSGV" msprop:Generator_TableClassName="GETDSGVDataTable" msprop:Generator_TableVarName="tableGETDSGV" msprop:Generator_TablePropName="GETDSGV" msprop:Generator_RowDeletingName="GETDSGVRowDeleting" msprop:Generator_RowChangingName="GETDSGVRowChanging" msprop:Generator_RowEvHandlerName="GETDSGVRowChangeEventHandler" msprop:Generator_RowDeletedName="GETDSGVRowDeleted" msprop:Generator_UserTableName="GETDSGV" msprop:Generator_RowChangedName="GETDSGVRowChanged" msprop:Generator_RowEvArgName="GETDSGVRowChangeEvent" msprop:Generator_RowClassName="GETDSGVRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAGV" msprop:Generator_ColumnVarNameInTable="columnMAGV" msprop:Generator_ColumnPropNameInRow="MAGV" msprop:Generator_ColumnPropNameInTable="MAGVColumn" msprop:Generator_UserColumnName="MAGV">
@@ -1148,7 +1148,7 @@ FROM            MONHOC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MONHOC1" msprop:Generator_TableClassName="MONHOC1DataTable" msprop:Generator_TableVarName="tableMONHOC1" msprop:Generator_TablePropName="MONHOC1" msprop:Generator_RowDeletingName="MONHOC1RowDeleting" msprop:Generator_RowChangingName="MONHOC1RowChanging" msprop:Generator_RowEvHandlerName="MONHOC1RowChangeEventHandler" msprop:Generator_RowDeletedName="MONHOC1RowDeleted" msprop:Generator_UserTableName="MONHOC1" msprop:Generator_RowChangedName="MONHOC1RowChanged" msprop:Generator_RowEvArgName="MONHOC1RowChangeEvent" msprop:Generator_RowClassName="MONHOC1Row">
+        <xs:element name="GETDSMH" msprop:Generator_TableClassName="GETDSMHDataTable" msprop:Generator_TableVarName="tableGETDSMH" msprop:Generator_TablePropName="GETDSMH" msprop:Generator_RowDeletingName="GETDSMHRowDeleting" msprop:Generator_RowChangingName="GETDSMHRowChanging" msprop:Generator_RowEvHandlerName="GETDSMHRowChangeEventHandler" msprop:Generator_RowDeletedName="GETDSMHRowDeleted" msprop:Generator_UserTableName="GETDSMH" msprop:Generator_RowChangedName="GETDSMHRowChanged" msprop:Generator_RowEvArgName="GETDSMHRowChangeEvent" msprop:Generator_RowClassName="GETDSMHRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
@@ -1221,12 +1221,12 @@ FROM            MONHOC</CommandText>
       <xs:selector xpath=".//mstns:DS_SV" />
       <xs:field xpath="mstns:MASV" />
     </xs:unique>
-    <xs:unique name="GIAOVIEN1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:GIAOVIEN1" />
+    <xs:unique name="GETDSGV_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GETDSGV" />
       <xs:field xpath="mstns:MAGV" />
     </xs:unique>
-    <xs:unique name="MONHOC1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:MONHOC1" />
+    <xs:unique name="GETDSMH_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GETDSMH" />
       <xs:field xpath="mstns:MAMH" />
     </xs:unique>
     <xs:keyref name="FK_SINHVIEN_LOP" refer="LOP_Constraint1" msprop:rel_Generator_UserChildTable="SINHVIEN" msprop:rel_Generator_ChildPropName="GetSINHVIENRows" msprop:rel_Generator_UserRelationName="FK_SINHVIEN_LOP" msprop:rel_Generator_ParentPropName="LOPRow" msprop:rel_Generator_RelationVarName="relationFK_SINHVIEN_LOP" msprop:rel_Generator_UserParentTable="LOP" msdata:DeleteRule="None">

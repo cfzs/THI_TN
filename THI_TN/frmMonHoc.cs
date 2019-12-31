@@ -28,7 +28,7 @@ namespace THI_TN
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             //this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS.BODE);
-            dS.EnforceConstraints = true;
+            //dS.EnforceConstraints = true;
             btnGhi.Enabled = false;
             btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
@@ -162,7 +162,7 @@ namespace THI_TN
             dS.EnforceConstraints = false;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             this.bODETableAdapter.Fill(this.dS.BODE);
-            dS.EnforceConstraints = true;
+            //dS.EnforceConstraints = true;
 
 
         }

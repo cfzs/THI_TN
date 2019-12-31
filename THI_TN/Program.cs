@@ -87,13 +87,7 @@ namespace THI_TN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Application.Run(new frmSV());
-
-
-            Application.Run(new frmNhapDe());
-
-
+            Application.Run(new frmGiaoVien());
         }
     }
 }

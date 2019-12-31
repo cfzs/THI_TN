@@ -46,9 +46,9 @@ namespace THI_TN {
         
         private DS_SVDataTable tableDS_SV;
         
-        private GIAOVIEN1DataTable tableGIAOVIEN1;
+        private GETDSGVDataTable tableGETDSGV;
         
-        private MONHOC1DataTable tableMONHOC1;
+        private GETDSMHDataTable tableGETDSMH;
         
         private global::System.Data.DataRelation relationFK_BANGDIEM_SINHVIEN1;
         
@@ -137,11 +137,11 @@ namespace THI_TN {
                 if ((ds.Tables["DS_SV"] != null)) {
                     base.Tables.Add(new DS_SVDataTable(ds.Tables["DS_SV"]));
                 }
-                if ((ds.Tables["GIAOVIEN1"] != null)) {
-                    base.Tables.Add(new GIAOVIEN1DataTable(ds.Tables["GIAOVIEN1"]));
+                if ((ds.Tables["GETDSGV"] != null)) {
+                    base.Tables.Add(new GETDSGVDataTable(ds.Tables["GETDSGV"]));
                 }
-                if ((ds.Tables["MONHOC1"] != null)) {
-                    base.Tables.Add(new MONHOC1DataTable(ds.Tables["MONHOC1"]));
+                if ((ds.Tables["GETDSMH"] != null)) {
+                    base.Tables.Add(new GETDSMHDataTable(ds.Tables["GETDSMH"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -275,9 +275,9 @@ namespace THI_TN {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GIAOVIEN1DataTable GIAOVIEN1 {
+        public GETDSGVDataTable GETDSGV {
             get {
-                return this.tableGIAOVIEN1;
+                return this.tableGETDSGV;
             }
         }
         
@@ -285,9 +285,9 @@ namespace THI_TN {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MONHOC1DataTable MONHOC1 {
+        public GETDSMHDataTable GETDSMH {
             get {
-                return this.tableMONHOC1;
+                return this.tableGETDSMH;
             }
         }
         
@@ -391,11 +391,11 @@ namespace THI_TN {
                 if ((ds.Tables["DS_SV"] != null)) {
                     base.Tables.Add(new DS_SVDataTable(ds.Tables["DS_SV"]));
                 }
-                if ((ds.Tables["GIAOVIEN1"] != null)) {
-                    base.Tables.Add(new GIAOVIEN1DataTable(ds.Tables["GIAOVIEN1"]));
+                if ((ds.Tables["GETDSGV"] != null)) {
+                    base.Tables.Add(new GETDSGVDataTable(ds.Tables["GETDSGV"]));
                 }
-                if ((ds.Tables["MONHOC1"] != null)) {
-                    base.Tables.Add(new MONHOC1DataTable(ds.Tables["MONHOC1"]));
+                if ((ds.Tables["GETDSMH"] != null)) {
+                    base.Tables.Add(new GETDSMHDataTable(ds.Tables["GETDSMH"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -496,16 +496,16 @@ namespace THI_TN {
                     this.tableDS_SV.InitVars();
                 }
             }
-            this.tableGIAOVIEN1 = ((GIAOVIEN1DataTable)(base.Tables["GIAOVIEN1"]));
+            this.tableGETDSGV = ((GETDSGVDataTable)(base.Tables["GETDSGV"]));
             if ((initTable == true)) {
-                if ((this.tableGIAOVIEN1 != null)) {
-                    this.tableGIAOVIEN1.InitVars();
+                if ((this.tableGETDSGV != null)) {
+                    this.tableGETDSGV.InitVars();
                 }
             }
-            this.tableMONHOC1 = ((MONHOC1DataTable)(base.Tables["MONHOC1"]));
+            this.tableGETDSMH = ((GETDSMHDataTable)(base.Tables["GETDSMH"]));
             if ((initTable == true)) {
-                if ((this.tableMONHOC1 != null)) {
-                    this.tableMONHOC1.InitVars();
+                if ((this.tableGETDSMH != null)) {
+                    this.tableGETDSMH.InitVars();
                 }
             }
             this.relationFK_BANGDIEM_SINHVIEN1 = this.Relations["FK_BANGDIEM_SINHVIEN1"];
@@ -553,10 +553,10 @@ namespace THI_TN {
             base.Tables.Add(this.tableSINHVIEN);
             this.tableDS_SV = new DS_SVDataTable();
             base.Tables.Add(this.tableDS_SV);
-            this.tableGIAOVIEN1 = new GIAOVIEN1DataTable();
-            base.Tables.Add(this.tableGIAOVIEN1);
-            this.tableMONHOC1 = new MONHOC1DataTable();
-            base.Tables.Add(this.tableMONHOC1);
+            this.tableGETDSGV = new GETDSGVDataTable();
+            base.Tables.Add(this.tableGETDSGV);
+            this.tableGETDSMH = new GETDSMHDataTable();
+            base.Tables.Add(this.tableGETDSMH);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_BANGDIEM_SINHVIEN1", new global::System.Data.DataColumn[] {
                         this.tableSINHVIEN.MASVColumn}, new global::System.Data.DataColumn[] {
@@ -779,13 +779,13 @@ namespace THI_TN {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeGIAOVIEN1() {
+        private bool ShouldSerializeGETDSGV() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeMONHOC1() {
+        private bool ShouldSerializeGETDSMH() {
             return false;
         }
         
@@ -878,10 +878,10 @@ namespace THI_TN {
         public delegate void DS_SVRowChangeEventHandler(object sender, DS_SVRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void GIAOVIEN1RowChangeEventHandler(object sender, GIAOVIEN1RowChangeEvent e);
+        public delegate void GETDSGVRowChangeEventHandler(object sender, GETDSGVRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void MONHOC1RowChangeEventHandler(object sender, MONHOC1RowChangeEvent e);
+        public delegate void GETDSMHRowChangeEventHandler(object sender, GETDSMHRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4449,7 +4449,7 @@ namespace THI_TN {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GIAOVIEN1DataTable : global::System.Data.TypedTableBase<GIAOVIEN1Row> {
+        public partial class GETDSGVDataTable : global::System.Data.TypedTableBase<GETDSGVRow> {
             
             private global::System.Data.DataColumn columnMAGV;
             
@@ -4457,8 +4457,8 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1DataTable() {
-                this.TableName = "GIAOVIEN1";
+            public GETDSGVDataTable() {
+                this.TableName = "GETDSGV";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4466,7 +4466,7 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal GIAOVIEN1DataTable(global::System.Data.DataTable table) {
+            internal GETDSGVDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4483,7 +4483,7 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected GIAOVIEN1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GETDSGVDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4515,53 +4515,53 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1Row this[int index] {
+            public GETDSGVRow this[int index] {
                 get {
-                    return ((GIAOVIEN1Row)(this.Rows[index]));
+                    return ((GETDSGVRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GIAOVIEN1RowChangeEventHandler GIAOVIEN1RowChanging;
+            public event GETDSGVRowChangeEventHandler GETDSGVRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GIAOVIEN1RowChangeEventHandler GIAOVIEN1RowChanged;
+            public event GETDSGVRowChangeEventHandler GETDSGVRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GIAOVIEN1RowChangeEventHandler GIAOVIEN1RowDeleting;
+            public event GETDSGVRowChangeEventHandler GETDSGVRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event GIAOVIEN1RowChangeEventHandler GIAOVIEN1RowDeleted;
+            public event GETDSGVRowChangeEventHandler GETDSGVRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddGIAOVIEN1Row(GIAOVIEN1Row row) {
+            public void AddGETDSGVRow(GETDSGVRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1Row AddGIAOVIEN1Row(string MAGV, string HoTen) {
-                GIAOVIEN1Row rowGIAOVIEN1Row = ((GIAOVIEN1Row)(this.NewRow()));
+            public GETDSGVRow AddGETDSGVRow(string MAGV, string HoTen) {
+                GETDSGVRow rowGETDSGVRow = ((GETDSGVRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MAGV,
                         HoTen};
-                rowGIAOVIEN1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGIAOVIEN1Row);
-                return rowGIAOVIEN1Row;
+                rowGETDSGVRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGETDSGVRow);
+                return rowGETDSGVRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1Row FindByMAGV(string MAGV) {
-                return ((GIAOVIEN1Row)(this.Rows.Find(new object[] {
+            public GETDSGVRow FindByMAGV(string MAGV) {
+                return ((GETDSGVRow)(this.Rows.Find(new object[] {
                             MAGV})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GIAOVIEN1DataTable cln = ((GIAOVIEN1DataTable)(base.Clone()));
+                GETDSGVDataTable cln = ((GETDSGVDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4569,7 +4569,7 @@ namespace THI_TN {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GIAOVIEN1DataTable();
+                return new GETDSGVDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4597,28 +4597,28 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1Row NewGIAOVIEN1Row() {
-                return ((GIAOVIEN1Row)(this.NewRow()));
+            public GETDSGVRow NewGETDSGVRow() {
+                return ((GETDSGVRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GIAOVIEN1Row(builder);
+                return new GETDSGVRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GIAOVIEN1Row);
+                return typeof(GETDSGVRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GIAOVIEN1RowChanged != null)) {
-                    this.GIAOVIEN1RowChanged(this, new GIAOVIEN1RowChangeEvent(((GIAOVIEN1Row)(e.Row)), e.Action));
+                if ((this.GETDSGVRowChanged != null)) {
+                    this.GETDSGVRowChanged(this, new GETDSGVRowChangeEvent(((GETDSGVRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4626,8 +4626,8 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GIAOVIEN1RowChanging != null)) {
-                    this.GIAOVIEN1RowChanging(this, new GIAOVIEN1RowChangeEvent(((GIAOVIEN1Row)(e.Row)), e.Action));
+                if ((this.GETDSGVRowChanging != null)) {
+                    this.GETDSGVRowChanging(this, new GETDSGVRowChangeEvent(((GETDSGVRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4635,8 +4635,8 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GIAOVIEN1RowDeleted != null)) {
-                    this.GIAOVIEN1RowDeleted(this, new GIAOVIEN1RowChangeEvent(((GIAOVIEN1Row)(e.Row)), e.Action));
+                if ((this.GETDSGVRowDeleted != null)) {
+                    this.GETDSGVRowDeleted(this, new GETDSGVRowChangeEvent(((GETDSGVRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4644,14 +4644,14 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GIAOVIEN1RowDeleting != null)) {
-                    this.GIAOVIEN1RowDeleting(this, new GIAOVIEN1RowChangeEvent(((GIAOVIEN1Row)(e.Row)), e.Action));
+                if ((this.GETDSGVRowDeleting != null)) {
+                    this.GETDSGVRowDeleting(this, new GETDSGVRowChangeEvent(((GETDSGVRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveGIAOVIEN1Row(GIAOVIEN1Row row) {
+            public void RemoveGETDSGVRow(GETDSGVRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4678,7 +4678,7 @@ namespace THI_TN {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GIAOVIEN1DataTable";
+                attribute2.FixedValue = "GETDSGVDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4724,7 +4724,7 @@ namespace THI_TN {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MONHOC1DataTable : global::System.Data.TypedTableBase<MONHOC1Row> {
+        public partial class GETDSMHDataTable : global::System.Data.TypedTableBase<GETDSMHRow> {
             
             private global::System.Data.DataColumn columnMAMH;
             
@@ -4732,8 +4732,8 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1DataTable() {
-                this.TableName = "MONHOC1";
+            public GETDSMHDataTable() {
+                this.TableName = "GETDSMH";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4741,7 +4741,7 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal MONHOC1DataTable(global::System.Data.DataTable table) {
+            internal GETDSMHDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4758,7 +4758,7 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected MONHOC1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GETDSMHDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4790,53 +4790,53 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1Row this[int index] {
+            public GETDSMHRow this[int index] {
                 get {
-                    return ((MONHOC1Row)(this.Rows[index]));
+                    return ((GETDSMHRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MONHOC1RowChangeEventHandler MONHOC1RowChanging;
+            public event GETDSMHRowChangeEventHandler GETDSMHRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MONHOC1RowChangeEventHandler MONHOC1RowChanged;
+            public event GETDSMHRowChangeEventHandler GETDSMHRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MONHOC1RowChangeEventHandler MONHOC1RowDeleting;
+            public event GETDSMHRowChangeEventHandler GETDSMHRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MONHOC1RowChangeEventHandler MONHOC1RowDeleted;
+            public event GETDSMHRowChangeEventHandler GETDSMHRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddMONHOC1Row(MONHOC1Row row) {
+            public void AddGETDSMHRow(GETDSMHRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1Row AddMONHOC1Row(string MAMH, string TENMH) {
-                MONHOC1Row rowMONHOC1Row = ((MONHOC1Row)(this.NewRow()));
+            public GETDSMHRow AddGETDSMHRow(string MAMH, string TENMH) {
+                GETDSMHRow rowGETDSMHRow = ((GETDSMHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MAMH,
                         TENMH};
-                rowMONHOC1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMONHOC1Row);
-                return rowMONHOC1Row;
+                rowGETDSMHRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGETDSMHRow);
+                return rowGETDSMHRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1Row FindByMAMH(string MAMH) {
-                return ((MONHOC1Row)(this.Rows.Find(new object[] {
+            public GETDSMHRow FindByMAMH(string MAMH) {
+                return ((GETDSMHRow)(this.Rows.Find(new object[] {
                             MAMH})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MONHOC1DataTable cln = ((MONHOC1DataTable)(base.Clone()));
+                GETDSMHDataTable cln = ((GETDSMHDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4844,7 +4844,7 @@ namespace THI_TN {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MONHOC1DataTable();
+                return new GETDSMHDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4871,28 +4871,28 @@ namespace THI_TN {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1Row NewMONHOC1Row() {
-                return ((MONHOC1Row)(this.NewRow()));
+            public GETDSMHRow NewGETDSMHRow() {
+                return ((GETDSMHRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MONHOC1Row(builder);
+                return new GETDSMHRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MONHOC1Row);
+                return typeof(GETDSMHRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MONHOC1RowChanged != null)) {
-                    this.MONHOC1RowChanged(this, new MONHOC1RowChangeEvent(((MONHOC1Row)(e.Row)), e.Action));
+                if ((this.GETDSMHRowChanged != null)) {
+                    this.GETDSMHRowChanged(this, new GETDSMHRowChangeEvent(((GETDSMHRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4900,8 +4900,8 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MONHOC1RowChanging != null)) {
-                    this.MONHOC1RowChanging(this, new MONHOC1RowChangeEvent(((MONHOC1Row)(e.Row)), e.Action));
+                if ((this.GETDSMHRowChanging != null)) {
+                    this.GETDSMHRowChanging(this, new GETDSMHRowChangeEvent(((GETDSMHRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4909,8 +4909,8 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MONHOC1RowDeleted != null)) {
-                    this.MONHOC1RowDeleted(this, new MONHOC1RowChangeEvent(((MONHOC1Row)(e.Row)), e.Action));
+                if ((this.GETDSMHRowDeleted != null)) {
+                    this.GETDSMHRowDeleted(this, new GETDSMHRowChangeEvent(((GETDSMHRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4918,14 +4918,14 @@ namespace THI_TN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MONHOC1RowDeleting != null)) {
-                    this.MONHOC1RowDeleting(this, new MONHOC1RowChangeEvent(((MONHOC1Row)(e.Row)), e.Action));
+                if ((this.GETDSMHRowDeleting != null)) {
+                    this.GETDSMHRowDeleting(this, new GETDSMHRowChangeEvent(((GETDSMHRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveMONHOC1Row(MONHOC1Row row) {
+            public void RemoveGETDSMHRow(GETDSMHRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4952,7 +4952,7 @@ namespace THI_TN {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MONHOC1DataTable";
+                attribute2.FixedValue = "GETDSMHDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6596,25 +6596,25 @@ namespace THI_TN {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GIAOVIEN1Row : global::System.Data.DataRow {
+        public partial class GETDSGVRow : global::System.Data.DataRow {
             
-            private GIAOVIEN1DataTable tableGIAOVIEN1;
+            private GETDSGVDataTable tableGETDSGV;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal GIAOVIEN1Row(global::System.Data.DataRowBuilder rb) : 
+            internal GETDSGVRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGIAOVIEN1 = ((GIAOVIEN1DataTable)(this.Table));
+                this.tableGETDSGV = ((GETDSGVDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MAGV {
                 get {
-                    return ((string)(this[this.tableGIAOVIEN1.MAGVColumn]));
+                    return ((string)(this[this.tableGETDSGV.MAGVColumn]));
                 }
                 set {
-                    this[this.tableGIAOVIEN1.MAGVColumn] = value;
+                    this[this.tableGETDSGV.MAGVColumn] = value;
                 }
             }
             
@@ -6623,52 +6623,52 @@ namespace THI_TN {
             public string HoTen {
                 get {
                     try {
-                        return ((string)(this[this.tableGIAOVIEN1.HoTenColumn]));
+                        return ((string)(this[this.tableGETDSGV.HoTenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HoTen\' in table \'GIAOVIEN1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HoTen\' in table \'GETDSGV\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGIAOVIEN1.HoTenColumn] = value;
+                    this[this.tableGETDSGV.HoTenColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsHoTenNull() {
-                return this.IsNull(this.tableGIAOVIEN1.HoTenColumn);
+                return this.IsNull(this.tableGETDSGV.HoTenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetHoTenNull() {
-                this[this.tableGIAOVIEN1.HoTenColumn] = global::System.Convert.DBNull;
+                this[this.tableGETDSGV.HoTenColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MONHOC1Row : global::System.Data.DataRow {
+        public partial class GETDSMHRow : global::System.Data.DataRow {
             
-            private MONHOC1DataTable tableMONHOC1;
+            private GETDSMHDataTable tableGETDSMH;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal MONHOC1Row(global::System.Data.DataRowBuilder rb) : 
+            internal GETDSMHRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMONHOC1 = ((MONHOC1DataTable)(this.Table));
+                this.tableGETDSMH = ((GETDSMHDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string MAMH {
                 get {
-                    return ((string)(this[this.tableMONHOC1.MAMHColumn]));
+                    return ((string)(this[this.tableGETDSMH.MAMHColumn]));
                 }
                 set {
-                    this[this.tableMONHOC1.MAMHColumn] = value;
+                    this[this.tableGETDSMH.MAMHColumn] = value;
                 }
             }
             
@@ -6677,27 +6677,27 @@ namespace THI_TN {
             public string TENMH {
                 get {
                     try {
-                        return ((string)(this[this.tableMONHOC1.TENMHColumn]));
+                        return ((string)(this[this.tableGETDSMH.TENMHColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TENMH\' in table \'MONHOC1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TENMH\' in table \'GETDSMH\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMONHOC1.TENMHColumn] = value;
+                    this[this.tableGETDSMH.TENMHColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTENMHNull() {
-                return this.IsNull(this.tableMONHOC1.TENMHColumn);
+                return this.IsNull(this.tableGETDSMH.TENMHColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTENMHNull() {
-                this[this.tableMONHOC1.TENMHColumn] = global::System.Convert.DBNull;
+                this[this.tableGETDSMH.TENMHColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7079,22 +7079,22 @@ namespace THI_TN {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class GIAOVIEN1RowChangeEvent : global::System.EventArgs {
+        public class GETDSGVRowChangeEvent : global::System.EventArgs {
             
-            private GIAOVIEN1Row eventRow;
+            private GETDSGVRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1RowChangeEvent(GIAOVIEN1Row row, global::System.Data.DataRowAction action) {
+            public GETDSGVRowChangeEvent(GETDSGVRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GIAOVIEN1Row Row {
+            public GETDSGVRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7113,22 +7113,22 @@ namespace THI_TN {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class MONHOC1RowChangeEvent : global::System.EventArgs {
+        public class GETDSMHRowChangeEvent : global::System.EventArgs {
             
-            private MONHOC1Row eventRow;
+            private GETDSMHRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1RowChangeEvent(MONHOC1Row row, global::System.Data.DataRowAction action) {
+            public GETDSMHRowChangeEvent(GETDSMHRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOC1Row Row {
+            public GETDSMHRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11634,7 +11634,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GIAOVIEN1TableAdapter : global::System.ComponentModel.Component {
+    public partial class GETDSGVTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -11648,7 +11648,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public GIAOVIEN1TableAdapter() {
+        public GETDSGVTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -11745,7 +11745,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GIAOVIEN1";
+            tableMapping.DataSetTable = "GETDSGV";
             tableMapping.ColumnMappings.Add("MAGV", "MAGV");
             tableMapping.ColumnMappings.Add("HoTen", "HoTen");
             this._adapter.TableMappings.Add(tableMapping);
@@ -11772,7 +11772,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS.GIAOVIEN1DataTable dataTable) {
+        public virtual int Fill(DS.GETDSGVDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11785,9 +11785,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS.GIAOVIEN1DataTable GetData() {
+        public virtual DS.GETDSGVDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS.GIAOVIEN1DataTable dataTable = new DS.GIAOVIEN1DataTable();
+            DS.GETDSGVDataTable dataTable = new DS.GETDSGVDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11802,7 +11802,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class MONHOC1TableAdapter : global::System.ComponentModel.Component {
+    public partial class GETDSMHTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -11816,7 +11816,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public MONHOC1TableAdapter() {
+        public GETDSMHTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -11913,7 +11913,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "MONHOC1";
+            tableMapping.DataSetTable = "GETDSMH";
             tableMapping.ColumnMappings.Add("MAMH", "MAMH");
             tableMapping.ColumnMappings.Add("TENMH", "TENMH");
             this._adapter.TableMappings.Add(tableMapping);
@@ -11940,7 +11940,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS.MONHOC1DataTable dataTable) {
+        public virtual int Fill(DS.GETDSMHDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11953,9 +11953,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS.MONHOC1DataTable GetData() {
+        public virtual DS.GETDSMHDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS.MONHOC1DataTable dataTable = new DS.MONHOC1DataTable();
+            DS.GETDSMHDataTable dataTable = new DS.GETDSMHDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
