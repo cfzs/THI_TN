@@ -167,7 +167,7 @@ namespace THI_TN
                     MessageBox.Show("Mã sinh viên bị trùng.", "", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("Lỗi ghi sinh viên. Bạn kiểm tra lại thông tin trước khi ghi.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi ghi sinh viên. Bạn kiểm tra lại thông tin trước khi ghi." + ex.Message, "", MessageBoxButtons.OK);
 
             }
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false;
@@ -259,7 +259,7 @@ namespace THI_TN
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
+                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi." + ex.Message, "", MessageBoxButtons.OK);
                         btnPhucHoi.Enabled = false;
                         return;
                     }

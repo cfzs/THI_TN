@@ -168,7 +168,7 @@ namespace THI_TN
                     MessageBox.Show("Mã khoa bị trùng.", "", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("Lỗi ghi khoa. Bạn kiểm tra lại thông tin trước khi ghi.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi ghi khoa. Bạn kiểm tra lại thông tin trước khi ghi." + ex.Message, "", MessageBoxButtons.OK);
 
             }
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; 

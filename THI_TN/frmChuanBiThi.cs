@@ -78,7 +78,7 @@ namespace THI_TN
             }
             else if(txtTD.Text.Trim().Length > 1)
             {
-                MessageBox.Show("Chỉ ghi trình độ A hoặc B hoăc C.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Chỉ ghi trình độ A(Đại học) hoặc B(Cao đẳng) hoăc C(Trung cấp).", "", MessageBoxButtons.OK);
                 txtTD.Focus();
             }
             // kt ngày của hệ thống
@@ -128,7 +128,7 @@ namespace THI_TN
                     MessageBox.Show("Mã mà cặp 3 khóa chính bị trùng.", "", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi."+ex.Message, "", MessageBoxButtons.OK);
 
             }
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false;
@@ -167,7 +167,7 @@ namespace THI_TN
                 btnThem.Enabled = false; btnSua.Enabled = false;
                 btnThoat.Enabled = false;
                 btnGhi.Enabled = true; btnRefresh.Enabled = true;
-                gcGIAOVIEN_DANGKY.Enabled = false;
+                gcGIAOVIEN_DANGKY.Enabled = true;
                 vitri = bdsGIAOVIEN_DANGKY.Position;
             }
            
