@@ -44,17 +44,17 @@
             this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.gIAOVIEN_DANGKYTableAdapter = new THI_TN.DSTableAdapters.GIAOVIEN_DANGKYTableAdapter();
-            this.nGAYTHIDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.lANComboBox = new System.Windows.Forms.ComboBox();
             this.bdsL = new System.Windows.Forms.BindingSource(this.components);
             this.dS_SVTableAdapter = new THI_TN.DSTableAdapters.DS_SVTableAdapter();
-            this.mAMHComboBox = new System.Windows.Forms.ComboBox();
+            this.cmbTenMH = new System.Windows.Forms.ComboBox();
             this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
             this.gETDSMHTableAdapter = new THI_TN.DSTableAdapters.GETDSMHTableAdapter();
             this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dSLOPTableAdapter = new THI_TN.DSTableAdapters.DSLOPTableAdapter();
             this.mALOPTextEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.tENLOPComboBox = new System.Windows.Forms.ComboBox();
+            this.cmbMaLop = new System.Windows.Forms.ComboBox();
+            this.nGAYTHIComboBox = new System.Windows.Forms.ComboBox();
             mASVLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
@@ -68,8 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsDSSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).BeginInit();
@@ -143,7 +141,7 @@
             // 
             mAMHLabel1.AutoSize = true;
             mAMHLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            mAMHLabel1.Location = new System.Drawing.Point(265, 242);
+            mAMHLabel1.Location = new System.Drawing.Point(465, 243);
             mAMHLabel1.Name = "mAMHLabel1";
             mAMHLabel1.Size = new System.Drawing.Size(85, 17);
             mAMHLabel1.TabIndex = 15;
@@ -153,7 +151,7 @@
             // 
             mALOPLabel1.AutoSize = true;
             mALOPLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            mALOPLabel1.Location = new System.Drawing.Point(297, 192);
+            mALOPLabel1.Location = new System.Drawing.Point(497, 193);
             mALOPLabel1.Name = "mALOPLabel1";
             mALOPLabel1.Size = new System.Drawing.Size(53, 17);
             mALOPLabel1.TabIndex = 16;
@@ -218,24 +216,8 @@
             // 
             this.gIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // nGAYTHIDateEdit
-            // 
-            this.nGAYTHIDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGVDK, "NGAYTHI", true));
-            this.nGAYTHIDateEdit.EditValue = null;
-            this.nGAYTHIDateEdit.Location = new System.Drawing.Point(113, 279);
-            this.nGAYTHIDateEdit.Name = "nGAYTHIDateEdit";
-            this.nGAYTHIDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.nGAYTHIDateEdit.Properties.Appearance.Options.UseFont = true;
-            this.nGAYTHIDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYTHIDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYTHIDateEdit.Size = new System.Drawing.Size(100, 24);
-            this.nGAYTHIDateEdit.TabIndex = 9;
-            // 
             // lANComboBox
             // 
-            this.lANComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "LAN", true));
             this.lANComboBox.DataSource = this.bdsGVDK;
             this.lANComboBox.DisplayMember = "LAN";
             this.lANComboBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -255,19 +237,16 @@
             // 
             this.dS_SVTableAdapter.ClearBeforeFill = true;
             // 
-            // mAMHComboBox
+            // cmbTenMH
             // 
-            this.mAMHComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "MAMH", true));
-            this.mAMHComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGVDK, "MAMH", true));
-            this.mAMHComboBox.DataSource = this.bdsMH;
-            this.mAMHComboBox.DisplayMember = "TENMH";
-            this.mAMHComboBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.mAMHComboBox.FormattingEnabled = true;
-            this.mAMHComboBox.Location = new System.Drawing.Point(113, 238);
-            this.mAMHComboBox.Name = "mAMHComboBox";
-            this.mAMHComboBox.Size = new System.Drawing.Size(121, 25);
-            this.mAMHComboBox.TabIndex = 15;
-            this.mAMHComboBox.ValueMember = "MAMH";
+            this.cmbTenMH.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGVDK, "MAMH", true));
+            this.cmbTenMH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbTenMH.FormattingEnabled = true;
+            this.cmbTenMH.Location = new System.Drawing.Point(113, 238);
+            this.cmbTenMH.Name = "cmbTenMH";
+            this.cmbTenMH.Size = new System.Drawing.Size(340, 25);
+            this.cmbTenMH.TabIndex = 15;
+            this.cmbTenMH.DropDown += new System.EventHandler(this.mAMHComboBox_DropDown);
             // 
             // bdsMH
             // 
@@ -282,7 +261,7 @@
             // 
             this.mAMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
             this.mAMHTextEdit.Enabled = false;
-            this.mAMHTextEdit.Location = new System.Drawing.Point(353, 239);
+            this.mAMHTextEdit.Location = new System.Drawing.Point(567, 240);
             this.mAMHTextEdit.Name = "mAMHTextEdit";
             this.mAMHTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.mAMHTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -297,42 +276,52 @@
             // 
             this.mALOPTextEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsL, "MALOP", true));
             this.mALOPTextEdit1.Enabled = false;
-            this.mALOPTextEdit1.Location = new System.Drawing.Point(367, 189);
+            this.mALOPTextEdit1.Location = new System.Drawing.Point(567, 190);
             this.mALOPTextEdit1.Name = "mALOPTextEdit1";
             this.mALOPTextEdit1.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.mALOPTextEdit1.Properties.Appearance.Options.UseFont = true;
             this.mALOPTextEdit1.Size = new System.Drawing.Size(100, 24);
             this.mALOPTextEdit1.TabIndex = 17;
             // 
-            // tENLOPComboBox
+            // cmbMaLop
             // 
-            this.tENLOPComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsL, "TENLOP", true));
-            this.tENLOPComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGVDK, "MALOP", true));
-            this.tENLOPComboBox.DataSource = this.bdsL;
-            this.tENLOPComboBox.DisplayMember = "TENLOP";
-            this.tENLOPComboBox.Enabled = false;
-            this.tENLOPComboBox.FormattingEnabled = true;
-            this.tENLOPComboBox.Location = new System.Drawing.Point(113, 189);
-            this.tENLOPComboBox.Name = "tENLOPComboBox";
-            this.tENLOPComboBox.Size = new System.Drawing.Size(164, 25);
-            this.tENLOPComboBox.TabIndex = 18;
-            this.tENLOPComboBox.ValueMember = "MALOP";
+            this.cmbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGVDK, "MALOP", true));
+            this.cmbMaLop.DataSource = this.bdsL;
+            this.cmbMaLop.DisplayMember = "TENLOP";
+            this.cmbMaLop.Enabled = false;
+            this.cmbMaLop.FormattingEnabled = true;
+            this.cmbMaLop.Location = new System.Drawing.Point(113, 189);
+            this.cmbMaLop.Name = "cmbMaLop";
+            this.cmbMaLop.Size = new System.Drawing.Size(340, 25);
+            this.cmbMaLop.TabIndex = 18;
+            this.cmbMaLop.ValueMember = "MALOP";
+            // 
+            // nGAYTHIComboBox
+            // 
+            this.nGAYTHIComboBox.DataSource = this.bdsGVDK;
+            this.nGAYTHIComboBox.DisplayMember = "NGAYTHI";
+            this.nGAYTHIComboBox.FormattingEnabled = true;
+            this.nGAYTHIComboBox.Location = new System.Drawing.Point(113, 279);
+            this.nGAYTHIComboBox.Name = "nGAYTHIComboBox";
+            this.nGAYTHIComboBox.Size = new System.Drawing.Size(121, 25);
+            this.nGAYTHIComboBox.TabIndex = 19;
+            this.nGAYTHIComboBox.ValueMember = "NGAYTHI";
             // 
             // frmThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 588);
-            this.Controls.Add(this.tENLOPComboBox);
+            this.Controls.Add(this.nGAYTHIComboBox);
+            this.Controls.Add(this.cmbMaLop);
             this.Controls.Add(mALOPLabel1);
             this.Controls.Add(this.mALOPTextEdit1);
             this.Controls.Add(mAMHLabel1);
             this.Controls.Add(this.mAMHTextEdit);
-            this.Controls.Add(this.mAMHComboBox);
+            this.Controls.Add(this.cmbTenMH);
             this.Controls.Add(lANLabel);
             this.Controls.Add(this.lANComboBox);
             this.Controls.Add(nGAYTHILabel);
-            this.Controls.Add(this.nGAYTHIDateEdit);
             this.Controls.Add(mAMHLabel);
             this.Controls.Add(hOLabel);
             this.Controls.Add(this.hOTextEdit);
@@ -350,8 +339,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsDSSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGAYTHIDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).EndInit();
@@ -369,17 +356,17 @@
         private DevExpress.XtraEditors.TextEdit hOTextEdit;
         private System.Windows.Forms.BindingSource bdsGVDK;
         private DSTableAdapters.GIAOVIEN_DANGKYTableAdapter gIAOVIEN_DANGKYTableAdapter;
-        private DevExpress.XtraEditors.DateEdit nGAYTHIDateEdit;
         private System.Windows.Forms.ComboBox lANComboBox;
         private System.Windows.Forms.BindingSource bdsDSSV;
         private DSTableAdapters.DS_SVTableAdapter dS_SVTableAdapter;
-        private System.Windows.Forms.ComboBox mAMHComboBox;
+        private System.Windows.Forms.ComboBox cmbTenMH;
         private System.Windows.Forms.BindingSource bdsMH;
         private DSTableAdapters.GETDSMHTableAdapter gETDSMHTableAdapter;
         private DevExpress.XtraEditors.TextEdit mAMHTextEdit;
         private System.Windows.Forms.BindingSource bdsL;
         private DSTableAdapters.DSLOPTableAdapter dSLOPTableAdapter;
         private DevExpress.XtraEditors.TextEdit mALOPTextEdit1;
-        private System.Windows.Forms.ComboBox tENLOPComboBox;
+        private System.Windows.Forms.ComboBox cmbMaLop;
+        private System.Windows.Forms.ComboBox nGAYTHIComboBox;
     }
 }

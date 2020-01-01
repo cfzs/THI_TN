@@ -35,6 +35,20 @@ namespace THI_TN
 
         }
 
-        
+        private void mAMHComboBox_DropDown(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
+
+            //Set tay
+            Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            Program.conn.Open();
+            dt = Program.ExecSqlDataTable("SELECT MAMH, TENMH FROM MONHOC WHERE MALOP = '" + cmbMaLop.SelectedValue +"'");
+
+            cmbTenMH.DataSource = dt;
+            cmbTenMH.ValueMember = "MAMH";
+            cmbTenMH.DisplayMember = "TENMH";
+
+        }
     }
 }
