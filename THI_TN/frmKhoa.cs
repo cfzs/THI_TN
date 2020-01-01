@@ -202,15 +202,13 @@ namespace THI_TN
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            bdsKHOA.CancelEdit();
-            bdsKHOA.Position = viTri;
-            gcKHOA.Enabled = true;
-            // groupBox1.Enabled = false;
-            btnThem.Enabled = true;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            // btnInDSMH.Enabled = true;
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             btnThoat.Enabled = true;
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; barButtonItem2.Enabled = true;
+            gcKHOA.Enabled = true;
+            dS.EnforceConstraints = false;
+            this.kHOATableAdapter.Fill(this.dS.KHOA);
+           // this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
         }
     }
 }
