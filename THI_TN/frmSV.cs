@@ -183,15 +183,131 @@ namespace THI_TN
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            bdsSINHVIEN.CancelEdit();
-            bdsSINHVIEN.Position = viTri;
+            bdsLOP.CancelEdit();
+            bdsLOP.Position = viTri;
             gcLOP.Enabled = true;
-            // groupBox1.Enabled = false;
+           
+            btnGhi.Enabled = false;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            // btnInDSMH.Enabled = true;
+            btnPhucHoi.Enabled = false;
             btnThoat.Enabled = true;
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            viTri = bdsLOP.Position;
+            
+            gcLOP.Enabled = false;
+            bdsLOP.AddNew();
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
+            txtML.Focus();
+
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnThoat.Enabled = false;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
+            gcLOP.Enabled = false;
+            viTri = bdsLOP.Position;
+        }
+
+        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtML.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống mã lớp.", "", MessageBoxButtons.OK);
+                txtML.Focus();
+            }
+
+            else if (txtTL.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống tên lớp.", "", MessageBoxButtons.OK);
+                txtTL.Focus();
+            }
+
+            else if (txtMK.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được bỏ trống mã khoa.", "", MessageBoxButtons.OK);
+                txtMK.Focus();
+            }
+
+            else
+            {
+                try
+                {
+                    bdsLOP.EndEdit();
+                    bdsLOP.ResetCurrentItem();
+                    if (dS.HasChanges())
+                    {
+                        this.lOPTableAdapter.Update(this.dS.LOP);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("already present") || ex.Message.Contains("PRIMARY"))
+                    {
+                        MessageBox.Show("Mã lớp bị trùng.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        txtML.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
+                        btnPhucHoi.Enabled = false;
+                        return;
+                    }
+
+                }
+                btnGhi.Enabled = false; btnPhucHoi.Enabled = false;
+                btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+                btnRefresh.Enabled = true;
+                btnThoat.Enabled = true; gcLOP.Enabled = true;
+            }
+
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (bdsSINHVIEN.Count > 0)
+            {
+                MessageBox.Show("Lớp đã có sinh viên không thể xóa.", "", MessageBoxButtons.OK);
+                return;
+            }
+            if (MessageBox.Show("Bạn có thật sự muốn xóa lớp này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    bdsLOP.RemoveCurrent();
+                    this.lOPTableAdapter.Update(this.dS.LOP);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi xóa lớp.", "", MessageBoxButtons.OK);
+
+                }
+            }
+            btnThem.Enabled = true;
+            btnPhucHoi.Enabled = false;
+            if (bdsLOP.Count == 0)
+                btnXoa.Enabled = false;
+        }
+
+        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+            btnThoat.Enabled = true;
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; btnRefresh.Enabled = true;
+            gcLOP.Enabled = true;
+            dS.EnforceConstraints = false;
+            this.lOPTableAdapter.Fill(this.dS.LOP);
+            this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
         }
     }
 }

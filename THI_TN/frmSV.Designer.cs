@@ -49,7 +49,6 @@
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -61,6 +60,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSNV = new DevExpress.XtraBars.BarButtonItem();
             this.dS = new THI_TN.DS();
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new THI_TN.DSTableAdapters.KHOATableAdapter();
@@ -284,7 +284,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDSNV, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -295,24 +294,28 @@
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 8;
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.Id = 9;
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.Id = 10;
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.Id = 11;
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -326,12 +329,7 @@
             this.btnRefresh.Caption = "Refresh";
             this.btnRefresh.Id = 13;
             this.btnRefresh.Name = "btnRefresh";
-            // 
-            // btnDSNV
-            // 
-            this.btnDSNV.Caption = "Danh sách sinh viên";
-            this.btnDSNV.Id = 14;
-            this.btnDSNV.Name = "btnDSNV";
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
             // 
             // btnThoat
             // 
@@ -413,6 +411,12 @@
             this.barButtonItem8.Caption = "barButtonItem8";
             this.barButtonItem8.Id = 7;
             this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // btnDSNV
+            // 
+            this.btnDSNV.Caption = "Danh sách sinh viên";
+            this.btnDSNV.Id = 14;
+            this.btnDSNV.Name = "btnDSNV";
             // 
             // dS
             // 

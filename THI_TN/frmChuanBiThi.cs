@@ -42,14 +42,14 @@ namespace THI_TN
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            txtMGV.Enabled   = false;
-            txtHT.Enabled = false;
-            txtMMH.Enabled = false;
-            txtTMH.Enabled = false;
+            cbbMGV.Enabled   = false;
+            cbbHT.Enabled = true;
+            cbbMMH.Enabled = false;
+            cbbTMH.Enabled = true;
 
             txtL.Enabled = true;
-            txtML.Enabled = true;
-            txtNgay.Enabled = true;
+            cbbML.Enabled = false;
+            txtNT.Enabled = true;
             txtSCT.Enabled = true;
             txtTD.Enabled = true;
             txtTG.Enabled = true;
@@ -61,47 +61,52 @@ namespace THI_TN
             btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
             btnThoat.Enabled = false;
             btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnPhucHoi.Enabled = true;
-            txtML.Focus();
+            cbbML.Focus();
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtML.Text.Trim() == "")
+            if (cbbML.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống mã lớp.", "", MessageBoxButtons.OK);
-                txtML.Focus();
+                cbbML.Focus();
             }
-            if (txtTD.Text.Trim() == "")
+          else  if (txtTD.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống trình độ.", "", MessageBoxButtons.OK);
+                txtTD.Focus();
+            }
+            else if(txtTD.Text.Trim().Length > 1)
+            {
+                MessageBox.Show("Chỉ ghi trình độ A hoặc B hoăc C.", "", MessageBoxButtons.OK);
                 txtTD.Focus();
             }
             // kt ngày của hệ thống
             DateTime now = DateTime.Now;
             DateTime iDate;
-            iDate = txtNgay.Value;
-            // txtNT.Text.Trim().CustomFormat = "MM/dd/yyyy";
-            if (txtNgay.Text.Trim() == "")
+            iDate = txtNT.Value;
+            
+            if (txtNT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống ngày thi .", "", MessageBoxButtons.OK);
-                txtNgay.Focus();
+                txtNT.Focus();
             }
             else if (DateTime.Compare(now, iDate)==1)
             {
                 MessageBox.Show("Ngày chọn thi phải nhỏ hơn ngày hiện tại .", "", MessageBoxButtons.OK);
-                txtNgay.Focus();
+                txtNT.Focus();
             }
-            if (txtL.Text.Trim() == "")
+            else if (txtL.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống lần thi.", "", MessageBoxButtons.OK);
                 txtL.Focus();
             }
-            if (txtSCT.Text.Trim() == "")
+           else if (txtSCT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống số lượng câu thi.", "", MessageBoxButtons.OK);
                 txtSCT.Focus();
             }
-            if (txtTG.Text.Trim() == "")
+           else if (txtTG.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống thời gian thi.", "", MessageBoxButtons.OK);
                 txtTG.Focus();
@@ -109,7 +114,7 @@ namespace THI_TN
            
             try
             {
-                bdsGIAOVIEN_DANGKY.EndEdit();//đẩy về csdl
+                bdsGIAOVIEN_DANGKY.EndEdit();
                 bdsGIAOVIEN_DANGKY.ResetCurrentItem();
                 if (dS.HasChanges())
                 {
@@ -120,7 +125,7 @@ namespace THI_TN
             {
                 if (ex.Message.Contains("PRIMARY"))
                 {
-                    MessageBox.Show("Mã Mà cặp 3 khóa chính bị trùng.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Mã mà cặp 3 khóa chính bị trùng.", "", MessageBoxButtons.OK);
                 }
                 else
                     MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi.", "", MessageBoxButtons.OK);
@@ -138,12 +143,39 @@ namespace THI_TN
 
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             bdsGIAOVIEN_DANGKY.CancelEdit();
             bdsGIAOVIEN_DANGKY.Position = vitri;
             gcGIAOVIEN_DANGKY.Enabled = true;
             btnThem.Enabled = true;
             btnGhi.Enabled = true;
             btnThoat.Enabled = true;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // kt ngày của hệ thống
+            DateTime now = DateTime.Now;
+            DateTime iDate;
+            iDate = txtNT.Value;
+            if (DateTime.Compare(now, iDate) >= 0)
+            {
+                MessageBox.Show("Đã thi không được sửa .", "", MessageBoxButtons.OK);
+                return;
+            }
+            else {
+                btnThem.Enabled = false; btnSua.Enabled = false;
+                btnThoat.Enabled = false;
+                btnGhi.Enabled = true; btnRefresh.Enabled = true;
+                gcGIAOVIEN_DANGKY.Enabled = false;
+                vitri = bdsGIAOVIEN_DANGKY.Position;
+            }
+           
+        }
+
+        private void dSLOPBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
  }
