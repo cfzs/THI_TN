@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TN_CSDLPT;
 
 namespace THI_TN
 {
     public partial class frmDangNhap : Form
     {
+        internal static int co = 1 ;
+
         public frmDangNhap()
         {
             InitializeComponent();
@@ -73,7 +76,8 @@ namespace THI_TN
 
             if (Program.mGroup.Equals("SinhVien"))
             {
-                frmThi f1 = new frmThi();
+                co = 0;
+                FormChuanBiThi f1 = new FormChuanBiThi();
                 f1.FormClosed += new FormClosedEventHandler(f_formClosed);
                 f1.Show();
                 this.Hide();
