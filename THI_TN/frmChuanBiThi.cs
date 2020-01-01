@@ -144,12 +144,13 @@ namespace THI_TN
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            bdsGIAOVIEN_DANGKY.CancelEdit();
-            bdsGIAOVIEN_DANGKY.Position = vitri;
-            gcGIAOVIEN_DANGKY.Enabled = true;
-            btnThem.Enabled = true;
-            btnGhi.Enabled = true;
+            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
             btnThoat.Enabled = true;
+            btnGhi.Enabled = false; btnPhucHoi.Enabled = false; btnRefresh.Enabled = true;
+            gcGIAOVIEN_DANGKY.Enabled = true; 
+            dS.EnforceConstraints = false;
+            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
+            //this.sINHVIENTableAdapter.Fill(this.dS.SINHVIEN);
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

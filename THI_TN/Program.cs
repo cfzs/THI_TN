@@ -91,7 +91,7 @@ namespace THI_TN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FormChuanBiThi());
+            Application.Run(new frm_GT_KetQuaThi());
 
 
         }
