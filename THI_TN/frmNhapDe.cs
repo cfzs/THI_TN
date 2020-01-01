@@ -65,10 +65,10 @@ namespace THI_TN
         {
             if (bdsCTBT.Count > 0)
             {
-                MessageBox.Show("Môn học đã có bộ đề.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Câu hỏi đã có trong đề thi.", "", MessageBoxButtons.OK);
                 return;
             }
-            if (MessageBox.Show("Bạn có thật sự muốn xóa lớp này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có thật sự muốn xóa câu hỏi này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace THI_TN
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Lỗi xóa lớp.", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa câu hỏi.", "", MessageBoxButtons.OK);
 
                 }
             }
@@ -177,7 +177,7 @@ namespace THI_TN
                     {
                         MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
 
-                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
+                        MessageBox.Show("Lỗi ghi câu hỏi. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
                         btnPhucHoi.Enabled = false;
                         return;
                     }

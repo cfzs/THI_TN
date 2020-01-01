@@ -78,14 +78,9 @@
             this.txtHo = new DevExpress.XtraEditors.TextEdit();
             this.txtMaGV = new DevExpress.XtraEditors.TextEdit();
             this.dgvBD = new System.Windows.Forms.DataGridView();
-            this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
-            this.mONHOCTableAdapter = new THI_TN.DSTableAdapters.MONHOCTableAdapter();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnThemBD = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGhiBD = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnXoaBD = new System.Windows.Forms.ToolStripMenuItem();
             this.txtCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTenMH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
             this.cmbTrinhDo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.txtNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +89,13 @@
             this.txtD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbDapAn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mONHOCTableAdapter = new THI_TN.DSTableAdapters.MONHOCTableAdapter();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnThemBD = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGhiBD = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnXoaBD = new System.Windows.Forms.ToolStripMenuItem();
+            this.cTBTTableAdapter = new THI_TN.DSTableAdapters.CTBTTableAdapter();
+            this.bdsCTBT = new System.Windows.Forms.BindingSource(this.components);
             mAGVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -115,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTBT)).BeginInit();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -484,7 +487,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 244);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 361);
+            this.groupBox1.Size = new System.Drawing.Size(359, 361);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -574,48 +577,10 @@
             this.dataGridViewTextBoxColumn10});
             this.dgvBD.DataSource = this.bdsBD;
             this.dgvBD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBD.Location = new System.Drawing.Point(354, 244);
+            this.dgvBD.Location = new System.Drawing.Point(359, 244);
             this.dgvBD.Name = "dgvBD";
-            this.dgvBD.Size = new System.Drawing.Size(745, 361);
+            this.dgvBD.Size = new System.Drawing.Size(740, 361);
             this.dgvBD.TabIndex = 10;
-            // 
-            // bdsMH
-            // 
-            this.bdsMH.DataMember = "MONHOC";
-            this.bdsMH.DataSource = this.dS;
-            // 
-            // mONHOCTableAdapter
-            // 
-            this.mONHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThemBD,
-            this.btnGhiBD,
-            this.btnXoaBD});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(105, 70);
-            // 
-            // btnThemBD
-            // 
-            this.btnThemBD.Name = "btnThemBD";
-            this.btnThemBD.Size = new System.Drawing.Size(104, 22);
-            this.btnThemBD.Text = "Thêm";
-            this.btnThemBD.Click += new System.EventHandler(this.btnThemBD_Click);
-            // 
-            // btnGhiBD
-            // 
-            this.btnGhiBD.Name = "btnGhiBD";
-            this.btnGhiBD.Size = new System.Drawing.Size(104, 22);
-            this.btnGhiBD.Text = "Ghi";
-            this.btnGhiBD.Click += new System.EventHandler(this.btnGhiBD_Click);
-            // 
-            // btnXoaBD
-            // 
-            this.btnXoaBD.Name = "btnXoaBD";
-            this.btnXoaBD.Size = new System.Drawing.Size(104, 22);
-            this.btnXoaBD.Text = "Xóa";
             // 
             // txtCauHoi
             // 
@@ -635,6 +600,11 @@
             this.cmbTenMH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cmbTenMH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cmbTenMH.ValueMember = "MAMH";
+            // 
+            // bdsMH
+            // 
+            this.bdsMH.DataMember = "MONHOC";
+            this.bdsMH.DataSource = this.dS;
             // 
             // cmbTrinhDo
             // 
@@ -700,6 +670,49 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
+            // mONHOCTableAdapter
+            // 
+            this.mONHOCTableAdapter.ClearBeforeFill = true;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnThemBD,
+            this.btnGhiBD,
+            this.btnXoaBD});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(105, 70);
+            // 
+            // btnThemBD
+            // 
+            this.btnThemBD.Name = "btnThemBD";
+            this.btnThemBD.Size = new System.Drawing.Size(104, 22);
+            this.btnThemBD.Text = "Thêm";
+            this.btnThemBD.Click += new System.EventHandler(this.btnThemBD_Click);
+            // 
+            // btnGhiBD
+            // 
+            this.btnGhiBD.Name = "btnGhiBD";
+            this.btnGhiBD.Size = new System.Drawing.Size(104, 22);
+            this.btnGhiBD.Text = "Ghi";
+            this.btnGhiBD.Click += new System.EventHandler(this.btnGhiBD_Click);
+            // 
+            // btnXoaBD
+            // 
+            this.btnXoaBD.Name = "btnXoaBD";
+            this.btnXoaBD.Size = new System.Drawing.Size(104, 22);
+            this.btnXoaBD.Text = "Xóa";
+            this.btnXoaBD.Click += new System.EventHandler(this.btnXoaBD_Click);
+            // 
+            // cTBTTableAdapter
+            // 
+            this.cTBTTableAdapter.ClearBeforeFill = true;
+            // 
+            // bdsCTBT
+            // 
+            this.bdsCTBT.DataMember = "FK_CTBT_BODE1";
+            this.bdsCTBT.DataSource = this.bdsBD;
+            // 
             // frmGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -735,6 +748,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTBT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,5 +814,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txtD;
         private System.Windows.Forms.DataGridViewComboBoxColumn cmbDapAn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DSTableAdapters.CTBTTableAdapter cTBTTableAdapter;
+        private System.Windows.Forms.BindingSource bdsCTBT;
     }
 }
