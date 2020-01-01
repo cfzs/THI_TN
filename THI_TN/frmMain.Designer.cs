@@ -36,8 +36,8 @@
             this.btnLop = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiaoVien = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHocVi = new DevExpress.XtraBars.BarButtonItem();
-            this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhapDe = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
@@ -74,8 +74,8 @@
             this.btnLop,
             this.btnMonHoc,
             this.btnGiaoVien,
-            this.btnHocVi,
-            this.btnChucVu,
+            this.btnSinhVien,
+            this.btnNhapDe,
             this.btnDangNhap,
             this.btnDangXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -93,6 +93,7 @@
             this.btnKhoa.Caption = "Khoa";
             this.btnKhoa.Id = 2;
             this.btnKhoa.Name = "btnKhoa";
+            this.btnKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoa_ItemClick);
             // 
             // btnBoMon
             // 
@@ -105,12 +106,14 @@
             this.btnLop.Caption = "Lớp";
             this.btnLop.Id = 5;
             this.btnLop.Name = "btnLop";
+            this.btnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLop_ItemClick);
             // 
             // btnMonHoc
             // 
             this.btnMonHoc.Caption = "Môn học";
             this.btnMonHoc.Id = 6;
             this.btnMonHoc.Name = "btnMonHoc";
+            this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
             // 
             // btnGiaoVien
             // 
@@ -120,17 +123,19 @@
             this.btnGiaoVien.Name = "btnGiaoVien";
             this.btnGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiaoVien_ItemClick);
             // 
-            // btnHocVi
+            // btnSinhVien
             // 
-            this.btnHocVi.Caption = "Học vị";
-            this.btnHocVi.Id = 8;
-            this.btnHocVi.Name = "btnHocVi";
+            this.btnSinhVien.Caption = "Sinh viên";
+            this.btnSinhVien.Id = 8;
+            this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
             // 
-            // btnChucVu
+            // btnNhapDe
             // 
-            this.btnChucVu.Caption = "Chức vụ";
-            this.btnChucVu.Id = 9;
-            this.btnChucVu.Name = "btnChucVu";
+            this.btnNhapDe.Caption = "Nhập đề";
+            this.btnNhapDe.Id = 9;
+            this.btnNhapDe.Name = "btnNhapDe";
+            this.btnNhapDe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDe_ItemClick);
             // 
             // btnDangNhap
             // 
@@ -175,8 +180,8 @@
             // GiangVien
             // 
             this.GiangVien.ItemLinks.Add(this.btnGiaoVien);
-            this.GiangVien.ItemLinks.Add(this.btnHocVi);
-            this.GiangVien.ItemLinks.Add(this.btnChucVu);
+            this.GiangVien.ItemLinks.Add(this.btnSinhVien);
+            this.GiangVien.ItemLinks.Add(this.btnNhapDe);
             this.GiangVien.Name = "GiangVien";
             this.GiangVien.Text = "Giảng viên";
             // 
@@ -314,8 +319,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.BarButtonItem btnGiaoVien;
-        private DevExpress.XtraBars.BarButtonItem btnHocVi;
-        private DevExpress.XtraBars.BarButtonItem btnChucVu;
+        private DevExpress.XtraBars.BarButtonItem btnSinhVien;
+        private DevExpress.XtraBars.BarButtonItem btnNhapDe;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
