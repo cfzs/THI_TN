@@ -71,15 +71,33 @@ namespace THI_TN
             Program.mHoten = Program.myReader.GetString(1);
             Program.mGroup = Program.myReader.GetString(2);
 
-            frmMain f = new frmMain();
-            f.FormClosed += new FormClosedEventHandler(f_formClosed);
-            f.Show();
-            this.Hide();
+            if (Program.mGroup.Equals("SinhVien"))
+            {
+                frmThi f1 = new frmThi();
+                f1.FormClosed += new FormClosedEventHandler(f_formClosed);
+                f1.Show();
+                this.Hide();
+                Program.myReader.Close();
+                Program.conn.Close();
+                MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
 
-            
-            Program.myReader.Close();
-            Program.conn.Close();
-            MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                frmMain f = new frmMain();
+                f.FormClosed += new FormClosedEventHandler(f_formClosed);
+                f.Show();
+                this.Hide();
+
+
+                Program.myReader.Close();
+                Program.conn.Close();
+                MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
+
+
+            }
+
 
         }
 

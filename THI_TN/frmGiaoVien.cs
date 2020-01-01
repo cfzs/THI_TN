@@ -35,6 +35,7 @@ namespace THI_TN
             btnGhi.Enabled = false;
             btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
+            btnThemBD.Enabled = true; btnGhiBD.Enabled = false; btnXoaBD.Enabled = true;
             //btnPhucHoi.Enabled = false;
             if (bdsGV.Count == 0)
                 btnXoa.Enabled = false;
@@ -162,6 +163,7 @@ namespace THI_TN
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsGV.CancelEdit();
+            bdsBD.CancelEdit();
             bdsGV.Position = viTri;
             gcGV.Enabled = true;
             groupBox1.Enabled = false;
@@ -184,6 +186,7 @@ namespace THI_TN
             btnCTBD.Enabled = true; btnThoat.Enabled = true;
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; btnRefresh.Enabled = true;
             gcGV.Enabled = true; groupBox1.Enabled = false;
+            btnThemBD.Enabled = true; btnGhiBD.Enabled = false;  btnXoaBD.Enabled = true;
             dS.EnforceConstraints = false;
             this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
             this.bODETableAdapter.Fill(this.dS.BODE);
@@ -219,9 +222,10 @@ namespace THI_TN
             groupBox1.Enabled = false;
             gcGV.Enabled = false;
             bdsBD.AddNew();
-            //object maxCauHoi;
-            //maxCauHoi = dS.BODE.Compute("Max(CAUHOI)", "");
+            object maxCauHoi;
+            maxCauHoi = dS.BODE.Compute("Max(CAUHOI)", "");
             //txtCauHoi.Selected = (int.Parse(maxCauHoi.ToString()) + 1).ToString();
+            dgvBD.CurrentRow.SetValues((int.Parse(maxCauHoi.ToString()) + 1).ToString());
             btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
             btnCTBD.Enabled = false; btnThoat.Enabled = false;
             btnGhi.Enabled = false; btnPhucHoi.Enabled = true; btnRefresh.Enabled = true;
@@ -307,7 +311,7 @@ namespace THI_TN
                     {
                         MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
 
-                        MessageBox.Show("Lỗi ghi lớp. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
+                        MessageBox.Show("Lỗi ghi câu hỏi. Bạn kiểm tra lại thông tin lớp trước khi ghi.", "", MessageBoxButtons.OK);
                         btnPhucHoi.Enabled = false;
                         return;
                     }
@@ -318,6 +322,32 @@ namespace THI_TN
                 btnXoaBD.Enabled = true;
                
             }
+        }
+
+        private void btnXoaBD_Click(object sender, EventArgs e)
+        {
+            if (bdsCTBT.Count > 0)
+            {
+                MessageBox.Show("Câu hỏi đã có trong đề thi.", "", MessageBoxButtons.OK);
+                return;
+            }
+            if (MessageBox.Show("Bạn có thật sự muốn xóa câu hỏi này?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    bdsBD.RemoveCurrent();
+                    this.bODETableAdapter.Update(this.dS.BODE);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi xóa câu hỏi.", "", MessageBoxButtons.OK);
+
+                }
+            }
+            btnThemBD.Enabled = true;
+            btnPhucHoi.Enabled = false;
+            if (bdsBD.Count == 0)
+                btnXoaBD.Enabled = false;
         }
     }
 }
