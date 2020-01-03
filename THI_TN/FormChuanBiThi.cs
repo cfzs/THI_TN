@@ -202,11 +202,15 @@ namespace TN_CSDLPT
 
             ds = new List<DSCauHoi>();
             ds = DsCauHoi(socauhoi, TrinhDo, MaMH);
-            this.Close();
-            //FormBatDauThi f = new FormBatDauThi();
-            //f.ShowDialog();
-            frmThi f = new frmThi();
-            f.Show();
+            //this.Close();
+            FormBatDauThi f = new FormBatDauThi();
+            if (frmDangNhap.co == 0)
+            {
+                f.Show();
+            }
+            else 
+                f.ShowDialog();
+           
         }
 
         public FormChuanBiThi()
@@ -310,8 +314,8 @@ namespace TN_CSDLPT
         private void FormChuanBiThi_Load(object sender, EventArgs e)
         {
             //Set tay
-            Program.conn.ConnectionString = "Data Source=DESKTOP-GNVB183\\SERVER2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123";
-            Program.conn.Open();
+            //Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            //Program.conn.Open();
             // LoadDataToComboBoxLop();
             //LoadDataToComboBoxMon();
             // LoadDataToComboBoxLan();

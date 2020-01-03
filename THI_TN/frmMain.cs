@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TN_CSDLPT;
 
 namespace THI_TN
 {
@@ -101,6 +102,30 @@ namespace THI_TN
         private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmSV f = new frmSV();
+            f.FormClosed += new FormClosedEventHandler(f_formClosed);
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnDangKi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmChuanBiThi f = new frmChuanBiThi();
+            f.FormClosed += new FormClosedEventHandler(f_formClosed);
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnThiThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormChuanBiThi f = new FormChuanBiThi();
+            f.FormClosed += new FormClosedEventHandler(f_formClosed);
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnXemKQ_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frm_GT_KetQuaThi f = new frm_GT_KetQuaThi();
             f.FormClosed += new FormClosedEventHandler(f_formClosed);
             f.Show();
             this.Hide();

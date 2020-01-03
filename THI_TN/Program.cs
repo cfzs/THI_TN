@@ -20,7 +20,7 @@ namespace THI_TN
         public static String connstr;
         public static SqlDataReader myReader;
         public static String servername = "";
-        public static String username = "TH101";
+        public static String username = "";
         public static String mlogin = "";
         public static String password = "";
 
@@ -31,7 +31,7 @@ namespace THI_TN
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
-        public static String mLop = "TH04";
+        public static String mLop = "";
         public static String mTenLop = "";
         public static int mCoso = 0;
 
