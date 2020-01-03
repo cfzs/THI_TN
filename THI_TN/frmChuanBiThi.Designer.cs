@@ -528,7 +528,7 @@
             // 
             this.txtL.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGIAOVIEN_DANGKY, "LAN", true));
             this.txtL.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -537,14 +537,25 @@
             this.txtL.Name = "txtL";
             this.txtL.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtL.Properties.MaxValue = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.txtL.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtL.Size = new System.Drawing.Size(121, 20);
             this.txtL.TabIndex = 16;
+            this.txtL.EditValueChanged += new System.EventHandler(this.txtL_EditValueChanged);
             // 
             // txtSCT
             // 
             this.txtSCT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGIAOVIEN_DANGKY, "SOCAUTHI", true));
             this.txtSCT.EditValue = new decimal(new int[] {
-            0,
+            15,
             0,
             0,
             0});
@@ -553,6 +564,16 @@
             this.txtSCT.Name = "txtSCT";
             this.txtSCT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSCT.Properties.MaxValue = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.txtSCT.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.txtSCT.Size = new System.Drawing.Size(121, 20);
             this.txtSCT.TabIndex = 18;
             // 
@@ -560,7 +581,7 @@
             // 
             this.txtTG.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGIAOVIEN_DANGKY, "THOIGIAN", true));
             this.txtTG.EditValue = new decimal(new int[] {
-            0,
+            15,
             0,
             0,
             0});
@@ -569,6 +590,16 @@
             this.txtTG.Name = "txtTG";
             this.txtTG.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTG.Properties.MaxValue = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.txtTG.Properties.MinValue = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.txtTG.Size = new System.Drawing.Size(121, 20);
             this.txtTG.TabIndex = 20;
             // 
@@ -678,6 +709,7 @@
             this.cbbTL.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MALOP", true));
             this.cbbTL.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dbsLOP, "TENLOP", true));
             this.cbbTL.DataSource = this.dbsLOP;
+            this.cbbTL.DisplayMember = "MALOP";
             this.cbbTL.FormattingEnabled = true;
             this.cbbTL.Location = new System.Drawing.Point(95, 320);
             this.cbbTL.Name = "cbbTL";

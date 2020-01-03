@@ -63,9 +63,9 @@ namespace THI_TN
             gcGIAOVIEN_DANGKY.Enabled = false;
             bdsGIAOVIEN_DANGKY.AddNew();
 
-            btnThem.Enabled = false; btnSua.Enabled = false; btnXoa.Enabled = false;
+            btnThem.Enabled = false; btnSua.Enabled = false; btnSua.Enabled = false;
             btnThoat.Enabled = false;
-            btnGhi.Enabled = true; btnPhucHoi.Enabled = true; btnPhucHoi.Enabled = true;
+            btnGhi.Enabled = true; btnPhucHoi.Enabled = true;
             cbbML.Focus();
         }
 
@@ -76,23 +76,45 @@ namespace THI_TN
             string tgian = "EXEC sp_KiemTraThoiGianThi " + txtTG.Text.ToString();
             string khoachinh = "EXEC sp_KhoaChinhDangKiThi '" + cbbML.SelectedValue.ToString() + "' ,'" + cbbMMH.SelectedValue.ToString() + "' , " + txtL.Text.ToString();
             string socauthi = "EXEC sp_SoCauThi " + txtSCT.Text.ToString();
-            DataSet tg = new DataSet();
-            DataSet kh = new DataSet();
-            DataSet sct = new DataSet();
+            string lanthi = "EXEC sp_LanThi "+txtL.Text.ToString();
+            string trinhdo = "EXEC sp_TrinhDo '" + txtTD.Text.ToString()+"'";
 
-            SqlDataAdapter da1 = new SqlDataAdapter(tgian, Program.conn);
-            da1.Fill(tg);
-            SqlDataAdapter da2 = new SqlDataAdapter(khoachinh, Program.conn);
-            da2.Fill(kh);
-            SqlDataAdapter da3 = new SqlDataAdapter(socauthi, Program.conn);
-            da3.Fill(sct);
-            /*tg = Program.ExecSqlDataReader(tgian);
-            kh = Program.ExecSqlDataReader(khoachinh);
-            sct = Program.ExecSqlDataReader(socauthi);*/
-            tg.ToString(); kh.ToString(); sct.ToString();
-            //int tg1 = Convert.ToInt32(tg), kh1 = Convert.ToInt32(kh), sct1 = Convert.ToInt32(sct);
-            Program.conn.Close();
-            
+            //tgian thi
+            Program.myReader = Program.ExecSqlDataReader(tgian);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            int kq1 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
+            Program.myReader.Close();
+
+            //khóa chính
+            Program.myReader = Program.ExecSqlDataReader(khoachinh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            int kq2 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
+            Program.myReader.Close();
+
+            //số câu thi
+            Program.myReader = Program.ExecSqlDataReader(socauthi);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            int kq3 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
+            Program.myReader.Close();
+
+            //lần thi
+            Program.myReader = Program.ExecSqlDataReader(lanthi);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            int kq4 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
+            Program.myReader.Close();
+
+            //trinh độ
+            Program.myReader = Program.ExecSqlDataReader(trinhdo);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            int kq5 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
+            Program.myReader.Close();
+
+
             if (cbbML.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống mã lớp.", "", MessageBoxButtons.OK);
@@ -101,11 +123,6 @@ namespace THI_TN
           else  if (txtTD.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống trình độ.", "", MessageBoxButtons.OK);
-                txtTD.Focus();
-            }
-            else if(txtTD.Text.Trim().Length > 1)
-            {
-                MessageBox.Show("Chỉ ghi trình độ A(Đại học) hoặc B(Cao đẳng) hoăc C(Trung cấp).", "", MessageBoxButtons.OK);
                 txtTD.Focus();
             }
             // kt ngày của hệ thống
@@ -138,22 +155,32 @@ namespace THI_TN
                 MessageBox.Show("Không được bỏ trống thời gian thi.", "", MessageBoxButtons.OK);
                 txtTG.Focus();
             }
-            
-            else if (tg.Equals("0"))
+
+            else if (kq1 ==0)
             {
                 MessageBox.Show("Thời gian thi phải lớn hơn 0 hoặc nhỏ hơn bằng 60p");
                 txtTG.Focus();
             }
-            else if(kh.Equals("0"))
+            else if(kq2 ==0)
             {
                 MessageBox.Show("Cặp 3 khóa chính bị trùng .Kiểm tra lại.");
                 cbbHT.Focus();
 
             }
-            else if (sct.Equals("0"))
+            else if (kq3 ==0)
             {
-                MessageBox.Show("Số câu thi phải lớn hơn 0.");
+                MessageBox.Show("Số câu thi phải lớn hơn 10 nhỏ hơn 100.");
                 txtSCT.Focus();
+            }
+            else if(kq4 == 0)
+            {
+                MessageBox.Show("Lần thi chỉ có 1 hoặc 2.", "", MessageBoxButtons.OK);
+                txtL.Focus();
+            }
+            else if(kq5 == 0)
+            {
+                MessageBox.Show("Chỉ ghi trình độ A(Đại học) hoặc B(Cao đẳng) hoăc C(Trung cấp).", "", MessageBoxButtons.OK);
+                txtTD.Focus();
             }
             try
             {
@@ -218,6 +245,11 @@ namespace THI_TN
         }
 
         private void dSLOPBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtL_EditValueChanged(object sender, EventArgs e)
         {
 
         }
