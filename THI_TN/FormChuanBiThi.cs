@@ -203,8 +203,10 @@ namespace TN_CSDLPT
             ds = new List<DSCauHoi>();
             ds = DsCauHoi(socauhoi, TrinhDo, MaMH);
             this.Close();
-            FormBatDauThi f = new FormBatDauThi();
-            f.ShowDialog();
+            //FormBatDauThi f = new FormBatDauThi();
+            //f.ShowDialog();
+            frmThi f = new frmThi();
+            f.Show();
         }
 
         public FormChuanBiThi()

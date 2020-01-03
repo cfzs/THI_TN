@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using System.Data.SqlClient;
 using System.Data;
+using TN_CSDLPT;
 
 namespace THI_TN
 {
@@ -19,7 +20,7 @@ namespace THI_TN
         public static String connstr;
         public static SqlDataReader myReader;
         public static String servername = "";
-        public static String username = "";
+        public static String username = "TH101";
         public static String mlogin = "";
         public static String password = "";
 
@@ -30,6 +31,8 @@ namespace THI_TN
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
+        public static String mLop = "TH04";
+        public static String mTenLop = "";
         public static int mCoso = 0;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
@@ -88,7 +91,7 @@ namespace THI_TN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frm_GT_KetQuaThi());
+            Application.Run(new frmDangNhap());
 
 
         }

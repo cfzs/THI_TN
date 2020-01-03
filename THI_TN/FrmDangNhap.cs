@@ -22,7 +22,7 @@ namespace THI_TN
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            string chuoiketnoi = "Data Source=DESKTOP-GNVB183\\SERVER1;Initial Catalog=THI_TN;Integrated Security=True";
+            string chuoiketnoi = "Data Source=Quang-PC\\SRV1;Initial Catalog=THI_TN;Integrated Security=True";
             Program.conn.ConnectionString = chuoiketnoi;
             Program.conn.Open();
             DataTable dt = new DataTable();
