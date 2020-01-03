@@ -310,7 +310,7 @@ namespace TN_CSDLPT
         private void FormChuanBiThi_Load(object sender, EventArgs e)
         {
             //Set tay
-            Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            Program.conn.ConnectionString = "Data Source=DESKTOP-GNVB183\\SERVER2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123";
             Program.conn.Open();
             // LoadDataToComboBoxLop();
             //LoadDataToComboBoxMon();

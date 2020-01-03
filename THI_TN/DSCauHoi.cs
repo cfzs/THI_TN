@@ -19,6 +19,5 @@ namespace THI_TN
         public String DAPAN { get; set; }
         public String MAGV { get; set; }
         public String Chon { get; set; }
-
     }
 }
