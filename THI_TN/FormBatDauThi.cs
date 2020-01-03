@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -261,8 +262,26 @@ namespace TN_CSDLPT
             t.Stop();
             btnDungLai.Visible = false;
             this.Close();
-            //FormKetQua f = new FormKetQua();
-            //f.ShowDialog();
+            float diem = 0;
+            float cauDung = 10 / FormChuanBiThi.socauhoi;
+            for (int i = 0; i < FormChuanBiThi.socauhoi; i++)
+            {
+                String strLenh = "EXEC SP_ThemCTBT '" + Program.username + "' " + "'" + FormChuanBiThi.MaMH + "' " + "'" + FormChuanBiThi.socauhoi + "' " + "'" + FormChuanBiThi.lan + " '" + FormChuanBiThi.ds[i].Chon + "' " + null;
+                SqlDataReader a;
+                MessageBox.Show(strLenh);
+                a = Program.ExecSqlDataReader(strLenh);
+                if (FormChuanBiThi.ds[i].Chon.Equals(FormChuanBiThi.ds[i].DAPAN))
+                    diem += cauDung;
+            }
+            MessageBox.Show("Điểm: " + diem);
+            if (frmDangNhap.co == 0)
+            {
+                String strLenh = "EXEC SP_ThemDiem '" + Program.username + "' " + "'" + FormChuanBiThi.MaMH + "' " + "'" + FormChuanBiThi.lan + " '" + " '" + FormChuanBiThi.ngay + "' " + diem + null;
+                SqlDataReader a;
+                MessageBox.Show(strLenh);
+                a = Program.ExecSqlDataReader(strLenh);
+            }
+            
 
         }
 

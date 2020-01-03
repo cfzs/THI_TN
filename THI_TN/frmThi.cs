@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
+using TN_CSDLPT;
 
 namespace THI_TN
 {
@@ -17,6 +19,27 @@ namespace THI_TN
             InitializeComponent();
         }
 
+        System.Timers.Timer t;
+        int m = 3, s = 59;
+        private void OntimeEvert(object sender, ElapsedEventArgs e)
+        {
+            Invoke(new Action(() => {
+                s -= 1;
+                if (s == 0)
+                {
+                    s = 59;
+                    m -= 1;
+
+                }
+                else if (m == 0 && s == 1)
+                {
+                    t.Stop();
+                    cmbTenMH.Enabled = false;
+
+                }
+                txtTime.Text = string.Format("{0}:{1}", m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+            }));
+        }
 
         private void frmThi_Load(object sender, EventArgs e)
         {
@@ -32,6 +55,12 @@ namespace THI_TN
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);
             // TODO: This line of code loads data into the 'dS.SINHVIEN' table. You can move, or remove it, as needed.
             //dS.EnforceConstraints = true;
+
+            t = new System.Timers.Timer();
+            t.Interval = 1000; //1000 = 1s
+            t.Elapsed += OntimeEvert;
+            m = FormChuanBiThi.m - 1;
+            t.Start();
 
         }
 

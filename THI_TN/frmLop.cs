@@ -186,11 +186,11 @@ namespace THI_TN
         {
             int maKhoa = cmbMaKhoa.SelectedIndex;
             DataTable dt = new DataTable();
-            //dt = Program.ExecSqlDataTable("SELECT * FROM KHOA");
 
             //Set tay
-            Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
-            Program.conn.Open();
+            //Program.conn.ConnectionString = "Data Source=Quang-PC\\SRV2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123456";
+            //Program.conn.Open();
+
             dt = Program.ExecSqlDataTable("SELECT MAKH FROM KHOA");
 
             cmbMaKhoa.DataSource = dt;

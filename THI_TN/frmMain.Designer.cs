@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnKhoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBoMon = new DevExpress.XtraBars.BarButtonItem();
             this.btnLop = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.btnGiaoVien = new DevExpress.XtraBars.BarButtonItem();
@@ -57,6 +56,9 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnDangKi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThiThu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXemKQ = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
@@ -70,17 +72,19 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.btnKhoa,
-            this.btnBoMon,
             this.btnLop,
             this.btnMonHoc,
             this.btnGiaoVien,
             this.btnSinhVien,
             this.btnNhapDe,
             this.btnDangNhap,
-            this.btnDangXuat});
+            this.btnDangXuat,
+            this.btnDangKi,
+            this.btnThiThu,
+            this.btnXemKQ});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -94,12 +98,6 @@
             this.btnKhoa.Id = 2;
             this.btnKhoa.Name = "btnKhoa";
             this.btnKhoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoa_ItemClick);
-            // 
-            // btnBoMon
-            // 
-            this.btnBoMon.Caption = "Bộ môn";
-            this.btnBoMon.Id = 4;
-            this.btnBoMon.Name = "btnBoMon";
             // 
             // btnLop
             // 
@@ -171,7 +169,6 @@
             // ToChuc
             // 
             this.ToChuc.ItemLinks.Add(this.btnKhoa);
-            this.ToChuc.ItemLinks.Add(this.btnBoMon);
             this.ToChuc.ItemLinks.Add(this.btnLop);
             this.ToChuc.ItemLinks.Add(this.btnMonHoc);
             this.ToChuc.Name = "ToChuc";
@@ -182,6 +179,8 @@
             this.GiangVien.ItemLinks.Add(this.btnGiaoVien);
             this.GiangVien.ItemLinks.Add(this.btnSinhVien);
             this.GiangVien.ItemLinks.Add(this.btnNhapDe);
+            this.GiangVien.ItemLinks.Add(this.btnDangKi);
+            this.GiangVien.ItemLinks.Add(this.btnThiThu);
             this.GiangVien.Name = "GiangVien";
             this.GiangVien.Text = "Giảng viên";
             // 
@@ -206,6 +205,7 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnXemKQ);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
@@ -271,6 +271,27 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // btnDangKi
+            // 
+            this.btnDangKi.Caption = "Đăng kí thi";
+            this.btnDangKi.Id = 13;
+            this.btnDangKi.Name = "btnDangKi";
+            this.btnDangKi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangKi_ItemClick);
+            // 
+            // btnThiThu
+            // 
+            this.btnThiThu.Caption = "Thi thử";
+            this.btnThiThu.Id = 14;
+            this.btnThiThu.Name = "btnThiThu";
+            this.btnThiThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThiThu_ItemClick);
+            // 
+            // btnXemKQ
+            // 
+            this.btnXemKQ.Caption = "Xem kết quả thi";
+            this.btnXemKQ.Id = 15;
+            this.btnXemKQ.Name = "btnXemKQ";
+            this.btnXemKQ.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemKQ_ItemClick);
+            // 
             // frmMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -308,7 +329,6 @@
         private DevExpress.XtraWizard.WizardPage wizardPage1;
         private DevExpress.XtraWizard.CompletionWizardPage completionWizardPage1;
         private DevExpress.XtraBars.BarButtonItem btnKhoa;
-        private DevExpress.XtraBars.BarButtonItem btnBoMon;
         private DevExpress.XtraBars.BarButtonItem btnLop;
         private DevExpress.XtraBars.BarButtonItem btnMonHoc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup GiangVien;
@@ -324,6 +344,9 @@
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnDangKi;
+        private DevExpress.XtraBars.BarButtonItem btnThiThu;
+        private DevExpress.XtraBars.BarButtonItem btnXemKQ;
     }
 }
 

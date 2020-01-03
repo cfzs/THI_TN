@@ -55,6 +55,7 @@
             this.mALOPTextEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.cmbMaLop = new System.Windows.Forms.ComboBox();
             this.nGAYTHIComboBox = new System.Windows.Forms.ComboBox();
+            this.txtTime = new System.Windows.Forms.TextBox();
             mASVLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
@@ -307,11 +308,23 @@
             this.nGAYTHIComboBox.TabIndex = 19;
             this.nGAYTHIComboBox.ValueMember = "NGAYTHI";
             // 
+            // txtTime
+            // 
+            this.txtTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTime.Location = new System.Drawing.Point(224, 28);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.ReadOnly = true;
+            this.txtTime.Size = new System.Drawing.Size(116, 29);
+            this.txtTime.TabIndex = 20;
+            this.txtTime.Text = "00:00";
+            this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 588);
+            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.nGAYTHIComboBox);
             this.Controls.Add(this.cmbMaLop);
             this.Controls.Add(mALOPLabel1);
@@ -368,5 +381,6 @@
         private DevExpress.XtraEditors.TextEdit mALOPTextEdit1;
         private System.Windows.Forms.ComboBox cmbMaLop;
         private System.Windows.Forms.ComboBox nGAYTHIComboBox;
+        private System.Windows.Forms.TextBox txtTime;
     }
 }

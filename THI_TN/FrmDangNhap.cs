@@ -73,17 +73,24 @@ namespace THI_TN
             }
             Program.mHoten = Program.myReader.GetString(1);
             Program.mGroup = Program.myReader.GetString(2);
+            Program.myReader.Close();
 
             if (Program.mGroup.Equals("SinhVien"))
             {
                 co = 0;
+                strLenh = "SELECT MALOP FROM SINHVIEN WHERE MASV ='" + Program.username + "'";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                Program.myReader.Read();
+
+                Program.mLop = Program.myReader.GetString(0);
+                Program.myReader.Close();
                 FormChuanBiThi f1 = new FormChuanBiThi();
                 f1.FormClosed += new FormClosedEventHandler(f_formClosed);
                 f1.Show();
                 this.Hide();
                 Program.myReader.Close();
                 Program.conn.Close();
-                MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
+                MessageBox.Show("Sinh vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
 
 
             }
@@ -97,7 +104,7 @@ namespace THI_TN
 
                 Program.myReader.Close();
                 Program.conn.Close();
-                MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
+                MessageBox.Show("GIao vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
 
 
             }
