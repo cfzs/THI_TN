@@ -650,6 +650,7 @@
             // cbbHT
             // 
             this.cbbHT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSGV, "HoTen", true));
+            this.cbbHT.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MAGV", true));
             this.cbbHT.DataSource = this.bdsGETDSGV;
             this.cbbHT.DisplayMember = "HoTen";
             this.cbbHT.FormattingEnabled = true;
@@ -662,6 +663,7 @@
             // cbbTMH
             // 
             this.cbbTMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGETDSMH, "TENMH", true));
+            this.cbbTMH.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MAMH", true));
             this.cbbTMH.DataSource = this.bdsGETDSMH;
             this.cbbTMH.DisplayMember = "TENMH";
             this.cbbTMH.FormattingEnabled = true;
@@ -673,9 +675,9 @@
             // 
             // cbbTL
             // 
+            this.cbbTL.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsGIAOVIEN_DANGKY, "MALOP", true));
             this.cbbTL.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dbsLOP, "TENLOP", true));
             this.cbbTL.DataSource = this.dbsLOP;
-            this.cbbTL.DisplayMember = "TENLOP";
             this.cbbTL.FormattingEnabled = true;
             this.cbbTL.Location = new System.Drawing.Point(95, 320);
             this.cbbTL.Name = "cbbTL";

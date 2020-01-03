@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,13 @@ namespace THI_TN
 
         private void frmChuanBiThi_Load(object sender, EventArgs e)
         {
+            Program.conn.ConnectionString = "Data Source=DESKTOP-GNVB183\\SERVER2;Initial Catalog=THI_TN;Persist Security Info=True;User ID=KieuThien;Password=123";
+            Program.conn.Open();
+            dS.EnforceConstraints = false;
+
             // TODO: This line of code loads data into the 'dS.DSLOP' table. You can move, or remove it, as needed.
             this.dSLOPTableAdapter.Fill(this.dS.DSLOP);
-            dS.EnforceConstraints = false;
+            //dS.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dS.GETDSMH' table. You can move, or remove it, as needed.
             this.gETDSMHTableAdapter.Fill(this.dS.GETDSMH);
             // TODO: This line of code loads data into the 'dS.GETDSGV' table. You can move, or remove it, as needed.
@@ -66,6 +71,28 @@ namespace THI_TN
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+           
+            //kiểm tra các điều kiện trong sql 
+            string tgian = "EXEC sp_KiemTraThoiGianThi " + txtTG.Text.ToString();
+            string khoachinh = "EXEC sp_KhoaChinhDangKiThi '" + cbbML.SelectedValue.ToString() + "' ,'" + cbbMMH.SelectedValue.ToString() + "' , " + txtL.Text.ToString();
+            string socauthi = "EXEC sp_SoCauThi " + txtSCT.Text.ToString();
+            DataSet tg = new DataSet();
+            DataSet kh = new DataSet();
+            DataSet sct = new DataSet();
+
+            SqlDataAdapter da1 = new SqlDataAdapter(tgian, Program.conn);
+            da1.Fill(tg);
+            SqlDataAdapter da2 = new SqlDataAdapter(khoachinh, Program.conn);
+            da2.Fill(kh);
+            SqlDataAdapter da3 = new SqlDataAdapter(socauthi, Program.conn);
+            da3.Fill(sct);
+            /*tg = Program.ExecSqlDataReader(tgian);
+            kh = Program.ExecSqlDataReader(khoachinh);
+            sct = Program.ExecSqlDataReader(socauthi);*/
+            tg.ToString(); kh.ToString(); sct.ToString();
+            //int tg1 = Convert.ToInt32(tg), kh1 = Convert.ToInt32(kh), sct1 = Convert.ToInt32(sct);
+            Program.conn.Close();
+            
             if (cbbML.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống mã lớp.", "", MessageBoxButtons.OK);
@@ -111,7 +138,23 @@ namespace THI_TN
                 MessageBox.Show("Không được bỏ trống thời gian thi.", "", MessageBoxButtons.OK);
                 txtTG.Focus();
             }
-           
+            
+            else if (tg.Equals("0"))
+            {
+                MessageBox.Show("Thời gian thi phải lớn hơn 0 hoặc nhỏ hơn bằng 60p");
+                txtTG.Focus();
+            }
+            else if(kh.Equals("0"))
+            {
+                MessageBox.Show("Cặp 3 khóa chính bị trùng .Kiểm tra lại.");
+                cbbHT.Focus();
+
+            }
+            else if (sct.Equals("0"))
+            {
+                MessageBox.Show("Số câu thi phải lớn hơn 0.");
+                txtSCT.Focus();
+            }
             try
             {
                 bdsGIAOVIEN_DANGKY.EndEdit();
