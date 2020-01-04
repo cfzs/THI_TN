@@ -59,17 +59,14 @@ namespace TN_CSDLPT
                 cbMaMH.DataSource = dt;
                 cbMaMH.ValueMember = "MAMH";
                 cbMaMH.DisplayMember = "TENMH";
-                MessageBox.Show(cbMaMH.SelectedValue.ToString().Trim() + "->Toi Day");
                 
 
                 String strLenh = "EXEC SP_KIEMTRATHI '" + Program.mLop.Trim() + "','" + cbMaMH.SelectedValue.ToString().Trim() + "','" + Program.username.Trim() + "'";
-                MessageBox.Show(strLenh);
                 a = Program.ExecSqlDataReader(strLenh);
                 a.Read();
                 int kq = a.GetInt32(0);
                 a.Close();
                 lanthi = kq;
-                MessageBox.Show("" + kq);
                 if (kq == 0)
                 {
                     btnBatDau.Visible = false;
@@ -112,13 +109,11 @@ namespace TN_CSDLPT
         {
             if (frmDangNhap.co == 0)
             {
-                MessageBox.Show("LOP : "+Program.mLop);
                 SqlDataAdapter da = new SqlDataAdapter("select LAN from GIAOVIEN_DANGKY where GIAOVIEN_DANGKY.MALOP = '" + Program.mLop + "'", Program.conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 comboLan.DataSource = dt;
                 comboLan.ValueMember = "LAN";
-                MessageBox.Show("LAN : " + comboLan.SelectedValue.ToString().Trim());
                 //cbMaMH.DisplayMember = "TENMH";
                 //MessageBox.Show(cbMaMH.SelectedValue.ToString().Trim() + "->Toi Day");
 
@@ -126,8 +121,6 @@ namespace TN_CSDLPT
                 SqlDataReader myReader;
                 tenMH = cbMaMH.Text.ToString().Trim();
                 String strLenh = "select NGAYTHI, TRINHDO from GIAOVIEN_DANGKY where MALOP = '" + Program.mLop + "'  and LAN = '" + comboLan.SelectedValue.ToString().Trim() + "' and MAMH = '" + cbMaMH.SelectedValue.ToString().Trim() + "'";
-                MessageBox.Show(strLenh);
-                MessageBox.Show("Chay toi day roi");
                 myReader = Program.ExecSqlDataReader(strLenh);
                 myReader.Read();
                 ngay = myReader.GetDateTime(0);
@@ -137,7 +130,6 @@ namespace TN_CSDLPT
                 String t2 = time.ToString("MM/dd/yyyy");
                 ngay = DateTime.Parse(t1);
                 time = DateTime.Parse(t2);
-                MessageBox.Show("" + time + " " + ngay + " " + (DateTime.Compare(time, ngay).ToString()));
                 Program.conn.Close();
                 if (DateTime.Compare(time, ngay) < 0)
                 {
@@ -165,7 +157,6 @@ namespace TN_CSDLPT
             {
                 tenMH = cbMaMH.Text.ToString().Trim();
                 strLenh = "select SOCAUTHI,TRINHDO,MAMH,THOIGIAN,LAN,NGAYTHI from GIAOVIEN_DANGKY where MALOP = '" + Program.mLop.Trim() + "'  and LAN = '" + comboLan.SelectedValue.ToString().Trim() + "' and TRINHDO = '" + TrinhDo + "' and MAMH = '" + cbMaMH.SelectedValue.ToString().Trim() + "'";
-                MessageBox.Show(strLenh);
                 myReader = Program.ExecSqlDataReader(strLenh);
                 myReader.Read();
                 socauhoi = myReader.GetInt16(0);
@@ -174,7 +165,6 @@ namespace TN_CSDLPT
                 thoigian = myReader.GetInt16(3);
                 lan = myReader.GetInt16(4);
                 ngay = myReader.GetDateTime(5);
-                MessageBox.Show(socauhoi + " " + TrinhDo + " " + MaMH);
                 Program.conn.Close();
                 m = thoigian;
             }
@@ -183,7 +173,6 @@ namespace TN_CSDLPT
                 tenMH = cbMaMH.Text.ToString().Trim();
                 tenLop = cbLop.Text.ToString().Trim();
                 strLenh = "select SOCAUTHI,TRINHDO,MAMH,THOIGIAN,LAN from GIAOVIEN_DANGKY where MALOP = '" + cbLop.SelectedValue.ToString().Trim() + "'and MAGV ='" + Program.username + "'and LAN = '" + comboLan.Text.ToString().Trim() + "'and MAMH = '" + cbMaMH.SelectedValue.ToString().Trim() + "' and TRINHDO = '" + cbTrinhDo.Text.Trim() + "'";
-                MessageBox.Show(strLenh);
                 myReader = Program.ExecSqlDataReader(strLenh);
                 myReader.Read();
                 socauhoi = myReader.GetInt16(0);
@@ -192,7 +181,6 @@ namespace TN_CSDLPT
                 thoigian = myReader.GetInt16(3);
                 lan = myReader.GetInt16(4);
 
-                MessageBox.Show(socauhoi + " " + TrinhDo + " " + MaMH);
                 Program.conn.Close();
                 m = thoigian;
             }
@@ -247,7 +235,6 @@ namespace TN_CSDLPT
                 cbMaMH.DataSource = dt;
                 cbMaMH.ValueMember = "MAMH";
                 cbMaMH.DisplayMember = "TENMH";
-                MessageBox.Show(cbMaMH.SelectedValue.ToString().Trim());
             }
             catch (Exception ex)
             {
@@ -260,7 +247,6 @@ namespace TN_CSDLPT
             try
             {
 
-                MessageBox.Show("Lop ne : " + Program.mLop);
 
                 SqlDataAdapter da = new SqlDataAdapter("select MONHOC.MAMH,MONHOC.TENMH from MONHOC,GIAOVIEN_DANGKY where GIAOVIEN_DANGKY.MALOP = '" + Program.mLop + "' and MONHOC.MAMH = GIAOVIEN_DANGKY.MAMH ", Program.conn);
                 DataTable dt = new DataTable();
@@ -268,7 +254,6 @@ namespace TN_CSDLPT
                 cbMaMH.DataSource = dt;
                 cbMaMH.ValueMember = "MAMH";
                 cbMaMH.DisplayMember = "TENMH";
-                MessageBox.Show(cbMaMH.SelectedValue.ToString().Trim() + "->Toi Day");
 
 
             }

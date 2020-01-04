@@ -269,6 +269,7 @@
             // 
             // txtTime
             // 
+            this.txtTime.Enabled = false;
             this.txtTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Location = new System.Drawing.Point(206, 12);
             this.txtTime.Name = "txtTime";

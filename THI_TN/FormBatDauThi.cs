@@ -22,7 +22,7 @@ namespace TN_CSDLPT
         }
 
         System.Timers.Timer t;
-        int m = 5, s = 59;
+        int m, s;
         private void OntimeEvert(object sender, ElapsedEventArgs e)
         {
             Invoke(new Action(() => {
@@ -36,6 +36,7 @@ namespace TN_CSDLPT
                 else if (m == 0 && s == 1)
                 {
                     t.Stop();
+                    btnDungLai.PerformClick();
 
                 }
                 txtTime.Text = string.Format("{0}:{1}", m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
@@ -48,6 +49,7 @@ namespace TN_CSDLPT
             t.Interval = 1000; //1000 = 1s
             t.Elapsed += OntimeEvert;
             m = FormChuanBiThi.m - 1;
+            s = 59;
             t.Start();
             labSoCauHoi.Text = "Câu " + (i + 1);
             labNoiDung.Text = FormChuanBiThi.ds[0].NoiDung.ToString();
@@ -266,20 +268,25 @@ namespace TN_CSDLPT
             float cauDung = 10 / FormChuanBiThi.socauhoi;
             for (int i = 0; i < FormChuanBiThi.socauhoi; i++)
             {
-                String strLenh = "EXEC SP_ThemCTBT '" + Program.username + "' " + "'" + FormChuanBiThi.MaMH + "' " + "'" + FormChuanBiThi.socauhoi + "' " + "'" + FormChuanBiThi.lan + " '" + FormChuanBiThi.ds[i].Chon + "' " + null;
-                SqlDataReader a;
-                MessageBox.Show(strLenh);
-                a = Program.ExecSqlDataReader(strLenh);
                 if (FormChuanBiThi.ds[i].Chon.Equals(FormChuanBiThi.ds[i].DAPAN))
                     diem += cauDung;
             }
             MessageBox.Show("Điểm: " + diem);
             if (frmDangNhap.co == 0)
             {
-                String strLenh = "EXEC SP_ThemDiem '" + Program.username + "' " + "'" + FormChuanBiThi.MaMH + "' " + "'" + FormChuanBiThi.lan + " '" + " '" + FormChuanBiThi.ngay + "' " + diem + null;
+                String strLenh = "EXEC SP_ThemDiem '" + Program.username + "','"+ FormChuanBiThi.MaMH + "'," + FormChuanBiThi.lan + ",'" + FormChuanBiThi.ngay + "'," + diem + ",null";
                 SqlDataReader a;
-                MessageBox.Show(strLenh);
                 a = Program.ExecSqlDataReader(strLenh);
+                a.Close();
+                for (int i = 0; i < FormChuanBiThi.socauhoi; i++)
+                {
+                    if (frmDangNhap.co == 0)
+                    {
+                        strLenh = "EXEC SP_ThemCTBT '" + Program.username + "','" + FormChuanBiThi.MaMH + "'," + FormChuanBiThi.ds[i].CauHoi + "," + FormChuanBiThi.lan + ",'" + FormChuanBiThi.ds[i].Chon + "',null";
+                        a = Program.ExecSqlDataReader(strLenh);
+                        a.Close();
+                    }
+                }
             }
             
 
