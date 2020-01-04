@@ -93,6 +93,8 @@
             this.cbbHT = new System.Windows.Forms.ComboBox();
             this.cbbTMH = new System.Windows.Forms.ComboBox();
             this.cbbTL = new System.Windows.Forms.ComboBox();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGS = new DevExpress.XtraBars.BarButtonItem();
             tRINHDOLabel = new System.Windows.Forms.Label();
             nGAYTHILabel = new System.Windows.Forms.Label();
             lANLabel = new System.Windows.Forms.Label();
@@ -241,9 +243,11 @@
             this.btnRefresh,
             this.btnDSNV,
             this.btnThoat,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.btnGS});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 17;
+            this.barManager1.MaxItemId = 19;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -257,7 +261,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGS)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -717,6 +722,19 @@
             this.cbbTL.TabIndex = 61;
             this.cbbTL.ValueMember = "MALOP";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Ghi sửa";
+            this.barButtonItem2.Id = 17;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btnGS
+            // 
+            this.btnGS.Caption = "Ghi sửa";
+            this.btnGS.Id = 18;
+            this.btnGS.Name = "btnGS";
+            this.btnGS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGS_ItemClick);
+            // 
             // frmChuanBiThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,5 +841,7 @@
         private System.Windows.Forms.ComboBox cbbTL;
         private System.Windows.Forms.ComboBox cbbTMH;
         private System.Windows.Forms.ComboBox cbbHT;
+        private DevExpress.XtraBars.BarButtonItem btnGS;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
