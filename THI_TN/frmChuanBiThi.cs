@@ -63,8 +63,8 @@ namespace THI_TN
             gcGIAOVIEN_DANGKY.Enabled = false;
             bdsGIAOVIEN_DANGKY.AddNew();
 
-            btnThem.Enabled = false; btnSua.Enabled = false; btnSua.Enabled = false;
-            btnThoat.Enabled = false;
+            btnThem.Enabled = false; btnSua.Enabled = false; barButtonItem1.Enabled = false;
+            btnThoat.Enabled = false;btnGS.Enabled = false;
             btnGhi.Enabled = true; btnPhucHoi.Enabled = true;
             cbbML.Focus();
         }
@@ -114,6 +114,10 @@ namespace THI_TN
             int kq5 = Int32.Parse(Program.myReader.GetInt32(0).ToString());
             Program.myReader.Close();
 
+            // kt ngày của hệ thống
+            DateTime now = DateTime.Now;
+            DateTime iDate;
+            iDate = txtNT.Value;
 
             if (cbbML.Text.Trim() == "")
             {
@@ -125,12 +129,7 @@ namespace THI_TN
                 MessageBox.Show("Không được bỏ trống trình độ.", "", MessageBoxButtons.OK);
                 txtTD.Focus();
             }
-            // kt ngày của hệ thống
-            DateTime now = DateTime.Now;
-            DateTime iDate;
-            iDate = txtNT.Value;
-            
-            if (txtNT.Text.Trim() == "")
+           else if (txtNT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được bỏ trống ngày thi .", "", MessageBoxButtons.OK);
                 txtNT.Focus();
@@ -182,25 +181,29 @@ namespace THI_TN
                 MessageBox.Show("Chỉ ghi trình độ A(Đại học) hoặc B(Cao đẳng) hoăc C(Trung cấp).", "", MessageBoxButtons.OK);
                 txtTD.Focus();
             }
-            try
+            else
             {
-                bdsGIAOVIEN_DANGKY.EndEdit();
-                bdsGIAOVIEN_DANGKY.ResetCurrentItem();
-                if (dS.HasChanges())
+                try
                 {
-                    this.gIAOVIEN_DANGKYTableAdapter.Update(this.dS.GIAOVIEN_DANGKY);//đẩy về sql
+                    bdsGIAOVIEN_DANGKY.EndEdit();
+                    bdsGIAOVIEN_DANGKY.ResetCurrentItem();
+                    if (dS.HasChanges())
+                    {
+                        this.gIAOVIEN_DANGKYTableAdapter.Update(this.dS.GIAOVIEN_DANGKY);//đẩy về sql
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message.Contains("PRIMARY"))
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Mã mà cặp 3 khóa chính bị trùng.", "", MessageBoxButtons.OK);
-                }
-                else
-                    MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi."+ex.Message, "", MessageBoxButtons.OK);
+                    if (ex.Message.Contains("PRIMARY"))
+                    {
+                        MessageBox.Show("Mã mà cặp 3 khóa chính bị trùng.", "", MessageBoxButtons.OK);
+                    }
+                    else
+                        MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi." + ex.Message, "", MessageBoxButtons.OK);
 
+                }
             }
+          
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false;
             btnThem.Enabled = true;
             btnThoat.Enabled = true; gcGIAOVIEN_DANGKY.Enabled = true;
@@ -214,7 +217,7 @@ namespace THI_TN
         private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            btnThem.Enabled = true; btnSua.Enabled = true; btnXoa.Enabled = true;
+            btnThem.Enabled = true; barButtonItem1.Enabled = true;
             btnThoat.Enabled = true;
             btnGhi.Enabled = false; btnPhucHoi.Enabled = false; btnRefresh.Enabled = true;
             gcGIAOVIEN_DANGKY.Enabled = true; 
@@ -238,6 +241,7 @@ namespace THI_TN
                 btnThem.Enabled = false; btnSua.Enabled = false;
                 btnThoat.Enabled = false;
                 btnGhi.Enabled = true; btnRefresh.Enabled = true;
+                btnGS.Enabled = true;
                 gcGIAOVIEN_DANGKY.Enabled = true;
                 vitri = bdsGIAOVIEN_DANGKY.Position;
             }
@@ -252,6 +256,26 @@ namespace THI_TN
         private void txtL_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+               // bdsGIAOVIEN_DANGKY.RemoveCurrent();
+                bdsGIAOVIEN_DANGKY.EndEdit();
+                bdsGIAOVIEN_DANGKY.ResetCurrentItem();
+                if (dS.HasChanges())
+                {
+                    this.gIAOVIEN_DANGKYTableAdapter.Update(this.dS.GIAOVIEN_DANGKY);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi đăng kí thi. Bạn kiểm tra lại thông tin trước khi ghi." + ex.Message, "", MessageBoxButtons.OK);
+            }
+
+         
         }
     }
  }
